@@ -8,17 +8,19 @@ from tqdm import tqdm_notebook
 
 ## TODO: adapt for every user
 try:
-    whoami = os.getlogin()
-    if whoami == 'aaron.spring':
-        my_system = 'mac'
-    else:
-        my_system = 'mistral'
+    my_system = None
+    host = os.hostname()
+    for node in ['mlogin','mistralpp']:
+        if node in hostname:
+            my_system = 'mistral'
+    if my_system is None:
+        my_system = 'local'
 except:
-    my_system = 'mistral'
+    my_system = 'local'
 
 if my_system is 'mistral':
     file_origin = '/work/mh0727/m300524/'
-elif my_system is 'mac':
+elif my_system is 'local':
     file_origin = '/Users/aaron.spring/mistral_work/'
 
 cdo = cdo.Cdo(tempdir=file_origin + 'tmp')
