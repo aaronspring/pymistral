@@ -1,0 +1,14 @@
+{
+  "Markdown": {
+    "beautifiers": [
+      "Prettier"
+    ],
+    "indent_size": "4"
+  },
+
+  "Python": {
+    "beautifiers": [
+      "Black"
+    ]
+  }
+}
