@@ -1,6 +1,6 @@
 # pymistral
 
-parallel, effective and efficient computation via slurm and dask on our supercomputer
+Wrapper for parallel, effective and efficient computations via slurm and dask on our supercomputer
 
 # Contact
 
