@@ -1,3 +1,4 @@
+---
 Markdown:
   beautifiers:
     - Prettier
@@ -8,7 +9,6 @@ Markdown:
 Python:
   beautifiers:
     - Black
-    - YAPF
   indent_size: 4
   indent_char: " "
   wrap_line_length: 80
