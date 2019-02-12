@@ -1,6 +1,8 @@
 Markdown:
   beautifiers:
     - Prettier
+  indent_size: 4
+  indent_char: " "
   wrap_line_length: 80
 
 Python:
