@@ -31,6 +31,7 @@ install:
   - pip list
   - pwd
   - ls
+  - pip install pytest
 
 script:
 - python -m pytest pymistral/tests
