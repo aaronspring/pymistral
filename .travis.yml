@@ -24,6 +24,7 @@ install:
   - python setup.py install
   - conda list
   - which conda
+  - which python
   - pip list
   - pwd
   - ls
