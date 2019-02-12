@@ -2,11 +2,9 @@ from setuptools import find_packages, setup
 
 test_requirements = ["pytest"]
 
-install_requires = ['conda-forge',
-                    'defaults',
-                    'bokeh',
+install_requires = ['bokeh',
                     'cartopy',
-                    'cdo>=1.9.5',
+                    'cdo',
                     'dask',
                     'dask-jobqueue',
                     'distributed',
@@ -14,12 +12,12 @@ install_requires = ['conda-forge',
                     'matplotlib',
                     'numpy',
                     'pandas',
-                    'python-cdo>=1.4.0',
+                    'python-cdo',
                     'scipy',
                     'seaborn',
                     'tqdm',
                     'xarray',
-                    'python=3.6']
+                    'python']
 
 
 AUTHOR = ['Sebastian Milinski', 'Aaron Spring']
