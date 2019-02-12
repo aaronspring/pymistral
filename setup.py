@@ -19,7 +19,7 @@ install_requires = ['conda-forge',
                     'seaborn',
                     'tqdm',
                     'xarray',
-                    'python=3.*']
+                    'python=3.6']
 
 
 AUTHOR = ['Sebastian Milinski', 'Aaron Spring']
