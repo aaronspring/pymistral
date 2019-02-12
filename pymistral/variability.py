@@ -1,4 +1,3 @@
-import os
 import re
 
 import cdo
@@ -10,14 +9,12 @@ import xarray as xr
 from scipy.signal import detrend, periodogram, tukey
 from scipy.stats import chi2, pearsonr
 
-from climpred.stats import (DPP, xr_corr, xr_decorrelation_time,
-                            xr_varweighted_mean_period)
+from climpred.stats import DPP
 
-from .plot import my_plot  # , plot_timeseries
+from .plot import my_plot
 
 
 def plot_DPP(control3d, m=10, threshold=.1, **kwargs):
-    from climpred.prediction import DPP
     data = DPP(control3d, m=10)
     my_plot(data.where(data > threshold), **kwargs)
     plt.title((' ').join((data.name, 'DPP m =', str(m))))
@@ -27,7 +24,8 @@ def Sef2014_Fig3_ACF(control,
                      varnamelist,
                      area='Tropical_Pacific',
                      period='ym'):
-    """Plot persistence as Autocorrelation function (ACF) from control simulation.
+    """Plot persistence as Autocorrelation
+    function (ACF) from control simulation.
 
     Reference
     ---------
@@ -109,9 +107,9 @@ def plot_power_spectrum_markov(P,
 
 
 def _get_pcs(anom,
-            neofs=15,
-            pcscaling=0,
-            curv=True):
+             neofs=15,
+             pcscaling=0,
+             curv=True):
     from eofs.xarray import Eof
 
     def get_anom(df):
@@ -130,8 +128,8 @@ def _get_pcs(anom,
     eofs = solver.eofsAsCorrelation(neofs=neofs)
     # eofcov = solver.eofsAsCovariance(neofs=neofs)
     pcs = solver.pcs(npcs=neofs, pcscaling=pcscaling)
-    eofs['mode'] = np.arange(1,eofs.mode.size+1)
-    pcs['mode'] = np.arange(1,pcs.mode.size+1)
+    eofs['mode'] = np.arange(1, eofs.mode.size+1)
+    pcs['mode'] = np.arange(1, pcs.mode.size+1)
     return eofs, pcs
 
 
@@ -152,10 +150,9 @@ def Sef2013_Fig4_power_spectrum_pcs(control3d,
         control3d, pcscaling=1, neofs=neofs)
     cmap = sb.color_palette(palette, pcs.mode.size)
     if plot_eofs:
-        eofs.plot(col='mode',robust=True, yincrease=not curv)
+        eofs.plot(col='mode', robust=True, yincrease=not curv)
         plt.show()
-        pcs.to_dataframe().unstack().plot(colors=cmap,figsize=(10,4))
-
+        pcs.to_dataframe().unstack().plot(colors=cmap, figsize=(10, 4))
 
     fig, ax = plt.subplots(figsize=(10, 4))
     for i, mode in enumerate(pcs.mode):
@@ -172,9 +169,12 @@ def Sef2013_Fig4_power_spectrum_pcs(control3d,
             ax=ax,
             color=cmap[i],
             label='PC' + str(int(mode)))
-        x=_get_max_peak_period(P, power_spectrum, high_ci)
+        x = _get_max_peak_period(P, power_spectrum, high_ci)
         if print_peak:
-            print('PC'+str(int(mode)),'max peak at','{0:.2f}'.format(x),'years.')
+            print('PC' + str(int(mode)),
+                  'max peak at',
+                  '{0:.2f}'.format(x),
+                  'years.')
         ax.axvline(
             x=x,
             c=cmap[i],
@@ -221,15 +221,14 @@ def corr_pairgrid(control,
     g.fig.suptitle((' ').join(('Correlations', area, period)))
 
 
-
 def show_wavelets(control,
                   unit='',
                   cxmax=None):
     s = control.to_series()
     if cxmax is None:
         cxmax = s.var() * 8
-    title = ' '#(' ').join((varname, area, period))
-    label = ' '#varname + ' ' + area
+    title = ' '  # (' ').join((varname, area, period))
+    label = ' '  # varname + ' ' + area
     import pycwt as wavelet
     from pycwt.helpers import find
     from scipy.signal import detrend
@@ -395,7 +394,6 @@ def plot_Hovmoeller(control,
     plt.tight_layout()
 
 
-
 # s='GR15_lon_-150--120_lat_-10--35.mask.nc'
 def _area_str_2_lons_lats(area):
     lons = re.search('_lon_(.*)_lat', area).group(1)
@@ -507,8 +505,8 @@ def create_power_spectrum(s, pct=0.1, pLow=0.05):
 
 def create_composites(anomaly_field, timeseries, threshold=1, dim='time'):
     index_comp = xr.full_like(timeseries, 'none', dtype='U4')
-    index_comp[timeseries >= threshold ] = 'pos'
-    index_comp[timeseries <= -threshold ] = 'neg'
+    index_comp[timeseries >= threshold] = 'pos'
+    index_comp[timeseries <= -threshold] = 'neg'
     composite = anomaly_field.groupby(index_comp.rename('index')).mean(dim=dim)
     return composite
 

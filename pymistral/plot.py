@@ -1,14 +1,9 @@
-from collections import OrderedDict
-
 import cartopy as cp
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 import xarray as xr
 from cartopy.mpl.ticker import LatitudeFormatter, LongitudeFormatter
-from matplotlib.cm import ScalarMappable
-from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.ticker import MaxNLocator
 
 
