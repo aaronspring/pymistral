@@ -8,11 +8,11 @@
 
   "Python": {
     "beautifiers": [
-      "Black","YAPF"
+      "Black", "YAPF"
     ],
-    "indent_size": 0,
+    "indent_size": 2,
     "indent_char": " ",
-    "wrap_line_length": 0,
+    "wrap_line_length": 80,
     "wrap_prose": "always"
   }
 }
