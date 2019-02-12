@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 
 setup(name='pymistral',
       version='0.1',
@@ -9,7 +9,8 @@ setup(name='pymistral',
       author_email=['sebastian.milinski@mpimet.mpg.de',
                     'aaron.spring@mpimet.mpg.de'],
       license='MIT',
-      packages=['pymistral'],
+      packages=find_packages(),
       zip_safe=False,
-      test_require=['pytest']
+      test_require=['pytest'],
+      python_requires=['>=3.6']
       )

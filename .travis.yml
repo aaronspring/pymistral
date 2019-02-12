@@ -17,8 +17,8 @@ before_install:
   - conda info -a
 
 install:
-  - conda env create -n test_env --file pymistral.yml
-  - source activate test_env
+  - conda env create -n pymistral --file pymistral.yml
+  - source activate pymistral
   - conda list
   - pip install --no-deps -e .
   - python setup.py install
