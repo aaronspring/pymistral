@@ -9,16 +9,6 @@ import xarray as xr
 from scipy.signal import detrend, periodogram, tukey
 from scipy.stats import chi2, pearsonr
 
-from climpred.stats import DPP
-
-from .plot import my_plot
-
-
-def plot_DPP(control3d, m=10, threshold=.1, **kwargs):
-    data = DPP(control3d, m=10)
-    my_plot(data.where(data > threshold), **kwargs)
-    plt.title((' ').join((data.name, 'DPP m =', str(m))))
-
 
 def Sef2014_Fig3_ACF(control,
                      varnamelist,
