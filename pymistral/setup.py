@@ -151,10 +151,7 @@ def _get_path(varname=None, exp='PM', prefix='ds', ta='ym', **kwargs):
         path = my_GE_path + 'postprocessed/'
 
     if varname is None:
-        if isinstance(ds, xr.DataArray):
-            varname = ds.name
-        else:
-            raise ValueError('specify varname')
+        raise ValueError('specify varname')
 
     suffix = ''
     if prefix not in ['ds', 'control']:
@@ -453,7 +450,7 @@ def postprocess_PM(varnames,
                 ds = _squeeze_dims(xr.open_dataset(ds))
                 ds = convert_C(ds)
             else:
-                ds = load_PM(
+                ds = _load_PM(
                     varnamelist=[varname],
                     initlist=initlist,
                     cdo_op=cdo_op,
