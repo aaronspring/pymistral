@@ -16,8 +16,7 @@ install_requires = ['bokeh',
                     'scipy',
                     'seaborn',
                     'tqdm',
-                    'xarray',
-                    'python']
+                    'xarray']
 
 
 AUTHOR = ['Sebastian Milinski', 'Aaron Spring']
