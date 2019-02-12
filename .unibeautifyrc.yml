@@ -1,0 +1,14 @@
+Markdown:
+  beautifiers:
+    - Prettier
+  indent_size: 4
+  indent_char: " "
+  wrap_line_length: 80
+
+Python:
+  beautifiers:
+    - Black
+  indent_size: 4
+  indent_char: " "
+  wrap_line_length: 80
+  wrap_prose: always

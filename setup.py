@@ -1,9 +1,26 @@
 from setuptools import find_packages, setup
 
 test_requirements = ["pytest"]
-# with open("test_requirements-py36.txt") as f:
-#    install_requires = f.read().strip().split("\n")
-install_requires = ['xarray', 'dask']
+
+install_requires = ['conda-forge',
+                    'defaults',
+                    'bokeh',
+                    'cartopy',
+                    'cdo>=1.9.5',
+                    'dask',
+                    'dask-jobqueue',
+                    'distributed',
+                    'jupyterlab',
+                    'matplotlib',
+                    'numpy',
+                    'pandas',
+                    'python-cdo>=1.4.0',
+                    'scipy',
+                    'seaborn',
+                    'tqdm',
+                    'xarray',
+                    'python=3.*']
+
 
 AUTHOR = ['Sebastian Milinski', 'Aaron Spring']
 AUTHOR_EMAIL = ['sebastian.milinski@mpimet.mpg.de',
