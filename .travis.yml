@@ -23,7 +23,9 @@ install:
   - conda list
   - pip install --no-deps -e .
   - python setup.py install
+  - pip freeze | grep pymistral
   - conda list
+  - conda info
   - which conda
   - which python
   - pip list
@@ -31,4 +33,4 @@ install:
   - ls
 
 script:
-- pytest pymistral
+- python -m pytest pymistral/tests
