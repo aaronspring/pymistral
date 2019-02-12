@@ -1,0 +1,21 @@
+name: test_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - bokeh
+  - cartopy
+  - cdo>=1.9.5
+  - dask
+  - dask-jobqueue
+  - distributed
+  - jupyterlab
+  - matplotlib
+  - numpy
+  - pandas
+  - python-cdo>=1.4.0
+  - scipy
+  - seaborn
+  - tqdm
+  - xarray
+  - python=3.*
