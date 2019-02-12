@@ -11,6 +11,9 @@ setup(name='pymistral',
       license='MIT',
       packages=find_packages(),
       zip_safe=False,
-      test_require=['pytest'],
+      install_require=['xarray', 'numpy'],
+      extras_require={
+          'testing': ['pytest']
+      }
       python_requires=['>=3.6']
       )
