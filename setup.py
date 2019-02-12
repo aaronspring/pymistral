@@ -1,5 +1,7 @@
 from setuptools import find_packages, setup
 
+test_requirements = ["pytest"]
+
 setup(name='pymistral',
       version='0.1',
       description=[
@@ -11,9 +13,7 @@ setup(name='pymistral',
       license='MIT',
       packages=find_packages(),
       zip_safe=False,
-      install_require=['xarray', 'numpy'],
-      extras_require={
-          'testing': ['pytest']
-      },
+      test_suite="tests",
+      tests_require=test_requirements,
       python_requires=['>=3.6']
       )
