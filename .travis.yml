@@ -22,6 +22,7 @@ install:
   - conda list
   - pip install --no-deps -e .
   - python setup.py install
+  - conda list
 
 script:
 - pytest pymistral
