@@ -14,6 +14,6 @@ setup(name='pymistral',
       install_require=['xarray', 'numpy'],
       extras_require={
           'testing': ['pytest']
-      }
+      },
       python_requires=['>=3.6']
       )
