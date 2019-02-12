@@ -23,6 +23,10 @@ install:
   - pip install --no-deps -e .
   - python setup.py install
   - conda list
+  - which conda
+  - pip list
+  - pwd
+  - ls
 
 script:
 - pytest pymistral
