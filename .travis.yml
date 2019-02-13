@@ -20,7 +20,9 @@ install:
   - conda env create -n test_env --file ci/requirements-py36.yml
   - source activate test_env
   - conda list
+  - pip install --no-deps -e .
   - python setup.py install
+  - pip list | grep pymistral
 
 script:
 - py.test

@@ -13,9 +13,9 @@ dependencies:
   - matplotlib
   - numpy
   - pandas
-  - python-cdo>=1.4.0
+  - python-cdo
   - scipy
   - seaborn
   - tqdm
   - xarray
-  - python=3.6
+  - python
