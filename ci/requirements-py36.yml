@@ -1,11 +1,11 @@
 name: test_env
 channels:
   - conda-forge
-  - defaults
 dependencies:
+  - python=3.6
   - bokeh
   - cartopy
-  - cdo>=1.9.5
+  - cdo=1.9.5
   - dask
   - dask-jobqueue
   - distributed
@@ -17,5 +17,4 @@ dependencies:
   - seaborn
   - tqdm
   - xarray
-  - python
   - python-cdo
