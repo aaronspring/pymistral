@@ -4,7 +4,6 @@ test_requirements = ["pytest"]
 
 install_requires = ['bokeh',
                     'cartopy',
-                    'cdo',
                     'dask',
                     'dask-jobqueue',
                     'distributed',
