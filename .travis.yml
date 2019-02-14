@@ -25,6 +25,7 @@ install:
   - ls
   - which conda
   - which python
+  - which -a cdo
   - pip install --no-deps -e .
   - python setup.py install
   - pip list | grep pymistral
