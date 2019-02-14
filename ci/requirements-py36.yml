@@ -13,7 +13,6 @@ dependencies:
   - matplotlib
   - numpy
   - pandas
-  - python-cdo
   - scipy
   - seaborn
   - tqdm
