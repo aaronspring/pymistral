@@ -15,6 +15,7 @@ before_install:
   - conda config --set always_yes yes --set changeps1 no --set show_channel_urls true
   - conda update -q conda
   - conda info -a
+  - conda update --all
 
 install:
   - conda env create -n test_env --file ci/requirements-py36.yml
