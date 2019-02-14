@@ -18,3 +18,4 @@ dependencies:
   - tqdm
   - xarray
   - python
+  - python-cdo
