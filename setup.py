@@ -33,8 +33,8 @@ setup(name='pymistral',
       license='MIT',
       packages=find_packages(),
       zip_safe=False,
-      install_requires=INSTALL_REQUIRES,
+      # install_requires=INSTALL_REQUIRES,
       tests_require=TEST_REQUIRES,
       py_modules=["cdo"],
-      python_requires=['>=3.6']
+      # python_requires=['>=3.6']
       )
