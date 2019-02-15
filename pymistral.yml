@@ -1,11 +1,10 @@
 name: pymistral
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - bokeh
   - cartopy
-  - cdo>=1.9.5
+  - cdo
   - dask
   - dask-jobqueue
   - distributed
@@ -13,10 +12,9 @@ dependencies:
   - matplotlib
   - numpy
   - pandas
-  - python-cdo>=1.4.0
+  - python-cdo
   - scipy
   - seaborn
   - tqdm
   - xarray
-  - python=3.*
-
+  - python=3.6

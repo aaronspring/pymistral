@@ -18,19 +18,21 @@ before_install:
   - conda update --all
 
 install:
-  - conda env create -n test_env --file ci/requirements-py36.yml
+  - conda env create --file ci/requirements-py36.yml
   - source activate test_env
   - conda update --all
+  - cdo -V
+  - type -p cdo
+  - python --version
   - conda list
   - pwd
   - ls
   - which conda
-  - cdo -V
   - which python
   - which -a cdo
-  - pip install --no-deps -e .
   - python setup.py install
   - pip list | grep pymistral
+  - pip list | grep cdo
 
 script:
 - py.test
