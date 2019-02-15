@@ -1,7 +1,8 @@
-name: pymistral
+name: test_env
 channels:
   - conda-forge
 dependencies:
+  - pytest
   - bokeh
   - cartopy
   - cdo
@@ -12,9 +13,8 @@ dependencies:
   - matplotlib
   - numpy
   - pandas
-  - python-cdo
   - scipy
   - seaborn
   - tqdm
   - xarray
-  - python=3.6
+  - python-cdo

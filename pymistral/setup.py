@@ -6,12 +6,12 @@ import pandas as pd
 import xarray as xr
 from tqdm import tqdm_notebook
 
-## TODO: adapt for every user
+# TODO: adapt for every user
 try:
     my_system = None
     host = os.hostname()
-    for node in ['mlogin','mistralpp']:
-        if node in hostname:
+    for node in ['mlogin', 'mistralpp']:
+        if node in host:
             my_system = 'mistral'
     if my_system is None:
         my_system = 'local'
@@ -20,12 +20,17 @@ except:
 
 if my_system is 'mistral':
     file_origin = '/work/mh0727/m300524/'
+    tmp = file_origin + 'tmp'
 elif my_system is 'local':
-    file_origin = '/Users/aaron.spring/mistral_work/'
+    #    file_origin = '/Users/aaron.spring/mistral_work/'
+    file_origin = '~/'
+    tmp = my_dir = os.path.expanduser('~/tmp')
+    if not os.path.exists(tmp):
+        os.makedirs(tmp)
 
-cdo = cdo.Cdo(tempdir=file_origin + 'tmp')
+cdo = cdo.Cdo(tempdir=tmp)
 
-## TODO: load all cmip cmorized varnames?
+# TODO: load all cmip cmorized varnames?
 sample_file_dir = file_origin + 'experiments/sample_files/'
 # hamocc_data_2d_varnamelist = cdo.showname(
 #    input=sample_file_dir + 'hamocc_data_2d_*')[0].split()
@@ -54,10 +59,10 @@ def _get_path_cmip(base_folder=cmip_folder,
                    timestr='*'):
     return base_folder + '/' + exp + '/' + period + '/' + comp + '/' + varname + '/' + run_id + '/' + varname + '_' + comp[
         0].upper(
-        ) + period + '_' + model + '_' + exp + '_' + run_id + '_' + timestr + ending
+    ) + period + '_' + model + '_' + exp + '_' + run_id + '_' + timestr + ending
 
 
-## TODO: adapt for CMIP6, maybe with CMIP=5 arg
+# TODO: adapt for CMIP6, maybe with CMIP=5 arg
 def load_cmip(exp='esmControl',
               period='mon',
               varname='co2',
@@ -150,12 +155,6 @@ def _get_path(varname=None, exp='PM', prefix='ds', ta='ym', **kwargs):
     elif exp is 'GE':
         path = my_GE_path + 'postprocessed/'
 
-    if varname is None:
-        if isinstance(ds, xr.DataArray):
-            varname = ds.name
-        else:
-            raise ValueError('specify varname')
-
     suffix = ''
     if prefix not in ['ds', 'control']:
         for key, value in kwargs.items():
@@ -183,7 +182,7 @@ def save(ds, varname=None, exp='PM', prefix='ds', ta='ym', **kwargs):
 def _set_mm_span(ds):
     """Set monthly mean time axis.
 
-    ### TODO: make possible for year 2300 or 1100.
+    # TODO: make possible for year 2300 or 1100.
     Starts in 1900 because of cftime limit."""
     span = pd.date_range(start='1/1/1900', periods=ds.time.size, freq='M')
     return ds.assign(time=span)
@@ -353,7 +352,7 @@ def _load_PM(mmin=0,
                 chunks=chunks,
                 preprocess=_squeeze_dims) for m in np.arange(mmin, mmax + 1)
         ],
-                                   dim='member')
+            dim='member')
         many_member_ds = many_member_ds.assign(
             member=np.arange(mmin, mmax + 1))
         many_member_ds = _set_LY(many_member_ds)
@@ -400,7 +399,7 @@ def _load_GE(memberlist=['rcp26', 'rcp45', 'rcp85'],
                 chunks=chunks,
                 preprocess=_squeeze_dims) for rcp in memberlist
         ],
-                                dim='member')
+            dim='member')
         many_rcp_ds = many_rcp_ds.assign(member=memberlist)
         many_rcp_ds = _set_LY(many_rcp_ds)
         dslist.append(many_rcp_ds)
@@ -453,7 +452,7 @@ def postprocess_PM(varnames,
                 ds = _squeeze_dims(xr.open_dataset(ds))
                 ds = convert_C(ds)
             else:
-                ds = load_PM(
+                ds = _load_PM(
                     varnamelist=[varname],
                     initlist=initlist,
                     cdo_op=cdo_op,

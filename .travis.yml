@@ -8,6 +8,8 @@ python:
   - 3.6
 
 before_install:
+  - sudo apt-get update
+  - sudo apt-get install libnetcdf-dev
   - wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
@@ -15,13 +17,26 @@ before_install:
   - conda config --set always_yes yes --set changeps1 no --set show_channel_urls true
   - conda update -q conda
   - conda info -a
+  - conda update --all
 
 install:
-  - conda env create -n test_env --file pymistral.yml
+  - conda env create --file ci/requirements-py36.yml
   - source activate test_env
+  - conda install pip
+  - cdo -V
+  - type -p cdo
+  - python --version
   - conda list
-  - pip install --no-deps -e .
-  - python setup.py install
+  - pwd
+  - ls
+  - which conda
+  - which python
+  - conda list | grep python
+  - conda list | grep cdo
+  - which -a cdo
+  - python setup.py install --user
+  - pip list | grep pymistral
+  - pip list | grep cdo
 
 script:
-- pytest pymistral
+- pytest
