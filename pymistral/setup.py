@@ -6,11 +6,11 @@ import pandas as pd
 import xarray as xr
 from tqdm import tqdm_notebook
 
-## TODO: adapt for every user
+# TODO: adapt for every user
 try:
     my_system = None
     host = os.hostname()
-    for node in ['mlogin','mistralpp']:
+    for node in ['mlogin', 'mistralpp']:
         if node in hostname:
             my_system = 'mistral'
     if my_system is None:
@@ -21,11 +21,13 @@ except:
 if my_system is 'mistral':
     file_origin = '/work/mh0727/m300524/'
 elif my_system is 'local':
-    file_origin = '/Users/aaron.spring/mistral_work/'
+    #    file_origin = '/Users/aaron.spring/mistral_work/'
+    file_origin = '~/'
+tmp = file_origin + 'tmp/'
+os.mkdir(tmp)
+cdo = cdo.Cdo(tempdir=tmp)
 
-cdo = cdo.Cdo(tempdir=file_origin + 'tmp')
-
-## TODO: load all cmip cmorized varnames?
+# TODO: load all cmip cmorized varnames?
 sample_file_dir = file_origin + 'experiments/sample_files/'
 # hamocc_data_2d_varnamelist = cdo.showname(
 #    input=sample_file_dir + 'hamocc_data_2d_*')[0].split()
@@ -54,10 +56,10 @@ def _get_path_cmip(base_folder=cmip_folder,
                    timestr='*'):
     return base_folder + '/' + exp + '/' + period + '/' + comp + '/' + varname + '/' + run_id + '/' + varname + '_' + comp[
         0].upper(
-        ) + period + '_' + model + '_' + exp + '_' + run_id + '_' + timestr + ending
+    ) + period + '_' + model + '_' + exp + '_' + run_id + '_' + timestr + ending
 
 
-## TODO: adapt for CMIP6, maybe with CMIP=5 arg
+# TODO: adapt for CMIP6, maybe with CMIP=5 arg
 def load_cmip(exp='esmControl',
               period='mon',
               varname='co2',
@@ -353,7 +355,7 @@ def _load_PM(mmin=0,
                 chunks=chunks,
                 preprocess=_squeeze_dims) for m in np.arange(mmin, mmax + 1)
         ],
-                                   dim='member')
+            dim='member')
         many_member_ds = many_member_ds.assign(
             member=np.arange(mmin, mmax + 1))
         many_member_ds = _set_LY(many_member_ds)
@@ -400,7 +402,7 @@ def _load_GE(memberlist=['rcp26', 'rcp45', 'rcp85'],
                 chunks=chunks,
                 preprocess=_squeeze_dims) for rcp in memberlist
         ],
-                                dim='member')
+            dim='member')
         many_rcp_ds = many_rcp_ds.assign(member=memberlist)
         many_rcp_ds = _set_LY(many_rcp_ds)
         dslist.append(many_rcp_ds)
