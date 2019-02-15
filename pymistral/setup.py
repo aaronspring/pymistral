@@ -20,11 +20,14 @@ except:
 
 if my_system is 'mistral':
     file_origin = '/work/mh0727/m300524/'
+    tmp = file_origin + 'tmp'
 elif my_system is 'local':
     #    file_origin = '/Users/aaron.spring/mistral_work/'
     file_origin = '~/'
-tmp = file_origin + 'tmp/'
-os.mkdir(tmp)
+    tmp = my_dir = os.path.expanduser('~/tmp')
+    if not os.path.exists(tmp):
+        os.makedirs(tmp)
+
 cdo = cdo.Cdo(tempdir=tmp)
 
 # TODO: load all cmip cmorized varnames?
@@ -179,7 +182,7 @@ def save(ds, varname=None, exp='PM', prefix='ds', ta='ym', **kwargs):
 def _set_mm_span(ds):
     """Set monthly mean time axis.
 
-    ### TODO: make possible for year 2300 or 1100.
+    # TODO: make possible for year 2300 or 1100.
     Starts in 1900 because of cftime limit."""
     span = pd.date_range(start='1/1/1900', periods=ds.time.size, freq='M')
     return ds.assign(time=span)
