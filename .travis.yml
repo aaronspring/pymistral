@@ -30,7 +30,7 @@ install:
   - which conda
   - which python
   - which -a cdo
-  - python setup.py install
+  - python setup.py install --user
   - pip list | grep pymistral
   - pip list | grep cdo
 

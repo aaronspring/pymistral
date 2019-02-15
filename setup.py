@@ -36,5 +36,5 @@ setup(name='pymistral',
       install_requires=INSTALL_REQUIRES,
       tests_require=TEST_REQUIRES,
       py_modules=["cdo"],
-      requires_python=['>=3.6']
+      python_requires=['>=3.6']
       )
