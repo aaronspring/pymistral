@@ -20,8 +20,8 @@ before_install:
   - conda update --all
 
 install:
-  - conda env create --file ci/requirements-py36.yml
-  - source activate test_env
+  - conda env create --file pymistral.yml
+  - source activate pymistral
   - conda install pip
   - cdo -V
   - type -p cdo
