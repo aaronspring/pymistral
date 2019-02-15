@@ -11,7 +11,7 @@ try:
     my_system = None
     host = os.hostname()
     for node in ['mlogin', 'mistralpp']:
-        if node in hostname:
+        if node in host:
             my_system = 'mistral'
     if my_system is None:
         my_system = 'local'
@@ -151,12 +151,6 @@ def _get_path(varname=None, exp='PM', prefix='ds', ta='ym', **kwargs):
         path = PM_path + 'postprocessed/'
     elif exp is 'GE':
         path = my_GE_path + 'postprocessed/'
-
-    if varname is None:
-        if isinstance(ds, xr.DataArray):
-            varname = ds.name
-        else:
-            raise ValueError('specify varname')
 
     suffix = ''
     if prefix not in ['ds', 'control']:
@@ -455,7 +449,7 @@ def postprocess_PM(varnames,
                 ds = _squeeze_dims(xr.open_dataset(ds))
                 ds = convert_C(ds)
             else:
-                ds = load_PM(
+                ds = _load_PM(
                     varnamelist=[varname],
                     initlist=initlist,
                     cdo_op=cdo_op,
