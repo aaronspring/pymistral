@@ -23,7 +23,6 @@ install:
   - conda env create --file ci/requirements-py36.yml
   - source activate test_env
   - conda install pip
-  - conda update --all
   - cdo -V
   - type -p cdo
   - python --version
