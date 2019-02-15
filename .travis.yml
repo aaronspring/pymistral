@@ -35,4 +35,4 @@ install:
   - pip list | grep cdo
 
 script:
-- py.test
+- pytest
