@@ -8,6 +8,7 @@ Markdown:
 Python:
   beautifiers:
     - YAPF
+    - black
   indent_size: 2
   indent_char: " "
   indent_space: "space"
