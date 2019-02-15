@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 TEST_REQUIRES = ["pytest"]
 
 INSTALL_REQUIRES = ['bokeh',
-                    'netcdf4'
+                    'netcdf4',
                     'cartopy',
                     'dask',
                     'dask-jobqueue',
