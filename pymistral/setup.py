@@ -43,13 +43,15 @@ PM_path = file_origin + 'experiments/'
 GE_path = file_origin + 'experiments/GE/'
 center = 'MPI-M'
 model = 'MPI-ESM-LR'
-cmip_folder = '/work/ik0555/cmip5/archive/CMIP5/output/' + center + '/' + model
+cmip5_folder = '/work/ik0555/cmip5/archive/CMIP5/output/' + center + '/' + model
 my_GE_path = file_origin + '160701_Grand_Ensemble/'
 GE_post = my_GE_path + 'postprocessed/'
 PM_post = PM_path + 'postprocessed/'
 
 
-def _get_path_cmip(base_folder=cmip_folder,
+def _get_path_cmip(base_folder=cmip5_folder,
+                   model='MPI-ESM-LR',
+                   center='MPI-M',
                    exp='esmControl',
                    period='mon',
                    varname='co2',
@@ -57,9 +59,7 @@ def _get_path_cmip(base_folder=cmip_folder,
                    run_id='r1i1p1',
                    ending='.nc',
                    timestr='*'):
-    return base_folder + '/' + exp + '/' + period + '/' + comp + '/' + varname + '/' + run_id + '/' + varname + '_' + comp[
-        0].upper(
-    ) + period + '_' + model + '_' + exp + '_' + run_id + '_' + timestr + ending
+    return '/'.join([base_folder, center, model, exp, period, comp, varname, run_id]) + '/' + '_'.join([varname, comp[0].upper(), period, model, exp, run_id, timestr]) + ending
 
 
 # TODO: adapt for CMIP6, maybe with CMIP=5 arg
