@@ -43,7 +43,7 @@ sample_file_dir = file_origin + 'experiments/sample_files/'
 PM_path = file_origin + 'experiments/'
 GE_path = file_origin + 'experiments/GE/'
 
-cmip5_folder = '/work/ik0555/cmip5/archive/CMIP5/output/'
+cmip5_folder = '/work/ik0555/cmip5/archive/CMIP5/output'
 my_GE_path = file_origin + '160701_Grand_Ensemble/'
 GE_post = my_GE_path + 'postprocessed/'
 PM_post = PM_path + 'postprocessed/'
