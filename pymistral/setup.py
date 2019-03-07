@@ -60,7 +60,7 @@ def _get_path_cmip(base_folder=cmip5_folder,
                    run_id='r1i1p1',
                    ending='.nc',
                    timestr='*'):
-    return '/'.join([base_folder, center, model, exp, period, comp, comp[0].upper()+period, run_id, 'v????????', varname]) + '/' + '_'.join([varname, comp[0].upper()+period, model, exp, run_id, timestr]) + ending
+    return '/'.join([base_folder, center, model, exp, period, comp, comp[0].upper()+period, run_id, sorted(glob.glob('v????????'))[-1], varname]) + '/' + '_'.join([varname, comp[0].upper()+period, model, exp, run_id, timestr]) + ending
 
 
 # TODO: adapt for CMIP6, maybe with CMIP=5 arg
@@ -102,7 +102,7 @@ def load_cmip(base_folder=cmip5_folder,
                 options='-r')).squeeze()[varname]
     else:
         print('xr.open_mfdataset('+ncfiles_cmip+')['+varname+']')
-        return xr.open_mfdataset(ncfiles_cmip)[varname]
+        return xr.open_mfdataset(ncfiles_cmip, concat_dim='time')[varname]
 
 
 def load_cmip_from_center_model_list(center_list=['MPI-M', 'NCAR'], model_list=['MPI-ESM-LR', 'CCSM4'], **cmip_kwargs):
@@ -112,7 +112,7 @@ def load_cmip_from_center_model_list(center_list=['MPI-M', 'NCAR'], model_list=[
         data.append(load_cmip(center=center, model=model, **cmip_kwargs))
     data = xr.concat(data, 'center')
     data['center'] = center_list
-    return center
+    return data
 
 
 def read_table_file(table_file_str):
