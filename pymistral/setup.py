@@ -63,7 +63,7 @@ PM_post = PM_path + 'postprocessed/'
 
 cmip5_centers = ['MPI-M', 'NCAR', 'CCCma', 'MIROC', 'IPSL', 'NOAA-GFDL', 'MRI']
 
-cmip5_models = ['MPI-ESM-LR', 'CCSM4', 'CamESM2',
+cmip5_models = ['MPI-ESM-LR', 'CCSM4', 'CanESM2',
                 'MIROC-ESM', 'IPSL-CM5A-LR', 'GFDL-ESM2M', 'MRI-ESM1']
 
 
