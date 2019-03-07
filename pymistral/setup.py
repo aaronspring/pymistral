@@ -49,6 +49,11 @@ my_GE_path = file_origin + '160701_Grand_Ensemble/'
 GE_post = my_GE_path + 'postprocessed/'
 PM_post = PM_path + 'postprocessed/'
 
+cmip5_centers = ['MPI-M', 'NCAR', 'CCCma', 'MIROC', 'IPSL', 'NOAA-GFDL', 'MRI']
+
+cmip5_models = ['MPI-ESM-LR', 'CCSM4', 'CamESM2',
+                'MIROC-ESM', 'IPSL-CM5A-LR', 'GFDL-ESM2M', 'MRI-ESM1']
+
 
 def _get_path_cmip(base_folder=cmip5_folder,
                    model='MPI-ESM-LR',
@@ -60,9 +65,13 @@ def _get_path_cmip(base_folder=cmip5_folder,
                    run_id='r1i1p1',
                    ending='.nc',
                    timestr='*'):
-    path_v = sorted(glob.glob('/'.join([base_folder, center, model, exp,
-                                        period, comp, comp[0].upper()+period, run_id, 'v????????'])))[-1]
-    return path_v + '/' + varname + '/' + '_'.join([varname, comp[0].upper()+period, model, exp, run_id, timestr]) + ending
+    try:
+        path_v = sorted(glob.glob('/'.join([base_folder, center, model, exp,
+                                            period, comp, comp[0].upper()+period, run_id, 'v????????'])))[-1]
+        return path_v + '/' + varname + '/' + '_'.join([varname, comp[0].upper()+period, model, exp, run_id, timestr]) + ending
+    except:
+        return '/'.join([base_folder, center, model, exp,
+                         period, comp, comp[0].upper()+period, run_id])
 
 
 # TODO: adapt for CMIP6, maybe with CMIP=5 arg
