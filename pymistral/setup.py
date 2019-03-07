@@ -1,3 +1,4 @@
+import glob
 import os
 
 import cdo
@@ -51,10 +52,10 @@ PM_post = PM_path + 'postprocessed/'
 def _get_path_cmip(base_folder=cmip5_folder,
                    model='MPI-ESM-LR',
                    center='MPI-M',
-                   exp='esmControl',
+                   exp='historical',
                    period='mon',
-                   varname='co2',
-                   comp='atmos',
+                   varname='tos',
+                   comp='ocean',
                    run_id='r1i1p1',
                    ending='.nc',
                    timestr='*'):
@@ -62,17 +63,22 @@ def _get_path_cmip(base_folder=cmip5_folder,
 
 
 # TODO: adapt for CMIP6, maybe with CMIP=5 arg
-def load_cmip(exp='esmControl',
+def load_cmip(base_folder=cmip5_folder,
+              model='MPI-ESM-LR',
+              center='MPI-M',
+              exp='historial',
               period='mon',
-              varname='co2',
-              comp='atmos',
+              varname='tos',
+              comp='ocean',
               run_id='r1i1p1',
               ending='.nc',
               timestr='*',
-              operator='',
-              levelstr=''):
+              operator=''):
     """Load a variable from CMIP5."""
     ncfiles_cmip = _get_path_cmip(
+        base_folder=cmip5_folder,
+        model=model,
+        center=center,
         exp=exp,
         period=period,
         varname=varname,
@@ -80,12 +86,22 @@ def load_cmip(exp='esmControl',
         run_id=run_id,
         ending=ending,
         timestr=timestr)
-    return xr.open_dataset(
-        cdo.addc(
-            '0',
-            input=operator + ' -select,name=' + varname + levelstr + ' ' +
-            ncfiles_cmip,
-            options='-r')).squeeze()[varname]
+    nfiles = len(glob.glob(ncfiles_cmip))
+    if nfiles is 0:
+        raise ValueError('no files found in', ncfiles_cmip)
+        # # TODO: check all args for reasonable inputs, check path exists explicitly
+    print('Load', nfiles, 'files from:', ncfiles_cmip)
+    if operator is not '':
+        print('preprocessing: cdo', operator, ncfiles_cmip)
+        return xr.open_dataset(
+            cdo.addc(
+                '0',
+                input=operator + ' -select,name=' + varname +
+                ncfiles_cmip,
+                options='-r')).squeeze()[varname]
+    else:
+        print('xr.open_mfdataset('+ncfiles_cmip+')['+varname+']')
+        return xr.open_mfdataset(ncfiles_cmip)[varname]
 
 
 def read_table_file(table_file_str):
