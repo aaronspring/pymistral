@@ -43,7 +43,8 @@ sample_file_dir = file_origin + 'experiments/sample_files/'
 PM_path = file_origin + 'experiments/'
 GE_path = file_origin + 'experiments/GE/'
 
-cmip5_folder = '/work/ik0555/cmip5/archive/CMIP5/output'
+# cmip5_folder = '/work/ik0555/cmip5/archive/CMIP5/output'
+cmip5_folder = '/work/kd0956/CMIP5/data/cmip5/output1'
 my_GE_path = file_origin + '160701_Grand_Ensemble/'
 GE_post = my_GE_path + 'postprocessed/'
 PM_post = PM_path + 'postprocessed/'
@@ -59,14 +60,14 @@ def _get_path_cmip(base_folder=cmip5_folder,
                    run_id='r1i1p1',
                    ending='.nc',
                    timestr='*'):
-    return '/'.join([base_folder, center, model, exp, period, comp, varname, run_id]) + '/' + '_'.join([varname, comp[0].upper()+period, model, exp, run_id, timestr]) + ending
+    return '/'.join([base_folder, center, model, exp, period, comp, varname, run_id, 'v????????']) + '/' + '_'.join([varname, comp[0].upper()+period, model, exp, run_id, timestr]) + ending
 
 
 # TODO: adapt for CMIP6, maybe with CMIP=5 arg
 def load_cmip(base_folder=cmip5_folder,
               model='MPI-ESM-LR',
               center='MPI-M',
-              exp='historial',
+              exp='historical',
               period='mon',
               varname='tos',
               comp='ocean',
@@ -102,6 +103,16 @@ def load_cmip(base_folder=cmip5_folder,
     else:
         print('xr.open_mfdataset('+ncfiles_cmip+')['+varname+']')
         return xr.open_mfdataset(ncfiles_cmip)[varname]
+
+
+def load_cmip_from_center_model_list(center_list=['MPI-M', 'NCAR'], model_list=['MPI-ESM-LR', 'CCSM4'], **cmip_kwargs):
+    data = []
+    for center, model in zip(center_list, model_list):
+        print('Load', center, model)
+        data.append(load_cmip(center=center, model=model, **cmip_kwargs))
+    data = xr.concat(data, 'center')
+    data['center'] = center_list
+    return center
 
 
 def read_table_file(table_file_str):
