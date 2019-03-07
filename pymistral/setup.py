@@ -108,7 +108,7 @@ def load_cmip(base_folder=cmip5_folder,
         return xr.open_dataset(
             cdo.addc(
                 '0',
-                input=operator + ' -select,name=' + varname +
+                input=operator + ' -select,name=' + varname + ' ' +
                 ncfiles_cmip,
                 options='-r')).squeeze()[varname]
     else:
@@ -126,7 +126,7 @@ def load_cmip_from_center_model_list(center_list=['MPI-M', 'NCAR'], model_list=[
     return data
 
 
-def load_cmip_many_varnames(varnamelist, **cmip_kwargs):
+def load_cmip_many_varnames(varnamelist=['tos', 'sos'], **cmip_kwargs):
     data = []
     for varname in varnamelist:
         print('Load', varname)
