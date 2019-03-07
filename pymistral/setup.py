@@ -126,6 +126,15 @@ def load_cmip_from_center_model_list(center_list=['MPI-M', 'NCAR'], model_list=[
     return data
 
 
+def load_cmip_many_varnames(varnamelist, **cmip_kwargs):
+    data = []
+    for varname in varnamelist:
+        print('Load', varname)
+        data.append(load_cmip(varname=varname, **cmip_kwargs))
+    data = xr.merge(data)
+    return data
+
+
 def read_table_file(table_file_str):
     """Read partab/.codes file."""
     table_file = pd.read_fwf(
