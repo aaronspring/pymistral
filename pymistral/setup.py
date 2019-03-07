@@ -7,25 +7,37 @@ import pandas as pd
 import xarray as xr
 from tqdm import tqdm_notebook
 
-# TODO: adapt for every user
+# builds on export WORK, GROUP
 try:
     my_system = None
-    host = os.hostname()
+    host = os.environ['HOSTNAME']
+    user = os.environ['USER']
+    work = os.environ['WORK']
+    group = os.environ['GROUP']
     for node in ['mlogin', 'mistralpp']:
         if node in host:
             my_system = 'mistral'
+    if 'm' is host[0]:
+        my_system = 'mistral'
     if my_system is None:
         my_system = 'local'
 except:
     my_system = 'local'
 
 if my_system is 'mistral':
-    file_origin = '/work/mh0727/m300524/'
+    file_origin = work
     tmp = file_origin + 'tmp'
+    if not os.path.exists(tmp):
+        os.makedirs(tmp)
 elif my_system is 'local':
-    #    file_origin = '/Users/aaron.spring/mistral_work/'
-    file_origin = '~/'
-    tmp = my_dir = os.path.expanduser('~/tmp')
+    mistral_work = '/Users/aaron.spring/mistral_work/'
+    work = mistral_work + 'mh0727/m300524/'  # group + '/' + user + '/'
+    file_origin = work
+    cdo_mistral = True
+    if cdo_mistral:
+        tmp = os.path.expanduser('~/tmp')
+    else:
+        tmp = file_origin + 'tmp'
     if not os.path.exists(tmp):
         os.makedirs(tmp)
 
@@ -44,7 +56,7 @@ PM_path = file_origin + 'experiments/'
 GE_path = file_origin + 'experiments/GE/'
 
 # cmip5_folder = '/work/ik0555/cmip5/archive/CMIP5/output'
-cmip5_folder = '/work/kd0956/CMIP5/data/cmip5/output1'
+cmip5_folder = mistral_work+'kd0956/CMIP5/data/cmip5/output1'
 my_GE_path = file_origin + '160701_Grand_Ensemble/'
 GE_post = my_GE_path + 'postprocessed/'
 PM_post = PM_path + 'postprocessed/'
