@@ -60,7 +60,9 @@ def _get_path_cmip(base_folder=cmip5_folder,
                    run_id='r1i1p1',
                    ending='.nc',
                    timestr='*'):
-    return '/'.join([base_folder, center, model, exp, period, comp, comp[0].upper()+period, run_id, sorted(glob.glob('v????????'))[-1], varname]) + '/' + '_'.join([varname, comp[0].upper()+period, model, exp, run_id, timestr]) + ending
+    path_v = sorted(glob.glob('/'.join([base_folder, center, model, exp,
+                                        period, comp, comp[0].upper()+period, run_id, 'v????????'])))[-1]
+    return path_v + '/' + varname + '/' + '_'.join([varname, comp[0].upper()+period, model, exp, run_id, timestr]) + ending
 
 
 # TODO: adapt for CMIP6, maybe with CMIP=5 arg
