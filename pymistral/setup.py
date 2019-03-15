@@ -1,3 +1,4 @@
+import glob
 import os
 
 import cdo
@@ -6,25 +7,37 @@ import pandas as pd
 import xarray as xr
 from tqdm import tqdm_notebook
 
-# TODO: adapt for every user
+# builds on export WORK, GROUP
 try:
     my_system = None
-    host = os.hostname()
+    host = os.environ['HOSTNAME']
+    user = os.environ['USER']
+    work = os.environ['WORK']
+    group = os.environ['GROUP']
     for node in ['mlogin', 'mistralpp']:
         if node in host:
             my_system = 'mistral'
+    if 'm' is host[0]:
+        my_system = 'mistral'
     if my_system is None:
         my_system = 'local'
 except:
     my_system = 'local'
 
 if my_system is 'mistral':
-    file_origin = '/work/mh0727/m300524/'
+    file_origin = work
     tmp = file_origin + 'tmp'
+    if not os.path.exists(tmp):
+        os.makedirs(tmp)
 elif my_system is 'local':
-    #    file_origin = '/Users/aaron.spring/mistral_work/'
-    file_origin = '~/'
-    tmp = my_dir = os.path.expanduser('~/tmp')
+    mistral_work = '/Users/aaron.spring/mistral_work/'
+    work = mistral_work + 'mh0727/m300524/'  # group + '/' + user + '/'
+    file_origin = work
+    cdo_mistral = True
+    if cdo_mistral:
+        tmp = os.path.expanduser('~/tmp')
+    else:
+        tmp = file_origin + 'tmp'
     if not os.path.exists(tmp):
         os.makedirs(tmp)
 
@@ -41,39 +54,55 @@ sample_file_dir = file_origin + 'experiments/sample_files/'
 
 PM_path = file_origin + 'experiments/'
 GE_path = file_origin + 'experiments/GE/'
-center = 'MPI-M'
-model = 'MPI-ESM-LR'
-cmip_folder = '/work/ik0555/cmip5/archive/CMIP5/output/' + center + '/' + model
+
+# cmip5_folder = '/work/ik0555/cmip5/archive/CMIP5/output'
+cmip5_folder = mistral_work+'kd0956/CMIP5/data/cmip5/output1'
 my_GE_path = file_origin + '160701_Grand_Ensemble/'
 GE_post = my_GE_path + 'postprocessed/'
 PM_post = PM_path + 'postprocessed/'
 
+cmip5_centers = ['MPI-M', 'NCAR', 'CCCma', 'MIROC', 'IPSL', 'NOAA-GFDL', 'MRI']
 
-def _get_path_cmip(base_folder=cmip_folder,
-                   exp='esmControl',
+cmip5_models = ['MPI-ESM-LR', 'CCSM4', 'CanESM2',
+                'MIROC-ESM', 'IPSL-CM5A-LR', 'GFDL-ESM2M', 'MRI-ESM1']
+
+
+def _get_path_cmip(base_folder=cmip5_folder,
+                   model='MPI-ESM-LR',
+                   center='MPI-M',
+                   exp='historical',
                    period='mon',
-                   varname='co2',
-                   comp='atmos',
+                   varname='tos',
+                   comp='ocean',
                    run_id='r1i1p1',
                    ending='.nc',
                    timestr='*'):
-    return base_folder + '/' + exp + '/' + period + '/' + comp + '/' + varname + '/' + run_id + '/' + varname + '_' + comp[
-        0].upper(
-    ) + period + '_' + model + '_' + exp + '_' + run_id + '_' + timestr + ending
+    try:
+        path_v = sorted(glob.glob('/'.join([base_folder, center, model, exp,
+                                            period, comp, comp[0].upper()+period, run_id, 'v????????'])))[-1]
+        return path_v + '/' + varname + '/' + '_'.join([varname, comp[0].upper()+period, model, exp, run_id, timestr]) + ending
+    except:
+        return '/'.join([base_folder, center, model, exp,
+                         period, comp, comp[0].upper()+period, run_id])
 
 
 # TODO: adapt for CMIP6, maybe with CMIP=5 arg
-def load_cmip(exp='esmControl',
+def load_cmip(base_folder=cmip5_folder,
+              model='MPI-ESM-LR',
+              center='MPI-M',
+              exp='historical',
               period='mon',
-              varname='co2',
-              comp='atmos',
+              varname='tos',
+              comp='ocean',
               run_id='r1i1p1',
               ending='.nc',
               timestr='*',
-              operator='',
-              levelstr=''):
+              operator=''):
     """Load a variable from CMIP5."""
     ncfiles_cmip = _get_path_cmip(
+        base_folder=cmip5_folder,
+        model=model,
+        center=center,
         exp=exp,
         period=period,
         varname=varname,
@@ -81,12 +110,41 @@ def load_cmip(exp='esmControl',
         run_id=run_id,
         ending=ending,
         timestr=timestr)
-    return xr.open_dataset(
-        cdo.addc(
-            '0',
-            input=operator + ' -select,name=' + varname + levelstr + ' ' +
-            ncfiles_cmip,
-            options='-r')).squeeze()[varname]
+    nfiles = len(glob.glob(ncfiles_cmip))
+    if nfiles is 0:
+        raise ValueError('no files found in', ncfiles_cmip)
+        # # TODO: check all args for reasonable inputs, check path exists explicitly
+    print('Load', nfiles, 'files from:', ncfiles_cmip)
+    if operator is not '':
+        print('preprocessing: cdo', operator, ncfiles_cmip)
+        return xr.open_dataset(
+            cdo.addc(
+                '0',
+                input=operator + ' -select,name=' + varname + ' ' +
+                ncfiles_cmip,
+                options='-r')).squeeze()[varname]
+    else:
+        print('xr.open_mfdataset('+ncfiles_cmip+')['+varname+']')
+        return xr.open_mfdataset(ncfiles_cmip, concat_dim='time')[varname]
+
+
+def load_cmip_from_center_model_list(center_list=['MPI-M', 'NCAR'], model_list=['MPI-ESM-LR', 'CCSM4'], **cmip_kwargs):
+    data = []
+    for center, model in zip(center_list, model_list):
+        print('Load', center, model)
+        data.append(load_cmip(center=center, model=model, **cmip_kwargs))
+    data = xr.concat(data, 'center')
+    data['center'] = center_list
+    return data
+
+
+def load_cmip_many_varnames(varnamelist=['tos', 'sos'], **cmip_kwargs):
+    data = []
+    for varname in varnamelist:
+        print('Load', varname)
+        data.append(load_cmip(varname=varname, **cmip_kwargs))
+    data = xr.merge(data)
+    return data
 
 
 def read_table_file(table_file_str):

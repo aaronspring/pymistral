@@ -7,8 +7,7 @@ Markdown:
   wrap_line_length: 80
 Python:
   beautifiers:
-    - YAPF
-    - black
+    - ["Black"]
   indent_size: 2
   indent_char: " "
   indent_space: "space"
