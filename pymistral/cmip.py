@@ -135,12 +135,6 @@ def find_cmip5_output(**kwargs):
     return output_centers, output_models
 
 
-def get_center_for_model(model):
-    for center in cmip5_centers_mistral:
-        if model in cmip5_models_mistral[center]:
-            return center
-
-
 # TODO: adapt for CMIP6, maybe with CMIP=5 arg
 def load_cmip(base_folder=cmip5_folder,
               model='MPI-ESM-LR',
@@ -184,7 +178,7 @@ def load_cmip(base_folder=cmip5_folder,
         return xr.open_mfdataset(ncfiles_cmip, concat_dim='time')[varname]
 
 
-def load_cmip_from_center_model_list(center_list=['MPI-M', 'NCAR'], model_list=['MPI-ESM-LR', 'CCSM4'], **cmip_kwargs):
+def load_cmip5_from_center_model_list(center_list=['MPI-M', 'NCAR'], model_list=['MPI-ESM-LR', 'CCSM4'], **cmip_kwargs):
     data = []
     for center, model in zip(center_list, model_list):
         print('Load', center, model)
@@ -194,17 +188,21 @@ def load_cmip_from_center_model_list(center_list=['MPI-M', 'NCAR'], model_list=[
     return data
 
 
-def get_center_for_model(model):
+def get_center_for_cmip5_model(model):
+    """Get center name for a CMIP5 model based on CMIP5 centers and models found on mistral."""
     for center in cmip5_centers_mistral:
         if model in cmip5_models_mistral[center]:
             return center
 
 
-def load_cmip_from_model_list(model_list=['MPI-ESM-LR', 'CCSM4'], **cmip_kwargs):
+def load_cmip5_from_model_list(model_list=['MPI-ESM-LR', 'CCSM4'], **cmip_kwargs):
+    """Load CMIP5 output from mistral based on model_list.
+
+    experiment_id, variables, ... to be specified in **cmip_kwargs."""
     data = []
     ml = model_list.copy()
     for model in model_list:
-        center = get_center_for_model(model)
+        center = get_center_for_cmip5_model(model)
         print(center, model)
         filestr = _get_path_cmip(model=model, center=center, **cmip_kwargs)
         if glob.glob(filestr) != []:
@@ -222,7 +220,10 @@ def load_cmip_from_model_list(model_list=['MPI-ESM-LR', 'CCSM4'], **cmip_kwargs)
     return data
 
 
-def load_cmip_many_varnames(varnamelist=['tos', 'sos'], **cmip_kwargs):
+def load_cmip5_many_varnames(varnamelist=['tos', 'sos'], **cmip_kwargs):
+    """Load many variables from varnamelist from CMIP5 output from mistral.
+
+    experiment_id, model_ids, ... to be specified in **cmip_kwargs."""
     data = []
     for varname in varnamelist:
         print('Load', varname)
