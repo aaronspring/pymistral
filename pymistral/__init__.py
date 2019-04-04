@@ -16,3 +16,4 @@ from . import variability
 from . import hamocc
 from . import mpiom
 from . import slurm_post
+from . import cmip
