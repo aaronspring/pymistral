@@ -25,6 +25,7 @@ except:
     my_system = 'local'
 
 if my_system is 'mistral':
+    mistral_work = '/work/'
     file_origin = work
     tmp = file_origin + 'tmp'
     if not os.path.exists(tmp):
