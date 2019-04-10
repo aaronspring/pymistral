@@ -1,0 +1,264 @@
+# naming: cmorized varname.product_name.time.space.misc
+# if category not availbale, then leave out
+plugins:
+  source:
+      - module: intake_xarray
+sources:
+  pco2_Takahashi:
+    driver: netcdf
+    description: Takahashi climatology on different grids
+    parameters:
+      s_res:
+        description: 'spatial resolution'
+        type: str
+        default: 'GR15'
+        allowed: ['GR15', '1deg','R2B6']
+    args:
+      urlpath: '/work/mh0727/data/pCO2/pco2_taka_{{s_res}}.nc'
+      decode_times: False
+
+  iron_Mahowald:
+    driver: netcdf
+    parameters:
+      s_res:
+        description: 'spatial resolution'
+        type: str
+        default: 'GR15'
+        allowed: ['GR15', 'GR30','TOY','TP04','TP10','TP6M']
+      version:
+        description: 'version as str'
+        type: str
+        default: '2005'
+        allowed: ['2005','r2']
+    args:
+      urlpath: '/work/mh0727/data/DUST/{{s_res}}_MAHOWALDDUST_{{version}}.nc'
+      decode_times: False
+    metadata:
+      plots:
+        monthly_climatology:
+          title: Mahowald monthly climatology
+          kind: contourf
+          x: 'lon'
+          y: 'lat'
+          z: 'DUST'
+          groupby: 'time'
+
+  iron_Albani2016:
+    description: 'Simulated dust fields from Albani et al. 2016 (GRL);
+                  Albani, S., N.M. Mahowald, L.N. Murphy, R. Raiswell, J.K. Moore, R.F. Anderson, D. McGee, L.I. Bradtmiller, B. Delmonte, P.P. Hesse, and P.A. Mayewski (2016). Paleodust variability since the Last Glacial Maximum and implications for iron inputs to the ocean. Geophys. Res. Lett., 43, 3944–3954, doi:10.1002/2016GL067911'
+    driver: netcdf
+    parameters:
+      s_res:
+        description: 'spatial resolution'
+        type: str
+        default: 'GR15'
+        allowed: ['GR15', 'GR30','TOY','TP04','TP10']
+    args:
+      urlpath: '/work/mh0727/data/DUST/Albanietal2016_GRL_dustdep.{{s_res}}.nc'
+      decode_times: False
+    metadata:
+      url_origin: doi:10.1002/2016GL067911
+
+  fgco2_SOMFFN:
+    driver: netcdf
+    args:
+      urlpath: '/work/mh0727/data/SOCOM/gridded_data/SOM-FFN/pco2_1982-2015_MPI_SOM-FFN_GCB2016.nc'
+      chunks: {'time':12}
+      drop_variables: date
+    metadata:
+      fields:
+        fgco2:
+          label: fgco2
+          unit: mol m-2 yr-1
+      plots:
+        fgco2_over_time:
+          title: 'SOM-FFN fgco2 over time'
+          kind: contourf
+          x: 'lon'
+          y: 'lat'
+          z: 'fgco2'
+          groupby: 'time'
+          width: 800
+          height: 400
+          cmap: 'RdBu_r'
+          levels: 20
+        fgco2_timeseries_location:
+          title: fgco2 timeseries at (lon,lat) location
+          kind: line
+          x: 'time'
+          y: 'fgco2'
+          groupby: ['lon','lat']
+        fgco2_timeseries_latitude:
+          title: fgco2 timeseries at latitude
+          kind: contourf
+          y: 'time'
+          x: 'lon'
+          z: 'fgco2'
+          groupby: 'lat'
+          levels: 20
+
+  fgco2_UEASI:
+    driver: netcdf
+    args:
+      urlpath: '/work/mh0727/data/SOCOM/gridded_data/UEA-SI/statistical_gap-filled_fco2_v1-0_20150910.nc'
+      chunks: {'time':12}
+    metadata:
+      readme: '/work/mh0727/data/SOCOM/gridded_data/UEA-SI/README'
+
+  fgco2_JMA-MLR:
+    driver: netcdf
+    args:
+      urlpath: '/work/mh0727/data/SOCOM/gridded_data/JMA-MLR/JMA_co2map1990-2015_v2_0.nc'
+      chunks: {'time':12}
+    metadata:
+      readme: '/work/mh0727/data/SOCOM/gridded_data/JMA-MLR/README'
+
+  fgco2_JenaMLS:
+    driver: netcdf
+    metadata:
+      readme: '/work/mh0727/data/SOCOM/gridded_data/Jena-MLS/README'
+    parameters:
+      version:
+        description: 'version'
+        type: str
+        default: 'v1.5_daily'
+        allowed: ['v1.4','v1.5_daily','v1.5_pCO2_daily']
+    args:
+      urlpath: '/work/mh0727/data/SOCOM/gridded_data/Jena-MLS/oc_{{version}}.nc'
+      chunks: {'time':12}
+
+  SOCOM_biomes:
+    driver: netcdf
+    description: biome aggregates
+    metadata:
+      url_origin: 'http://www.bgc-jena.mpg.de/SOCOM'
+      readme: '/work/mh0727/data/SOCOM/README'
+      fields:
+        meanf:
+          label: spco2
+          unit: uatm
+        mmeanf:
+          label: spco2
+          unit: uatm
+        fluxf:
+          label: fgco2
+          unit: PgC/yr
+        mfluxf:
+          label: fgco2
+          unit: PgC/month
+    parameters:
+      product:
+        description: 'product name'
+        type: str
+        default: 'ETH-SOMFFN'
+        allowed: ['ETH-SOMFFN','AOML-EMP','CARBONES-NN','CU-SCSE','Jena-MLS13','JMA-MLR','NIES-NN','NIES-OTTM','OceanFlux-SI','PU-MCMC','UEA-SI','UEx-MRL','UNSW-SOMLO']
+      biome:
+        description: 'biome index'
+        type: int
+        default: 0
+        allowed: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
+    args:
+      urlpath: '/work/mh0727/data/SOCOM/biome_timeseries/{{product}}.{{biome}}.nc'
+      concat_dim: 'biome'
+      decode_times: False
+  SOCOM_all_products:
+    driver: netcdf
+    description: biome aggregates
+    metadata:
+      url_origin: 'http://www.bgc-jena.mpg.de/SOCOM'
+      readme: '/work/mh0727/data/SOCOM/README'
+      fields:
+        taxis:
+          label: Time
+        meanf:
+          label: spco2
+        fluxf:
+          label: fgco2
+      plots:
+        fgco2_over_time:
+          title: 'SOCOM products: fgco2 in a biome over time'
+          kind: line
+          x: taxis
+          y: meanf
+        spco2_over_time:
+          title: 'SOCOM products: spco2 in a biome over time'
+          kind: line
+          x: taxis
+          y: fluxf
+    parameters:
+      biome:
+        description: 'biome index'
+        type: int
+        default: 0
+        allowed: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
+    args:
+      urlpath: '/work/mh0727/data/SOCOM/biome_timeseries/*.{{biome}}.nc'
+      concat_dim: 'product'
+      decode_times: False
+
+
+  zmld.IFREMER:
+    driver: netcdf
+    args:
+      urlpath: '/work/mh0727/data/MixedLayer/mld_DT02.nc'
+
+  zmld.Levitus:
+    description: 'Potential density (pd) criterion 0.125 in sigma units, Mixed Layer Depths
+by Grigory Monterey, Sydney Levitus'
+    driver: netcdf
+    origin: https://www.nodc.noaa.gov/OC5/WOA94/mix.html
+    args:
+      urlpath: '/work/mh0727/data/MixedLayer/mld_pd_0125.nc'
+
+  WOA13:
+    driver: netcdf
+    description: World Ocean Atlas
+    parameters:
+      t_res:
+        description: temporal resolution
+        type: str
+        default: annual # seasonal doesnt have taxis
+        allowed: [annual,month,seasonal] # monthly vs month
+      s_res:
+        description: spatial resolution
+        type: str
+        default: GR15
+        allowed: ['GR15','1deg','R2B6L64','TP04']
+      var:
+        description: variable name
+        type: str
+        default: nitrate
+        allowed: ['nitrate','dissolved_oxygen','apparent_oxygen_utilization','phosphate','salinity','silicate','temperature']
+    args:
+      urlpath: /work/mh0727/data/WOA/{{t_res}}/woa13_{{var}}_{{t_res}}_{{s_res}}.nc
+      decode_times: False
+      drop_variables: [lon_bnds, lat_bnds, depth_bnds,bnds,climatology_bnds,climatology_bounds]
+    metadata:
+      url_origin: https://www.nodc.noaa.gov/OC5/woa13/
+      fields:
+        n_an:
+          label: nitrate
+          unit: 10-6 mol / l
+        i_an:
+          label: silicate
+          unit: 10-6 mol / l
+        p_an:
+          label: phospate
+          unit: 10-6 mol / l
+        t_an:
+          label: temperature
+          unit: °C
+        s_an:
+          label: salinity
+          unit: psu
+        o_an:
+          label: volume fraction of oxygen in sea water
+          unit: ml / l
+        A_an:
+          label: apparent oxygen utilization
+          unit: ml / l
+      plots:
+        climatology:
+          kind: contourf
+          x: lon
+          y: lat

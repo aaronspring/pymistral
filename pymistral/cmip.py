@@ -17,7 +17,7 @@ cdo = cdo.Cdo(tempdir=tmp)
 if my_system is 'local':
     CV_basefolder = '/Users/aaron.spring/Coding/'
 elif my_system is 'mistral':
-    CV_basefolder = '/home/mpim/m300524/CMIP6_CVs/'
+    CV_basefolder = '/home/mpim/m300524/'
 
 # CMIP6
 # read in all institutions
