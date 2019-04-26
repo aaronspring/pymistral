@@ -18,9 +18,11 @@ if my_system is 'local':
     CV_basefolder = '/Users/aaron.spring/Coding/'
 elif my_system is 'mistral':
     CV_basefolder = '/home/mpim/m300524/'
-if os.getcwd().startswith('/home/travis/'):  # workaround for travis
-    CV_basefolder = os.getcwd()+'/'
 
+travis = False
+if os.getcwd().startswith('/home/travis/'):  # workaround for travis
+    travis = True
+    CV_basefolder = os.getcwd()+'/'
 
 # CMIP6
 # read in all institutions
@@ -91,15 +93,16 @@ def participation_of_models(mip):
 
 
 # CMIP5 on mistral
-cmip5_centers_mistral = os.listdir(cmip5_folder)
+if not travis:
+    cmip5_centers_mistral = os.listdir(cmip5_folder)
 
-cmip5_models_mistral = {}
-for center in cmip5_centers_mistral:
-    models = os.listdir('/'.join((cmip5_folder, center)))
-    cmip5_models_mistral[center] = models
+    cmip5_models_mistral = {}
+    for center in cmip5_centers_mistral:
+        models = os.listdir('/'.join((cmip5_folder, center)))
+        cmip5_models_mistral[center] = models
 
-cmip5_all_models_mistral = list(
-    itertools.chain.from_iterable(cmip5_models_mistral.values()))
+    cmip5_all_models_mistral = list(
+        itertools.chain.from_iterable(cmip5_models_mistral.values()))
 
 
 def _get_path_cmip(base_folder=cmip5_folder,
