@@ -5,4 +5,4 @@ data_sources:
     name: MISTRAL
     loc_type: posix
     direct_access: True
-    urlpath: /work/mh1007/CMOR/MPI-GE/output1/MPI-M/MPI-ESM
+    urlpath: /work/mh1007/CMOR/MPI-GE
