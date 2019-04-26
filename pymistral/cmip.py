@@ -19,84 +19,82 @@ if my_system is 'local':
 elif my_system is 'mistral':
     CV_basefolder = '/home/mpim/m300524/'
 
-# CMIP6
-# read in all institutions
-name = 'institution_id'
-cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
-institution_ids = pd.read_json(
-    cvpath).index[:-6].drop(['CV_collection_version', 'CV_collection_modified'])
+if my_system not in ['mistral', 'local']:
+    # CMIP6
+    # read in all institutions
+    name = 'institution_id'
+    cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
+    institution_ids = pd.read_json(
+        cvpath).index[:-6].drop(['CV_collection_version', 'CV_collection_modified'])
 
-# read in all models
-name = 'source_id'
-cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
-model_ids = pd.read_json(
-    cvpath).index[:-6].drop(['CV_collection_version', 'CV_collection_modified']).values
+    # read in all models
+    name = 'source_id'
+    cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
+    model_ids = pd.read_json(
+        cvpath).index[:-6].drop(['CV_collection_version', 'CV_collection_modified']).values
 
-# read in all sources
-name = 'source_id'
-cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
-source_ids = pd.read_json(cvpath)
+    # read in all sources
+    name = 'source_id'
+    cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
+    source_ids = pd.read_json(cvpath)
 
-# read in all activities/MIPs
-name = 'activity_id'
-cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
-mip_ids = pd.read_json(
-    cvpath).index[:-6].drop(['CV_collection_version', 'CV_collection_modified']).values
-mip_table = pd.read_json(cvpath).drop(
-    ['CV_collection_version', 'CV_collection_modified'])
-mip_longnames = pd.read_json(cvpath)[
-    'activity_id'][:-6].drop(['CV_collection_version', 'CV_collection_modified']).values
+    # read in all activities/MIPs
+    name = 'activity_id'
+    cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
+    mip_ids = pd.read_json(
+        cvpath).index[:-6].drop(['CV_collection_version', 'CV_collection_modified']).values
+    mip_table = pd.read_json(cvpath).drop(
+        ['CV_collection_version', 'CV_collection_modified'])
+    mip_longnames = pd.read_json(cvpath)[
+        'activity_id'][:-6].drop(['CV_collection_version', 'CV_collection_modified']).values
 
-# read in experiments
-name = 'experiment_id'
-cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
-experiment_ids = pd.read_json(cvpath).index.drop(
-    ['CV_collection_modified', 'CV_collection_version', 'author']).values
+    # read in experiments
+    name = 'experiment_id'
+    cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
+    experiment_ids = pd.read_json(cvpath).index.drop(
+        ['CV_collection_modified', 'CV_collection_version', 'author']).values
 
-# wrappers using the above
+    # wrappers using the above
 
+    def CMIP6_CV_model_participations(model):
+        """Returns MIPs a model participates in.
+        Args:
+            model (str): model from model_ids
+        Returns:
+            (list) of MIPs a model participates in.
 
-def CMIP6_CV_model_participations(model):
-    """Returns MIPs a model participates in.
-    Args:
-        model (str): model from model_ids
-    Returns:
-        (list) of MIPs a model participates in.
+        Example:
+            CMIP6_CV_model_participations('MPI-ESM1-2-HR')
+        """
+        s = source_ids.loc[model].values[0]
+        return s['activity_participation']
 
-    Example:
-        CMIP6_CV_model_participations('MPI-ESM1-2-HR')
-    """
-    s = source_ids.loc[model].values[0]
-    return s['activity_participation']
+    def participation_of_models(mip):
+        """Return a list of all CMIP6 models participating in a MIP.
 
+        Args:
+            mip (str): MIP from mip_ids
 
-def participation_of_models(mip):
-    """Return a list of all CMIP6 models participating in a MIP.
+        Example:
+            participation_of_models('C4MIP')
+            participation_of_models('DCPP')
+        """
+        mip_models = []
+        for model in model_ids:
+            if mip in CMIP6_CV_model_participations(model):
+                mip_models.append(model)
+        return mip_models
 
-    Args:
-        mip (str): MIP from mip_ids
+    # CMIP5 on mistral
+    cmip5_centers_mistral = os.listdir(cmip5_folder)
 
-    Example:
-        participation_of_models('C4MIP')
-        participation_of_models('DCPP')
-    """
-    mip_models = []
-    for model in model_ids:
-        if mip in CMIP6_CV_model_participations(model):
-            mip_models.append(model)
-    return mip_models
+    cmip5_models_mistral = {}
+    for center in cmip5_centers_mistral:
+        models = os.listdir('/'.join((cmip5_folder, center)))
+        cmip5_models_mistral[center] = models
 
-
-# CMIP5 on mistral
-cmip5_centers_mistral = os.listdir(cmip5_folder)
-
-cmip5_models_mistral = {}
-for center in cmip5_centers_mistral:
-    models = os.listdir('/'.join((cmip5_folder, center)))
-    cmip5_models_mistral[center] = models
-
-cmip5_all_models_mistral = list(
-    itertools.chain.from_iterable(cmip5_models_mistral.values()))
+    cmip5_all_models_mistral = list(
+        itertools.chain.from_iterable(cmip5_models_mistral.values()))
 
 
 def _get_path_cmip(base_folder=cmip5_folder,
