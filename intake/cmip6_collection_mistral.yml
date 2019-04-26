@@ -1,0 +1,9 @@
+name: cmip6_collection_mistral
+collection_type: cmip6
+data_sources:
+  root_dir:
+    name: MISTRAL
+    loc_type: posix
+    direct_access: True
+    urlpath: /work/kd0956/CMIP6/CMIP
+    # exclude_dirs: ['test_data/*','dc_repli/*','dc_test_data/*']

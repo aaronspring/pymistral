@@ -1,0 +1,1576 @@
+name: mistral_mpi_ge
+collection_type: mpige
+include_cache_dir: true
+data_sources:
+  pictrl:
+    locations:
+      - name: MISTRAL-DATA
+        loc_type: posix
+        direct_access: True
+        urlpath: /work/mh1007/MPI-GE/pictrl
+        exclude_dirs: ['*/restart/*', '*/log/*']
+    component_attrs:
+      ocn:
+        grid: GR15
+    case_members:
+      - case: pictrl0001
+        sequence_order: 0
+        ensemble: 1
+      - case: pictrl0002
+        sequence_order: 0
+        ensemble: 2
+  hist:
+    locations:
+      - name: MISTRAL-DATA
+        loc_type: posix
+        direct_access: True
+        urlpath: /work/mh1007/MPI-GE/hist
+        exclude_dirs: ['*/restart/*', '*/log/*']
+    component_attrs:
+      ocn:
+        grid: GR15
+    case_members:
+      - case: hist0001
+        sequence_order: 0
+        ensemble: 1
+      - case: hist0002
+        sequence_order: 0
+        ensemble: 2
+      - case: hist0003
+        sequence_order: 0
+        ensemble: 3
+      - case: hist0004
+        sequence_order: 0
+        ensemble: 4
+      - case: hist0005
+        sequence_order: 0
+        ensemble: 5
+      - case: hist0006
+        sequence_order: 0
+        ensemble: 6
+      - case: hist0007
+        sequence_order: 0
+        ensemble: 7
+      - case: hist0008
+        sequence_order: 0
+        ensemble: 8
+      - case: hist0009
+        sequence_order: 0
+        ensemble: 9
+      - case: hist0010
+        sequence_order: 0
+        ensemble: 10
+      - case: hist0011
+        sequence_order: 0
+        ensemble: 11
+      - case: hist0012
+        sequence_order: 0
+        ensemble: 12
+      - case: hist0013
+        sequence_order: 0
+        ensemble: 13
+      - case: hist0014
+        sequence_order: 0
+        ensemble: 14
+      - case: hist0015
+        sequence_order: 0
+        ensemble: 15
+      - case: hist0016
+        sequence_order: 0
+        ensemble: 16
+      - case: hist0017
+        sequence_order: 0
+        ensemble: 17
+      - case: hist0018
+        sequence_order: 0
+        ensemble: 18
+      - case: hist0019
+        sequence_order: 0
+        ensemble: 19
+      - case: hist0020
+        sequence_order: 0
+        ensemble: 20
+      - case: hist0021
+        sequence_order: 0
+        ensemble: 21
+      - case: hist0022
+        sequence_order: 0
+        ensemble: 22
+      - case: hist0023
+        sequence_order: 0
+        ensemble: 23
+      - case: hist0024
+        sequence_order: 0
+        ensemble: 24
+      - case: hist0025
+        sequence_order: 0
+        ensemble: 25
+      - case: hist0026
+        sequence_order: 0
+        ensemble: 26
+      - case: hist0027
+        sequence_order: 0
+        ensemble: 27
+      - case: hist0028
+        sequence_order: 0
+        ensemble: 28
+      - case: hist0029
+        sequence_order: 0
+        ensemble: 29
+      - case: hist0030
+        sequence_order: 0
+        ensemble: 30
+      - case: hist0031
+        sequence_order: 0
+        ensemble: 31
+      - case: hist0032
+        sequence_order: 0
+        ensemble: 32
+      - case: hist0033
+        sequence_order: 0
+        ensemble: 33
+      - case: hist0034
+        sequence_order: 0
+        ensemble: 34
+      - case: hist0035
+        sequence_order: 0
+        ensemble: 35
+      - case: hist0036
+        sequence_order: 0
+        ensemble: 36
+      - case: hist0037
+        sequence_order: 0
+        ensemble: 37
+      - case: hist0038
+        sequence_order: 0
+        ensemble: 38
+      - case: hist0039
+        sequence_order: 0
+        ensemble: 39
+      - case: hist0040
+        sequence_order: 0
+        ensemble: 40
+      - case: hist0041
+        sequence_order: 0
+        ensemble: 41
+      - case: hist0042
+        sequence_order: 0
+        ensemble: 42
+      - case: hist0043
+        sequence_order: 0
+        ensemble: 43
+      - case: hist0044
+        sequence_order: 0
+        ensemble: 44
+      - case: hist0045
+        sequence_order: 0
+        ensemble: 45
+      - case: hist0046
+        sequence_order: 0
+        ensemble: 46
+      - case: hist0047
+        sequence_order: 0
+        ensemble: 47
+      - case: hist0048
+        sequence_order: 0
+        ensemble: 48
+      - case: hist0049
+        sequence_order: 0
+        ensemble: 49
+      - case: hist0050
+        sequence_order: 0
+        ensemble: 50
+      - case: hist0051
+        sequence_order: 0
+        ensemble: 51
+      - case: hist0052
+        sequence_order: 0
+        ensemble: 52
+      - case: hist0053
+        sequence_order: 0
+        ensemble: 53
+      - case: hist0054
+        sequence_order: 0
+        ensemble: 54
+      - case: hist0055
+        sequence_order: 0
+        ensemble: 55
+      - case: hist0056
+        sequence_order: 0
+        ensemble: 56
+      - case: hist0057
+        sequence_order: 0
+        ensemble: 57
+      - case: hist0058
+        sequence_order: 0
+        ensemble: 58
+      - case: hist0059
+        sequence_order: 0
+        ensemble: 59
+      - case: hist0060
+        sequence_order: 0
+        ensemble: 60
+      - case: hist0061
+        sequence_order: 0
+        ensemble: 61
+      - case: hist0062
+        sequence_order: 0
+        ensemble: 62
+      - case: hist0063
+        sequence_order: 0
+        ensemble: 63
+      - case: hist0064
+        sequence_order: 0
+        ensemble: 64
+      - case: hist0065
+        sequence_order: 0
+        ensemble: 65
+      - case: hist0066
+        sequence_order: 0
+        ensemble: 66
+      - case: hist0067
+        sequence_order: 0
+        ensemble: 67
+      - case: hist0068
+        sequence_order: 0
+        ensemble: 68
+      - case: hist0069
+        sequence_order: 0
+        ensemble: 69
+      - case: hist0070
+        sequence_order: 0
+        ensemble: 70
+      - case: hist0071
+        sequence_order: 0
+        ensemble: 71
+      - case: hist0072
+        sequence_order: 0
+        ensemble: 72
+      - case: hist0073
+        sequence_order: 0
+        ensemble: 73
+      - case: hist0074
+        sequence_order: 0
+        ensemble: 74
+      - case: hist0075
+        sequence_order: 0
+        ensemble: 75
+      - case: hist0076
+        sequence_order: 0
+        ensemble: 76
+      - case: hist0077
+        sequence_order: 0
+        ensemble: 77
+      - case: hist0078
+        sequence_order: 0
+        ensemble: 78
+      - case: hist0079
+        sequence_order: 0
+        ensemble: 79
+      - case: hist0080
+        sequence_order: 0
+        ensemble: 80
+      - case: hist0081
+        sequence_order: 0
+        ensemble: 81
+      - case: hist0082
+        sequence_order: 0
+        ensemble: 82
+      - case: hist0083
+        sequence_order: 0
+        ensemble: 83
+      - case: hist0084
+        sequence_order: 0
+        ensemble: 84
+      - case: hist0085
+        sequence_order: 0
+        ensemble: 85
+      - case: hist0086
+        sequence_order: 0
+        ensemble: 86
+      - case: hist0087
+        sequence_order: 0
+        ensemble: 87
+      - case: hist0088
+        sequence_order: 0
+        ensemble: 88
+      - case: hist0089
+        sequence_order: 0
+        ensemble: 89
+      - case: hist0090
+        sequence_order: 0
+        ensemble: 90
+      - case: hist0091
+        sequence_order: 0
+        ensemble: 91
+      - case: hist0092
+        sequence_order: 0
+        ensemble: 92
+      - case: hist0093
+        sequence_order: 0
+        ensemble: 93
+      - case: hist0094
+        sequence_order: 0
+        ensemble: 94
+      - case: hist0095
+        sequence_order: 0
+        ensemble: 95
+      - case: hist0096
+        sequence_order: 0
+        ensemble: 96
+      - case: hist0097
+        sequence_order: 0
+        ensemble: 97
+      - case: hist0098
+        sequence_order: 0
+        ensemble: 98
+      - case: hist0099
+        sequence_order: 0
+        ensemble: 99
+      - case: hist0100
+        sequence_order: 0
+        ensemble: 100
+  rcp26:
+    locations:
+      - name: MISTRAL-DATA
+        loc_type: posix
+        direct_access: True
+        urlpath: /work/mh1007/MPI-GE/rcp26
+        exclude_dirs: ['*/restart/*', '*/log/*','*/output/mpiom/*mpiom_map.nc', '*/output/mpiom/*_mpiom_fx.nc']
+    component_attrs:
+      ocn:
+        grid: GR15
+    case_members:
+      - case: rcp260001
+        sequence_order: 0
+        ensemble: 1
+      - case: rcp260002
+        sequence_order: 0
+        ensemble: 2
+      - case: rcp260003
+        sequence_order: 0
+        ensemble: 3
+      - case: rcp260004
+        sequence_order: 0
+        ensemble: 4
+      - case: rcp260005
+        sequence_order: 0
+        ensemble: 5
+      - case: rcp260006
+        sequence_order: 0
+        ensemble: 6
+      - case: rcp260007
+        sequence_order: 0
+        ensemble: 7
+      - case: rcp260008
+        sequence_order: 0
+        ensemble: 8
+      - case: rcp260009
+        sequence_order: 0
+        ensemble: 9
+      - case: rcp260010
+        sequence_order: 0
+        ensemble: 10
+      - case: rcp260011
+        sequence_order: 0
+        ensemble: 11
+      - case: rcp260012
+        sequence_order: 0
+        ensemble: 12
+      - case: rcp260013
+        sequence_order: 0
+        ensemble: 13
+      - case: rcp260014
+        sequence_order: 0
+        ensemble: 14
+      - case: rcp260015
+        sequence_order: 0
+        ensemble: 15
+      - case: rcp260016
+        sequence_order: 0
+        ensemble: 16
+      - case: rcp260017
+        sequence_order: 0
+        ensemble: 17
+      - case: rcp260018
+        sequence_order: 0
+        ensemble: 18
+      - case: rcp260019
+        sequence_order: 0
+        ensemble: 19
+      - case: rcp260020
+        sequence_order: 0
+        ensemble: 20
+      - case: rcp260021
+        sequence_order: 0
+        ensemble: 21
+      - case: rcp260022
+        sequence_order: 0
+        ensemble: 22
+      - case: rcp260023
+        sequence_order: 0
+        ensemble: 23
+      - case: rcp260024
+        sequence_order: 0
+        ensemble: 24
+      - case: rcp260025
+        sequence_order: 0
+        ensemble: 25
+      - case: rcp260026
+        sequence_order: 0
+        ensemble: 26
+      - case: rcp260027
+        sequence_order: 0
+        ensemble: 27
+      - case: rcp260028
+        sequence_order: 0
+        ensemble: 28
+      - case: rcp260029
+        sequence_order: 0
+        ensemble: 29
+      - case: rcp260030
+        sequence_order: 0
+        ensemble: 30
+      - case: rcp260031
+        sequence_order: 0
+        ensemble: 31
+      - case: rcp260032
+        sequence_order: 0
+        ensemble: 32
+      - case: rcp260033
+        sequence_order: 0
+        ensemble: 33
+      - case: rcp260034
+        sequence_order: 0
+        ensemble: 34
+      - case: rcp260035
+        sequence_order: 0
+        ensemble: 35
+      - case: rcp260036
+        sequence_order: 0
+        ensemble: 36
+      - case: rcp260037
+        sequence_order: 0
+        ensemble: 37
+      - case: rcp260038
+        sequence_order: 0
+        ensemble: 38
+      - case: rcp260039
+        sequence_order: 0
+        ensemble: 39
+      - case: rcp260040
+        sequence_order: 0
+        ensemble: 40
+      - case: rcp260041
+        sequence_order: 0
+        ensemble: 41
+      - case: rcp260042
+        sequence_order: 0
+        ensemble: 42
+      - case: rcp260043
+        sequence_order: 0
+        ensemble: 43
+      - case: rcp260044
+        sequence_order: 0
+        ensemble: 44
+      - case: rcp260045
+        sequence_order: 0
+        ensemble: 45
+      - case: rcp260046
+        sequence_order: 0
+        ensemble: 46
+      - case: rcp260047
+        sequence_order: 0
+        ensemble: 47
+      - case: rcp260048
+        sequence_order: 0
+        ensemble: 48
+      - case: rcp260049
+        sequence_order: 0
+        ensemble: 49
+      - case: rcp260050
+        sequence_order: 0
+        ensemble: 50
+      - case: rcp260051
+        sequence_order: 0
+        ensemble: 51
+      - case: rcp260052
+        sequence_order: 0
+        ensemble: 52
+      - case: rcp260053
+        sequence_order: 0
+        ensemble: 53
+      - case: rcp260054
+        sequence_order: 0
+        ensemble: 54
+      - case: rcp260055
+        sequence_order: 0
+        ensemble: 55
+      - case: rcp260056
+        sequence_order: 0
+        ensemble: 56
+      - case: rcp260057
+        sequence_order: 0
+        ensemble: 57
+      - case: rcp260058
+        sequence_order: 0
+        ensemble: 58
+      - case: rcp260059
+        sequence_order: 0
+        ensemble: 59
+      - case: rcp260060
+        sequence_order: 0
+        ensemble: 60
+      - case: rcp260061
+        sequence_order: 0
+        ensemble: 61
+      - case: rcp260062
+        sequence_order: 0
+        ensemble: 62
+      - case: rcp260063
+        sequence_order: 0
+        ensemble: 63
+      - case: rcp260064
+        sequence_order: 0
+        ensemble: 64
+      - case: rcp260065
+        sequence_order: 0
+        ensemble: 65
+      - case: rcp260066
+        sequence_order: 0
+        ensemble: 66
+      - case: rcp260067
+        sequence_order: 0
+        ensemble: 67
+      - case: rcp260068
+        sequence_order: 0
+        ensemble: 68
+      - case: rcp260069
+        sequence_order: 0
+        ensemble: 69
+      - case: rcp260070
+        sequence_order: 0
+        ensemble: 70
+      - case: rcp260071
+        sequence_order: 0
+        ensemble: 71
+      - case: rcp260072
+        sequence_order: 0
+        ensemble: 72
+      - case: rcp260073
+        sequence_order: 0
+        ensemble: 73
+      - case: rcp260074
+        sequence_order: 0
+        ensemble: 74
+      - case: rcp260075
+        sequence_order: 0
+        ensemble: 75
+      - case: rcp260076
+        sequence_order: 0
+        ensemble: 76
+      - case: rcp260077
+        sequence_order: 0
+        ensemble: 77
+      - case: rcp260078
+        sequence_order: 0
+        ensemble: 78
+      - case: rcp260079
+        sequence_order: 0
+        ensemble: 79
+      - case: rcp260080
+        sequence_order: 0
+        ensemble: 80
+      - case: rcp260081
+        sequence_order: 0
+        ensemble: 81
+      - case: rcp260082
+        sequence_order: 0
+        ensemble: 82
+      - case: rcp260083
+        sequence_order: 0
+        ensemble: 83
+      - case: rcp260084
+        sequence_order: 0
+        ensemble: 84
+      - case: rcp260085
+        sequence_order: 0
+        ensemble: 85
+      - case: rcp260086
+        sequence_order: 0
+        ensemble: 86
+      - case: rcp260087
+        sequence_order: 0
+        ensemble: 87
+      - case: rcp260088
+        sequence_order: 0
+        ensemble: 88
+      - case: rcp260089
+        sequence_order: 0
+        ensemble: 89
+      - case: rcp260090
+        sequence_order: 0
+        ensemble: 90
+      - case: rcp260091
+        sequence_order: 0
+        ensemble: 91
+      - case: rcp260092
+        sequence_order: 0
+        ensemble: 92
+      - case: rcp260093
+        sequence_order: 0
+        ensemble: 93
+      - case: rcp260094
+        sequence_order: 0
+        ensemble: 94
+      - case: rcp260095
+        sequence_order: 0
+        ensemble: 95
+      - case: rcp260096
+        sequence_order: 0
+        ensemble: 96
+      - case: rcp260097
+        sequence_order: 0
+        ensemble: 97
+      - case: rcp260098
+        sequence_order: 0
+        ensemble: 98
+      - case: rcp260099
+        sequence_order: 0
+        ensemble: 99
+      - case: rcp260100
+        sequence_order: 0
+        ensemble: 100
+  rcp45:
+    locations:
+      - name: MISTRAL-DATA
+        loc_type: posix
+        direct_access: True
+        urlpath: /work/mh1007/MPI-GE/rcp45
+        exclude_dirs: ['*/restart/*', '*/log/*','*/output/mpiom/*mpiom_map.nc', '*/output/mpiom/*_mpiom_fx.nc']
+    component_attrs:
+      ocn:
+        grid: GR15
+    case_members:
+      - case: rcp450001
+        sequence_order: 0
+        ensemble: 1
+      - case: rcp450002
+        sequence_order: 0
+        ensemble: 2
+      - case: rcp450003
+        sequence_order: 0
+        ensemble: 3
+      - case: rcp450004
+        sequence_order: 0
+        ensemble: 4
+      - case: rcp450005
+        sequence_order: 0
+        ensemble: 5
+      - case: rcp450006
+        sequence_order: 0
+        ensemble: 6
+      - case: rcp450007
+        sequence_order: 0
+        ensemble: 7
+      - case: rcp450008
+        sequence_order: 0
+        ensemble: 8
+      - case: rcp450009
+        sequence_order: 0
+        ensemble: 9
+      - case: rcp450010
+        sequence_order: 0
+        ensemble: 10
+      - case: rcp450011
+        sequence_order: 0
+        ensemble: 11
+      - case: rcp450012
+        sequence_order: 0
+        ensemble: 12
+      - case: rcp450013
+        sequence_order: 0
+        ensemble: 13
+      - case: rcp450014
+        sequence_order: 0
+        ensemble: 14
+      - case: rcp450015
+        sequence_order: 0
+        ensemble: 15
+      - case: rcp450016
+        sequence_order: 0
+        ensemble: 16
+      - case: rcp450017
+        sequence_order: 0
+        ensemble: 17
+      - case: rcp450018
+        sequence_order: 0
+        ensemble: 18
+      - case: rcp450019
+        sequence_order: 0
+        ensemble: 19
+      - case: rcp450020
+        sequence_order: 0
+        ensemble: 20
+      - case: rcp450021
+        sequence_order: 0
+        ensemble: 21
+      - case: rcp450022
+        sequence_order: 0
+        ensemble: 22
+      - case: rcp450023
+        sequence_order: 0
+        ensemble: 23
+      - case: rcp450024
+        sequence_order: 0
+        ensemble: 24
+      - case: rcp450025
+        sequence_order: 0
+        ensemble: 25
+      - case: rcp450026
+        sequence_order: 0
+        ensemble: 26
+      - case: rcp450027
+        sequence_order: 0
+        ensemble: 27
+      - case: rcp450028
+        sequence_order: 0
+        ensemble: 28
+      - case: rcp450029
+        sequence_order: 0
+        ensemble: 29
+      - case: rcp450030
+        sequence_order: 0
+        ensemble: 30
+      - case: rcp450031
+        sequence_order: 0
+        ensemble: 31
+      - case: rcp450032
+        sequence_order: 0
+        ensemble: 32
+      - case: rcp450033
+        sequence_order: 0
+        ensemble: 33
+      - case: rcp450034
+        sequence_order: 0
+        ensemble: 34
+      - case: rcp450035
+        sequence_order: 0
+        ensemble: 35
+      - case: rcp450036
+        sequence_order: 0
+        ensemble: 36
+      - case: rcp450037
+        sequence_order: 0
+        ensemble: 37
+      - case: rcp450038
+        sequence_order: 0
+        ensemble: 38
+      - case: rcp450039
+        sequence_order: 0
+        ensemble: 39
+      - case: rcp450040
+        sequence_order: 0
+        ensemble: 40
+      - case: rcp450041
+        sequence_order: 0
+        ensemble: 41
+      - case: rcp450042
+        sequence_order: 0
+        ensemble: 42
+      - case: rcp450043
+        sequence_order: 0
+        ensemble: 43
+      - case: rcp450044
+        sequence_order: 0
+        ensemble: 44
+      - case: rcp450045
+        sequence_order: 0
+        ensemble: 45
+      - case: rcp450046
+        sequence_order: 0
+        ensemble: 46
+      - case: rcp450047
+        sequence_order: 0
+        ensemble: 47
+      - case: rcp450048
+        sequence_order: 0
+        ensemble: 48
+      - case: rcp450049
+        sequence_order: 0
+        ensemble: 49
+      - case: rcp450050
+        sequence_order: 0
+        ensemble: 50
+      - case: rcp450051
+        sequence_order: 0
+        ensemble: 51
+      - case: rcp450052
+        sequence_order: 0
+        ensemble: 52
+      - case: rcp450053
+        sequence_order: 0
+        ensemble: 53
+      - case: rcp450054
+        sequence_order: 0
+        ensemble: 54
+      - case: rcp450055
+        sequence_order: 0
+        ensemble: 55
+      - case: rcp450056
+        sequence_order: 0
+        ensemble: 56
+      - case: rcp450057
+        sequence_order: 0
+        ensemble: 57
+      - case: rcp450058
+        sequence_order: 0
+        ensemble: 58
+      - case: rcp450059
+        sequence_order: 0
+        ensemble: 59
+      - case: rcp450060
+        sequence_order: 0
+        ensemble: 60
+      - case: rcp450061
+        sequence_order: 0
+        ensemble: 61
+      - case: rcp450062
+        sequence_order: 0
+        ensemble: 62
+      - case: rcp450063
+        sequence_order: 0
+        ensemble: 63
+      - case: rcp450064
+        sequence_order: 0
+        ensemble: 64
+      - case: rcp450065
+        sequence_order: 0
+        ensemble: 65
+      - case: rcp450066
+        sequence_order: 0
+        ensemble: 66
+      - case: rcp450067
+        sequence_order: 0
+        ensemble: 67
+      - case: rcp450068
+        sequence_order: 0
+        ensemble: 68
+      - case: rcp450069
+        sequence_order: 0
+        ensemble: 69
+      - case: rcp450070
+        sequence_order: 0
+        ensemble: 70
+      - case: rcp450071
+        sequence_order: 0
+        ensemble: 71
+      - case: rcp450072
+        sequence_order: 0
+        ensemble: 72
+      - case: rcp450073
+        sequence_order: 0
+        ensemble: 73
+      - case: rcp450074
+        sequence_order: 0
+        ensemble: 74
+      - case: rcp450075
+        sequence_order: 0
+        ensemble: 75
+      - case: rcp450076
+        sequence_order: 0
+        ensemble: 76
+      - case: rcp450077
+        sequence_order: 0
+        ensemble: 77
+      - case: rcp450078
+        sequence_order: 0
+        ensemble: 78
+      - case: rcp450079
+        sequence_order: 0
+        ensemble: 79
+      - case: rcp450080
+        sequence_order: 0
+        ensemble: 80
+      - case: rcp450081
+        sequence_order: 0
+        ensemble: 81
+      - case: rcp450082
+        sequence_order: 0
+        ensemble: 82
+      - case: rcp450083
+        sequence_order: 0
+        ensemble: 83
+      - case: rcp450084
+        sequence_order: 0
+        ensemble: 84
+      - case: rcp450085
+        sequence_order: 0
+        ensemble: 85
+      - case: rcp450086
+        sequence_order: 0
+        ensemble: 86
+      - case: rcp450087
+        sequence_order: 0
+        ensemble: 87
+      - case: rcp450088
+        sequence_order: 0
+        ensemble: 88
+      - case: rcp450089
+        sequence_order: 0
+        ensemble: 89
+      - case: rcp450090
+        sequence_order: 0
+        ensemble: 90
+      - case: rcp450091
+        sequence_order: 0
+        ensemble: 91
+      - case: rcp450092
+        sequence_order: 0
+        ensemble: 92
+      - case: rcp450093
+        sequence_order: 0
+        ensemble: 93
+      - case: rcp450094
+        sequence_order: 0
+        ensemble: 94
+      - case: rcp450095
+        sequence_order: 0
+        ensemble: 95
+      - case: rcp450096
+        sequence_order: 0
+        ensemble: 96
+      - case: rcp450097
+        sequence_order: 0
+        ensemble: 97
+      - case: rcp450098
+        sequence_order: 0
+        ensemble: 98
+      - case: rcp450099
+        sequence_order: 0
+        ensemble: 99
+      - case: rcp450100
+        sequence_order: 0
+        ensemble: 100
+  rcp85:
+    locations:
+      - name: MISTRAL-DATA
+        loc_type: posix
+        direct_access: True
+        urlpath: /work/mh1007/MPI-GE/rcp85
+        exclude_dirs: ['*/restart/*', '*/log/*','*/output/mpiom/*mpiom_map.nc', '*/output/mpiom/*_mpiom_fx.nc']
+    component_attrs:
+      ocn:
+        grid: GR15
+    case_members:
+      - case: rcp850001
+        sequence_order: 0
+        ensemble: 1
+      - case: rcp850002
+        sequence_order: 0
+        ensemble: 2
+      - case: rcp850003
+        sequence_order: 0
+        ensemble: 3
+      - case: rcp850004
+        sequence_order: 0
+        ensemble: 4
+      - case: rcp850005
+        sequence_order: 0
+        ensemble: 5
+      - case: rcp850006
+        sequence_order: 0
+        ensemble: 6
+      - case: rcp850007
+        sequence_order: 0
+        ensemble: 7
+      - case: rcp850008
+        sequence_order: 0
+        ensemble: 8
+      - case: rcp850009
+        sequence_order: 0
+        ensemble: 9
+      - case: rcp850010
+        sequence_order: 0
+        ensemble: 10
+      - case: rcp850011
+        sequence_order: 0
+        ensemble: 11
+      - case: rcp850012
+        sequence_order: 0
+        ensemble: 12
+      - case: rcp850013
+        sequence_order: 0
+        ensemble: 13
+      - case: rcp850014
+        sequence_order: 0
+        ensemble: 14
+      - case: rcp850015
+        sequence_order: 0
+        ensemble: 15
+      - case: rcp850016
+        sequence_order: 0
+        ensemble: 16
+      - case: rcp850017
+        sequence_order: 0
+        ensemble: 17
+      - case: rcp850018
+        sequence_order: 0
+        ensemble: 18
+      - case: rcp850019
+        sequence_order: 0
+        ensemble: 19
+      - case: rcp850020
+        sequence_order: 0
+        ensemble: 20
+      - case: rcp850021
+        sequence_order: 0
+        ensemble: 21
+      - case: rcp850022
+        sequence_order: 0
+        ensemble: 22
+      - case: rcp850023
+        sequence_order: 0
+        ensemble: 23
+      - case: rcp850024
+        sequence_order: 0
+        ensemble: 24
+      - case: rcp850025
+        sequence_order: 0
+        ensemble: 25
+      - case: rcp850026
+        sequence_order: 0
+        ensemble: 26
+      - case: rcp850027
+        sequence_order: 0
+        ensemble: 27
+      - case: rcp850028
+        sequence_order: 0
+        ensemble: 28
+      - case: rcp850029
+        sequence_order: 0
+        ensemble: 29
+      - case: rcp850030
+        sequence_order: 0
+        ensemble: 30
+      - case: rcp850031
+        sequence_order: 0
+        ensemble: 31
+      - case: rcp850032
+        sequence_order: 0
+        ensemble: 32
+      - case: rcp850033
+        sequence_order: 0
+        ensemble: 33
+      - case: rcp850034
+        sequence_order: 0
+        ensemble: 34
+      - case: rcp850035
+        sequence_order: 0
+        ensemble: 35
+      - case: rcp850036
+        sequence_order: 0
+        ensemble: 36
+      - case: rcp850037
+        sequence_order: 0
+        ensemble: 37
+      - case: rcp850038
+        sequence_order: 0
+        ensemble: 38
+      - case: rcp850039
+        sequence_order: 0
+        ensemble: 39
+      - case: rcp850040
+        sequence_order: 0
+        ensemble: 40
+      - case: rcp850041
+        sequence_order: 0
+        ensemble: 41
+      - case: rcp850042
+        sequence_order: 0
+        ensemble: 42
+      - case: rcp850043
+        sequence_order: 0
+        ensemble: 43
+      - case: rcp850044
+        sequence_order: 0
+        ensemble: 44
+      - case: rcp850045
+        sequence_order: 0
+        ensemble: 45
+      - case: rcp850046
+        sequence_order: 0
+        ensemble: 46
+      - case: rcp850047
+        sequence_order: 0
+        ensemble: 47
+      - case: rcp850048
+        sequence_order: 0
+        ensemble: 48
+      - case: rcp850049
+        sequence_order: 0
+        ensemble: 49
+      - case: rcp850050
+        sequence_order: 0
+        ensemble: 50
+      - case: rcp850051
+        sequence_order: 0
+        ensemble: 51
+      - case: rcp850052
+        sequence_order: 0
+        ensemble: 52
+      - case: rcp850053
+        sequence_order: 0
+        ensemble: 53
+      - case: rcp850054
+        sequence_order: 0
+        ensemble: 54
+      - case: rcp850055
+        sequence_order: 0
+        ensemble: 55
+      - case: rcp850056
+        sequence_order: 0
+        ensemble: 56
+      - case: rcp850057
+        sequence_order: 0
+        ensemble: 57
+      - case: rcp850058
+        sequence_order: 0
+        ensemble: 58
+      - case: rcp850059
+        sequence_order: 0
+        ensemble: 59
+      - case: rcp850060
+        sequence_order: 0
+        ensemble: 60
+      - case: rcp850061
+        sequence_order: 0
+        ensemble: 61
+      - case: rcp850062
+        sequence_order: 0
+        ensemble: 62
+      - case: rcp850063
+        sequence_order: 0
+        ensemble: 63
+      - case: rcp850064
+        sequence_order: 0
+        ensemble: 64
+      - case: rcp850065
+        sequence_order: 0
+        ensemble: 65
+      - case: rcp850066
+        sequence_order: 0
+        ensemble: 66
+      - case: rcp850067
+        sequence_order: 0
+        ensemble: 67
+      - case: rcp850068
+        sequence_order: 0
+        ensemble: 68
+      - case: rcp850069
+        sequence_order: 0
+        ensemble: 69
+      - case: rcp850070
+        sequence_order: 0
+        ensemble: 70
+      - case: rcp850071
+        sequence_order: 0
+        ensemble: 71
+      - case: rcp850072
+        sequence_order: 0
+        ensemble: 72
+      - case: rcp850073
+        sequence_order: 0
+        ensemble: 73
+      - case: rcp850074
+        sequence_order: 0
+        ensemble: 74
+      - case: rcp850075
+        sequence_order: 0
+        ensemble: 75
+      - case: rcp850076
+        sequence_order: 0
+        ensemble: 76
+      - case: rcp850077
+        sequence_order: 0
+        ensemble: 77
+      - case: rcp850078
+        sequence_order: 0
+        ensemble: 78
+      - case: rcp850079
+        sequence_order: 0
+        ensemble: 79
+      - case: rcp850080
+        sequence_order: 0
+        ensemble: 80
+      - case: rcp850081
+        sequence_order: 0
+        ensemble: 81
+      - case: rcp850082
+        sequence_order: 0
+        ensemble: 82
+      - case: rcp850083
+        sequence_order: 0
+        ensemble: 83
+      - case: rcp850084
+        sequence_order: 0
+        ensemble: 84
+      - case: rcp850085
+        sequence_order: 0
+        ensemble: 85
+      - case: rcp850086
+        sequence_order: 0
+        ensemble: 86
+      - case: rcp850087
+        sequence_order: 0
+        ensemble: 87
+      - case: rcp850088
+        sequence_order: 0
+        ensemble: 88
+      - case: rcp850089
+        sequence_order: 0
+        ensemble: 89
+      - case: rcp850090
+        sequence_order: 0
+        ensemble: 90
+      - case: rcp850091
+        sequence_order: 0
+        ensemble: 91
+      - case: rcp850092
+        sequence_order: 0
+        ensemble: 92
+      - case: rcp850093
+        sequence_order: 0
+        ensemble: 93
+      - case: rcp850094
+        sequence_order: 0
+        ensemble: 94
+      - case: rcp850095
+        sequence_order: 0
+        ensemble: 95
+      - case: rcp850096
+        sequence_order: 0
+        ensemble: 96
+      - case: rcp850097
+        sequence_order: 0
+        ensemble: 97
+      - case: rcp850098
+        sequence_order: 0
+        ensemble: 98
+      - case: rcp850099
+        sequence_order: 0
+        ensemble: 99
+      - case: rcp850100
+        sequence_order: 0
+        ensemble: 100
+  onepct:
+    locations:
+      - name: MISTRAL-DATA
+        loc_type: posix
+        direct_access: True
+        urlpath: /work/mh1007/MPI-GE/onepct
+        exclude_dirs: ['*/restart/*', '*/log/*','*/output/mpiom/*mpiom_map.nc', '*/output/mpiom/*_mpiom_fx.nc']
+    component_attrs:
+      ocn:
+        grid: GR15
+    case_members:
+      - case: onepct0001
+        sequence_order: 0
+        ensemble: 1
+      - case: onepct0002
+        sequence_order: 0
+        ensemble: 2
+      - case: onepct0003
+        sequence_order: 0
+        ensemble: 3
+      - case: onepct0004
+        sequence_order: 0
+        ensemble: 4
+      - case: onepct0005
+        sequence_order: 0
+        ensemble: 5
+      - case: onepct0006
+        sequence_order: 0
+        ensemble: 6
+      - case: onepct0007
+        sequence_order: 0
+        ensemble: 7
+      - case: onepct0008
+        sequence_order: 0
+        ensemble: 8
+      - case: onepct0009
+        sequence_order: 0
+        ensemble: 9
+      - case: onepct0010
+        sequence_order: 0
+        ensemble: 10
+      - case: onepct0011
+        sequence_order: 0
+        ensemble: 11
+      - case: onepct0012
+        sequence_order: 0
+        ensemble: 12
+      - case: onepct0013
+        sequence_order: 0
+        ensemble: 13
+      - case: onepct0014
+        sequence_order: 0
+        ensemble: 14
+      - case: onepct0015
+        sequence_order: 0
+        ensemble: 15
+      - case: onepct0016
+        sequence_order: 0
+        ensemble: 16
+      - case: onepct0017
+        sequence_order: 0
+        ensemble: 17
+      - case: onepct0018
+        sequence_order: 0
+        ensemble: 18
+      - case: onepct0019
+        sequence_order: 0
+        ensemble: 19
+      - case: onepct0020
+        sequence_order: 0
+        ensemble: 20
+      - case: onepct0021
+        sequence_order: 0
+        ensemble: 21
+      - case: onepct0022
+        sequence_order: 0
+        ensemble: 22
+      - case: onepct0023
+        sequence_order: 0
+        ensemble: 23
+      - case: onepct0024
+        sequence_order: 0
+        ensemble: 24
+      - case: onepct0025
+        sequence_order: 0
+        ensemble: 25
+      - case: onepct0026
+        sequence_order: 0
+        ensemble: 26
+      - case: onepct0027
+        sequence_order: 0
+        ensemble: 27
+      - case: onepct0028
+        sequence_order: 0
+        ensemble: 28
+      - case: onepct0029
+        sequence_order: 0
+        ensemble: 29
+      - case: onepct0030
+        sequence_order: 0
+        ensemble: 30
+      - case: onepct0031
+        sequence_order: 0
+        ensemble: 31
+      - case: onepct0032
+        sequence_order: 0
+        ensemble: 32
+      - case: onepct0033
+        sequence_order: 0
+        ensemble: 33
+      - case: onepct0034
+        sequence_order: 0
+        ensemble: 34
+      - case: onepct0035
+        sequence_order: 0
+        ensemble: 35
+      - case: onepct0036
+        sequence_order: 0
+        ensemble: 36
+      - case: onepct0037
+        sequence_order: 0
+        ensemble: 37
+      - case: onepct0038
+        sequence_order: 0
+        ensemble: 38
+      - case: onepct0039
+        sequence_order: 0
+        ensemble: 39
+      - case: onepct0040
+        sequence_order: 0
+        ensemble: 40
+      - case: onepct0041
+        sequence_order: 0
+        ensemble: 41
+      - case: onepct0042
+        sequence_order: 0
+        ensemble: 42
+      - case: onepct0043
+        sequence_order: 0
+        ensemble: 43
+      - case: onepct0044
+        sequence_order: 0
+        ensemble: 44
+      - case: onepct0045
+        sequence_order: 0
+        ensemble: 45
+      - case: onepct0046
+        sequence_order: 0
+        ensemble: 46
+      - case: onepct0047
+        sequence_order: 0
+        ensemble: 47
+      - case: onepct0048
+        sequence_order: 0
+        ensemble: 48
+      - case: onepct0049
+        sequence_order: 0
+        ensemble: 49
+      - case: onepct0050
+        sequence_order: 0
+        ensemble: 50
+      - case: onepct0051
+        sequence_order: 0
+        ensemble: 51
+      - case: onepct0052
+        sequence_order: 0
+        ensemble: 52
+      - case: onepct0053
+        sequence_order: 0
+        ensemble: 53
+      - case: onepct0054
+        sequence_order: 0
+        ensemble: 54
+      - case: onepct0055
+        sequence_order: 0
+        ensemble: 55
+      - case: onepct0056
+        sequence_order: 0
+        ensemble: 56
+      - case: onepct0057
+        sequence_order: 0
+        ensemble: 57
+      - case: onepct0058
+        sequence_order: 0
+        ensemble: 58
+      - case: onepct0059
+        sequence_order: 0
+        ensemble: 59
+      - case: onepct0060
+        sequence_order: 0
+        ensemble: 60
+      - case: onepct0061
+        sequence_order: 0
+        ensemble: 61
+      - case: onepct0062
+        sequence_order: 0
+        ensemble: 62
+      - case: onepct0063
+        sequence_order: 0
+        ensemble: 63
+      - case: onepct0064
+        sequence_order: 0
+        ensemble: 64
+      - case: onepct0065
+        sequence_order: 0
+        ensemble: 65
+      - case: onepct0066
+        sequence_order: 0
+        ensemble: 66
+      - case: onepct0067
+        sequence_order: 0
+        ensemble: 67
+      - case: onepct0068
+        sequence_order: 0
+        ensemble: 68
+      - case: onepct0069
+        sequence_order: 0
+        ensemble: 69
+      - case: onepct0070
+        sequence_order: 0
+        ensemble: 70
+      - case: onepct0071
+        sequence_order: 0
+        ensemble: 71
+      - case: onepct0072
+        sequence_order: 0
+        ensemble: 72
+      - case: onepct0073
+        sequence_order: 0
+        ensemble: 73
+      - case: onepct0074
+        sequence_order: 0
+        ensemble: 74
+      - case: onepct0075
+        sequence_order: 0
+        ensemble: 75
+      - case: onepct0076
+        sequence_order: 0
+        ensemble: 76
+      - case: onepct0077
+        sequence_order: 0
+        ensemble: 77
+      - case: onepct0078
+        sequence_order: 0
+        ensemble: 78
+      - case: onepct0079
+        sequence_order: 0
+        ensemble: 79
+      - case: onepct0080
+        sequence_order: 0
+        ensemble: 80
+      - case: onepct0081
+        sequence_order: 0
+        ensemble: 81
+      - case: onepct0082
+        sequence_order: 0
+        ensemble: 82
+      - case: onepct0083
+        sequence_order: 0
+        ensemble: 83
+      - case: onepct0084
+        sequence_order: 0
+        ensemble: 84
+      - case: onepct0085
+        sequence_order: 0
+        ensemble: 85
+      - case: onepct0086
+        sequence_order: 0
+        ensemble: 86
+      - case: onepct0087
+        sequence_order: 0
+        ensemble: 87
+      - case: onepct0088
+        sequence_order: 0
+        ensemble: 88
+      - case: onepct0089
+        sequence_order: 0
+        ensemble: 89
+      - case: onepct0090
+        sequence_order: 0
+        ensemble: 90
+      - case: onepct0091
+        sequence_order: 0
+        ensemble: 91
+      - case: onepct0092
+        sequence_order: 0
+        ensemble: 92
+      - case: onepct0093
+        sequence_order: 0
+        ensemble: 93
+      - case: onepct0094
+        sequence_order: 0
+        ensemble: 94
+      - case: onepct0095
+        sequence_order: 0
+        ensemble: 95
+      - case: onepct0096
+        sequence_order: 0
+        ensemble: 96
+      - case: onepct0097
+        sequence_order: 0
+        ensemble: 97
+      - case: onepct0098
+        sequence_order: 0
+        ensemble: 98
+      - case: onepct0099
+        sequence_order: 0
+        ensemble: 99
+      - case: onepct0100
+        sequence_order: 0
+        ensemble: 100

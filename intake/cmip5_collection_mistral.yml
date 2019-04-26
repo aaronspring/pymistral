@@ -1,0 +1,8 @@
+name: cmip5_collection_mistral
+collection_type: cmip5
+data_sources:
+  root_dir:
+    name: MISTRAL
+    loc_type: posix
+    direct_access: True
+    urlpath: /work/kd0956/CMIP5/data/cmip5

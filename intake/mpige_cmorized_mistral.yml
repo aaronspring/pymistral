@@ -1,0 +1,8 @@
+name: mpige_cmorized_mistral
+collection_type: cmip5
+data_sources:
+  root_dir:
+    name: MISTRAL
+    loc_type: posix
+    direct_access: True
+    urlpath: /work/mh1007/CMOR/MPI-GE/output1/MPI-M/MPI-ESM
