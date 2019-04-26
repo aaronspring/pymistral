@@ -18,9 +18,8 @@ if my_system is 'local':
     CV_basefolder = '/Users/aaron.spring/Coding/'
 elif my_system is 'mistral':
     CV_basefolder = '/home/mpim/m300524/'
-else:  # workaround for travis
+if os.getcwd().startswith.('/home/travis/'):  # workaround for travis
     CV_basefolder = os.getcwd()+'/'
-    print(CV_basefolder)
 
 
 # CMIP6
