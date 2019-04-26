@@ -6,15 +6,11 @@ import glob
 import itertools
 import os
 
-import cdo  # workaround until this works:
+import cdo
 import pandas as pd
 import xarray as xr
 
 from .setup import _squeeze_dims, cmip5_folder, my_system, tmp
-
-# # The library auto-initializes upon import.
-# import pyessv
-
 
 cdo = cdo.Cdo(tempdir=tmp)
 

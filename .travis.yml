@@ -37,7 +37,7 @@ install:
   - python setup.py install --user
   - pip list | grep pymistral
   - pip list | grep cdo
-  - pip install git+https://github.com/WCRP-CMIP/CMIP6_CVs
+  - git clone https://github.com/WCRP-CMIP/CMIP6_CVs
 
 script:
 - pytest
