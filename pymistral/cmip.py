@@ -19,8 +19,9 @@ if my_system is 'local':
 elif my_system is 'mistral':
     CV_basefolder = '/home/mpim/m300524/'
 else:  # workaround for travis
-    CV_basefolder = os.getcwd()
+    CV_basefolder = os.getcwd()+'/'
     print(CV_basefolder)
+
 
 # CMIP6
 # read in all institutions
