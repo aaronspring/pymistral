@@ -7,7 +7,7 @@ import pandas as pd
 import xarray as xr
 from tqdm import tqdm_notebook
 
-# builds on export WORK, GROUP
+# builds on export WORK, GROUP to be set in your bashrc
 try:
     my_system = None
     host = os.environ['HOSTNAME']
@@ -25,7 +25,9 @@ except:
     my_system = 'local'
 
 if my_system is 'mistral':
-    file_origin = work
+    mistral_work = '/work/'
+    file_origin = mistral_work
+    work = mistral_work + group + '/' + user + '/'
     tmp = file_origin + 'tmp'
     if not os.path.exists(tmp):
         os.makedirs(tmp)
@@ -44,7 +46,8 @@ elif my_system is 'local':
 cdo = cdo.Cdo(tempdir=tmp)
 
 # TODO: load all cmip cmorized varnames?
-sample_file_dir = file_origin + 'experiments/sample_files/'
+# Make sure you have create work/group/mxxxxxx/tmp dir
+sample_file_dir = work + 'experiments/sample_files/'
 # hamocc_data_2d_varnamelist = cdo.showname(
 #    input=sample_file_dir + 'hamocc_data_2d_*')[0].split()
 # echam6_co2_varnamelist = cdo.showname(

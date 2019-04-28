@@ -17,39 +17,44 @@ cdo = cdo.Cdo(tempdir=tmp)
 if my_system is 'local':
     CV_basefolder = '/Users/aaron.spring/Coding/'
 elif my_system is 'mistral':
-    CV_basefolder = '/home/mpim/m300524/CMIP6_CVs/'
+    CV_basefolder = '/home/mpim/m300524/'
+
+travis = False
+if os.getcwd().startswith('/home/travis/'):  # workaround for travis
+    travis = True
+    CV_basefolder = os.getcwd()+'/'
 
 # CMIP6
 # read in all institutions
 name = 'institution_id'
-cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
-institution_ids = pd.read_json(
-    cvpath).index[:-6].drop(['CV_collection_version', 'CV_collection_modified'])
+cvpath = CV_basefolder + 'CMIP6_CVs/CMIP6_' + name + '.json'
+institution_ids = pd.read_json(cvpath).index[:-6].drop(
+    ['CV_collection_version', 'CV_collection_modified'])
 
 # read in all models
 name = 'source_id'
-cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
-model_ids = pd.read_json(
-    cvpath).index[:-6].drop(['CV_collection_version', 'CV_collection_modified']).values
+cvpath = CV_basefolder + 'CMIP6_CVs/CMIP6_' + name + '.json'
+model_ids = pd.read_json(cvpath).index[:-6].drop(
+    ['CV_collection_version', 'CV_collection_modified']).values
 
 # read in all sources
 name = 'source_id'
-cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
+cvpath = CV_basefolder + 'CMIP6_CVs/CMIP6_' + name + '.json'
 source_ids = pd.read_json(cvpath)
 
 # read in all activities/MIPs
 name = 'activity_id'
-cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
-mip_ids = pd.read_json(
-    cvpath).index[:-6].drop(['CV_collection_version', 'CV_collection_modified']).values
+cvpath = CV_basefolder + 'CMIP6_CVs/CMIP6_' + name + '.json'
+mip_ids = pd.read_json(cvpath).index[:-6].drop(
+    ['CV_collection_version', 'CV_collection_modified']).values
 mip_table = pd.read_json(cvpath).drop(
     ['CV_collection_version', 'CV_collection_modified'])
-mip_longnames = pd.read_json(cvpath)[
-    'activity_id'][:-6].drop(['CV_collection_version', 'CV_collection_modified']).values
+mip_longnames = pd.read_json(cvpath)['activity_id'][:-6].drop(
+    ['CV_collection_version', 'CV_collection_modified']).values
 
 # read in experiments
 name = 'experiment_id'
-cvpath = CV_basefolder+'CMIP6_CVs/CMIP6_'+name+'.json'
+cvpath = CV_basefolder + 'CMIP6_CVs/CMIP6_' + name + '.json'
 experiment_ids = pd.read_json(cvpath).index.drop(
     ['CV_collection_modified', 'CV_collection_version', 'author']).values
 
@@ -88,15 +93,16 @@ def participation_of_models(mip):
 
 
 # CMIP5 on mistral
-cmip5_centers_mistral = os.listdir(cmip5_folder)
+if not travis:
+    cmip5_centers_mistral = os.listdir(cmip5_folder)
 
-cmip5_models_mistral = {}
-for center in cmip5_centers_mistral:
-    models = os.listdir('/'.join((cmip5_folder, center)))
-    cmip5_models_mistral[center] = models
+    cmip5_models_mistral = {}
+    for center in cmip5_centers_mistral:
+        models = os.listdir('/'.join((cmip5_folder, center)))
+        cmip5_models_mistral[center] = models
 
-cmip5_all_models_mistral = list(
-    itertools.chain.from_iterable(cmip5_models_mistral.values()))
+    cmip5_all_models_mistral = list(
+        itertools.chain.from_iterable(cmip5_models_mistral.values()))
 
 
 def _get_path_cmip(base_folder=cmip5_folder,
@@ -111,12 +117,19 @@ def _get_path_cmip(base_folder=cmip5_folder,
                    timestr='*',
                    **kwargs):
     try:
-        path_v = sorted(glob.glob('/'.join([base_folder, center, model, exp,
-                                            period, comp, comp[0].upper()+period, run_id, 'v????????'])))[-1]
-        return path_v + '/' + varname + '/' + '_'.join([varname, comp[0].upper()+period, model, exp, run_id, timestr]) + ending
+        path_v = sorted(
+            glob.glob('/'.join([
+                base_folder, center, model, exp, period, comp,
+                comp[0].upper() + period, run_id, 'v????????'
+            ])))[-1]
+        return path_v + '/' + varname + '/' + '_'.join([
+            varname, comp[0].upper() + period, model, exp, run_id, timestr
+        ]) + ending
     except:
-        return '/'.join([base_folder, center, model, exp,
-                         period, comp, comp[0].upper()+period, run_id])
+        return '/'.join([
+            base_folder, center, model, exp, period, comp,
+            comp[0].upper() + period, run_id
+        ])
 
 
 # wrapper to check which data is available
@@ -170,15 +183,17 @@ def load_cmip(base_folder=cmip5_folder,
         return xr.open_dataset(
             cdo.addc(
                 '0',
-                input=operator + ' -select,name='+varname + select + ' ' +
+                input=operator + ' -select,name=' + varname + select + ' ' +
                 ncfiles_cmip,
                 options='-r')).squeeze()[varname]
     else:
-        print('xr.open_mfdataset('+ncfiles_cmip+')['+varname+']')
+        print('xr.open_mfdataset(' + ncfiles_cmip + ')[' + varname + ']')
         return xr.open_mfdataset(ncfiles_cmip, concat_dim='time')[varname]
 
 
-def load_cmip5_from_center_model_list(center_list=['MPI-M', 'NCAR'], model_list=['MPI-ESM-LR', 'CCSM4'], **cmip_kwargs):
+def load_cmip5_from_center_model_list(center_list=['MPI-M', 'NCAR'],
+                                      model_list=['MPI-ESM-LR', 'CCSM4'],
+                                      **cmip_kwargs):
     data = []
     for center, model in zip(center_list, model_list):
         print('Load', center, model)
@@ -195,7 +210,8 @@ def get_center_for_cmip5_model(model):
             return center
 
 
-def load_cmip5_from_model_list(model_list=['MPI-ESM-LR', 'CCSM4'], **cmip_kwargs):
+def load_cmip5_from_model_list(model_list=['MPI-ESM-LR', 'CCSM4'],
+                               **cmip_kwargs):
     """Load CMIP5 output from mistral based on model_list.
 
     experiment_id, variables, ... to be specified in **cmip_kwargs."""

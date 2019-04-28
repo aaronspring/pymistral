@@ -17,4 +17,7 @@ dependencies:
   - seaborn
   - tqdm
   - xarray
+  - intake
+  - intake-esm
+  - hvplot
   - pytest
