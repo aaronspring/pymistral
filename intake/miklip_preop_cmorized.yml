@@ -5,4 +5,5 @@ data_sources:
     name: MISTRAL
     loc_type: posix
     direct_access: True
+    exclude_dirs: ['output1']
     urlpath: /work/bmx828/miklip-ces/data4miklip/model/global/miklip/preop
