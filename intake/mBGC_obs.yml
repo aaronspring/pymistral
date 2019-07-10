@@ -139,6 +139,90 @@ sources:
       urlpath: '/work/mh0727/data/SOCOM/gridded_data/Jena-MLS/oc_{{version}}.nc'
       chunks: {'time':12}
 
+  Jena_CarboScope.APO_inversion:
+    driver: netcdf
+    description: APO Inversion by Christian Roedenbeck from MPI Jena
+    metadata:
+      url_origin: https://www.bgc-jena.mpg.de/CarboScope/?ID=apo
+      readme: /work/mh0727/data/Jena_CarboScope/APO_inversion/README.md
+      fields:
+        apomix:
+          label: APO mixing ratio
+          unit: ppm
+    parameters:
+      version:
+        description: version name
+        type: str
+        default: 'apo99_v1.6'
+        allowed: ['apo99_v1.6']
+      t_res:
+        description: temporal resolution
+        type: str
+        default: 'monmean'
+        allowed: ['daily','monmean','yearmonmean']
+    args:
+      urlpath: '/work/mh0727/data/Jena_CarboScope/APO_inversion/{{version}}_mix_{{t_res}}.nc'
+
+  Jena_CarboScope.atmospheric_CO2_inversion:
+    driver: netcdf
+    description: Atm. CO2 Inversion by Christian Roedenbeck from MPI Jena
+    metadata:
+      url_origin: https://www.bgc-jena.mpg.de/CarboScope/?ID=apo
+      readme: /work/mh0727/data/Jena_CarboScope/atmospheric_CO2_inversion/README.md
+      fields:
+        co2mix:
+          label: CO2 mixing ratio
+          unit: ppm
+        co2flux_land:
+          label: air-land CO2 flux
+          unit: PgC/yr
+        co2flux_ocean:
+          label: air-sea CO2 flux
+          unit: PgC/yr
+    parameters:
+      version:
+        description: version name
+        type: str
+        default: 's85_v4.2'
+        allowed: ['prior_v4.2','s76_v4.2','s85_v4.2','s93_v4.2']
+      t_res:
+        description: temporal resolution
+        type: str
+        default: 'monmean'
+        allowed: ['daily','monmean','yearmonmean']
+    args:
+      urlpath: '/work/mh0727/data/Jena_CarboScope/atmospheric_CO2_inversion/{{version}}_{{t_res}}.nc'
+
+  Jena_CarboScope.surf_pCO2_interpolation:
+    driver: netcdf
+    description: surface pCO2 interpolation by Christian Roedenbeck from MPI Jena
+    metadata:
+      url_origin: https://www.bgc-jena.mpg.de/CarboScope/?ID=oc
+      readme: /work/mh0727/data/Jena_CarboScope/surf_pCO2_interpolation/README.md
+      fields:
+        co2flux_ocean:
+          label: air-sea CO2 flux
+          unit: PgC/yr
+        pCO2:
+          label: surface pCO2
+          unit: ppm
+        paCO2:
+          label: atmospheric pCO2
+          unit: mbar
+    parameters:
+      version:
+        description: version name
+        type: str
+        default: 'oc_v1.6'
+        allowed: ['oc_v1.6']
+      t_res:
+        description: temporal resolution
+        type: str
+        default: 'monmean'
+        allowed: ['monmean','yearmonmean']
+    args:
+      urlpath: '/work/mh0727/data/Jena_CarboScope/surf_pCO2_interpolation/{{version}}_{{t_res}}.nc'
+
   SOCOM_biomes:
     driver: netcdf
     description: biome aggregates
