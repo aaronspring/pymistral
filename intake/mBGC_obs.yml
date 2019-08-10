@@ -379,18 +379,19 @@ by Grigory Monterey, Sydney Levitus'
           kind: contourf
           x: lon
           y: lat
+
   CO2:
     description: CO2 Mauna Loa
     driver: csv
     metadata:
       url_origin: https://cdiac.ess-dive.lbl.gov/trends/co2/sio-mlo.html
     args:
-      urlpath: http://cdiac.ess-dive.lbl.gov/ftp/trends/co2/maunaloa.co2
-      delimiter: ','
-      header: 54
-      names: ['Year','Month','Date1','Date','CO2_measured','CO2_rm_seasonality','CO2-4th_harmonic_linear_gain','Col8','Col9','Col10']
-      #).drop([0,1,2,3,729,730,731,732,733])
-      #.apply(pd.to_numeric).replace(-99.99,method='bfill')
+      urlpath: ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_mm_mlo.txt
+      csv_kwargs:
+        delimiter: '    '
+        header: 71
+        names: ['year month','decimal date','average','interpolated','trend','days','6','7','8','9','10']
+
   Levitus_tanom:
     description: ICDC
     driver: netcdf
@@ -404,6 +405,7 @@ by Grigory Monterey, Sydney Levitus'
       concat_dim: time
       drop_variables: [lat_bnds,lon_bnds,depth_bnds,climatology_bounds,crs]
       decode_times: False
+
   Levitus_sanom:
     description: ICDC
     driver: netcdf
@@ -417,6 +419,7 @@ by Grigory Monterey, Sydney Levitus'
       concat_dim: time
       drop_variables: [lat_bnds,lon_bnds,depth_bnds,climatology_bounds,crs]
       decode_times: False
+
   Levitus_OHC:
     description: ICDC
     driver: netcdf
@@ -436,6 +439,7 @@ by Grigory Monterey, Sydney Levitus'
       concat_dim: time
       drop_variables: [lat_bnds,depth,lon_bnds,depth_bnds,climatology_bounds,crs]
       decode_times: False
+
   MODIS:
     description: ICDC MODIS monthly
     driver: netcdf
@@ -458,6 +462,7 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: /pool/data/ICDC/ocean/modis_{{surface}}_{{var}}/DATA/monthly/*/MODIS*.nc
       concat_dim: time
+
   AVISO:
     description: ICDC SSH
     driver: netcdf
@@ -465,6 +470,7 @@ by Grigory Monterey, Sydney Levitus'
       urlpath: /pool/data/ICDC/ocean/aviso_ssh/DATA/*/dt_global_twosat_phy_l4_*.nc
       drop_variables: [lat_bnds, lon_bnds,nv,ugoas,adt,vgos,err,vgosa,crs]
       concat_dim: time
+
   HadISST:
     description: hadisst
     driver: netcdf
@@ -477,6 +483,35 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: /pool/data/ICDC/ocean/hadisst1/DATA/HadISST_{{var}}.nc
       drop_variables: [time_bnds,nv]
+
+  AMSR-E_SST:
+    driver: netcdf
+    description: Surface temperature (SST) data retrieved from observations of the satellite microwave radiometer Advanced Microwave Scanning Radiometer an Bord EOS (AMSR-E)
+    metadata:
+      url_origin: https://icdc.cen.uni-hamburg.de/1/daten/ocean/sst-amsre.html
+      fields:
+        sst:
+          label: SST
+          unit: K
+    args:
+      urlpath: /pool/data/ICDC/ocean/amsre_sst/DATA/MONTHLY/AMSRE_SST__REMSS-UHAM-ICDC*.nc
+      concat_dim: time
+      drop_variables: dataflag
+
+  OISST:
+    driver: netcdf
+    description: Version 2 of the OISST (previously Reynolds SST) data set. It comprises two new high resolution sea surface temperature (SST) analysis products that have been developed using optimum interpolation (OI) --> OISST data set. One product uses Advanced Very High Resolution Radiometer (AVHRR) infrared satellite SST data (Pathfinder data September 1981 through December 2005; operational AVHRR January 2006 onwards). The other uses AVHRR and Advanced Microwave Scanning Radiometer (AMSR) on the NASA Earth Observing System satellite SST data (June 2002 onwards). Both products also use in situ data from ships and buoys and include a large-scale adjustment of satellite biases with respect to the in situ data. Hence this SST data set has to be regarded as a bulk SST data set.
+    metadata:
+      url_origin: http://icdc.cen.uni-hamburg.de/1/daten/ocean/sst-reynolds/
+      fields:
+        sst:
+          label: SST
+          unit: K
+    args:
+      urlpath: /pool/data/ICDC/ocean/reynolds_sst/DATA/MONTHLY/*avhrr-only-v2__monthly__UHAM-ICDC.nc
+      concat_dim: time
+      drop_variables: [min_sea_ice_extent, max_sea_ice_extent, sst_mean_uncertainty, sst_stddev, n_days]
+
   OSCAR_surface_currents:
     driver: netcdf
     description: global near-surface current estimates
@@ -492,6 +527,21 @@ by Grigory Monterey, Sydney Levitus'
       urlpath: /pool/data/ICDC/ocean/oscar_surface_current_velocity/DATA/{{s_res}}/*oscar_vel*.nc
       concat_dim: time
       drop_variables: depth
+
+  SMOS_SSS:
+    driver: netcdf
+    description: The ESA mission SMOS was planned with the aim of obtaining more precise data concerning the global water cycle. The exchange of water between land, ocean and atmosphere is one of the principal factors influencing weather and climate patterns. Constituents of the global hydrological cycle that can be measured with SMOS are a) the soil moisture, b) the ocean surface salinity, and c) the thin (< 50 cm) sea ice thickness. SMOS is a polar orbiting satellite based passive microwave sensor operating at L-Band (1.4 GHz). The brightness temperature measured by SMOS at L-Band is dependent on the SST and SSS of the seawater as well as on the sea surface roughness induced by wind and waves. The surface salinity is derived by inverse models on a global basis, taking auxiliary information about the SST and the sea surface roughness into account.
+    metadata:
+      url_origin: https://icdc.cen.uni-hamburg.de/1/daten/ocean/smos-sss/
+      fields:
+        sss:
+          label: SSS
+          unit: psu
+    args:
+      urlpath: /pool/data/ICDC/ocean/smos_sss/DATA/SMOS_SSS_2010_2016_V3.nc
+      concat_dim: time
+      drop_variables: [sss_biasadj,sss_biasadj_obj, theoret_err, bias_err]
+
   HadCRUT3:
     driver: netcdf
     description: HadCRUT3 Surface (Air) Temperature Anomalies
@@ -520,16 +570,19 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: /pool/data/ICDC/atmosphere/hadcrut/DATA/hadcrut4/HadCRUT.4.6.0.0.{{out}}.nc
       drop_variables: [field_status, unspecified]
+
   # indices
   NINO3:
     driver: csv
     args:
       urlpath: https://www.esrl.noaa.gov/psd/data/correlation/nina3.data
       csv_kwargs:
-        skiprows: 1
-        #index_col: 0
-        sep: ' '
+        skiprows: 3
+        skipfooter: 4
+        sep: '  '
         names: ['Year','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
+# doesnt work
   PDO:
     driver: csv
     args:
@@ -539,6 +592,7 @@ by Grigory Monterey, Sydney Levitus'
         #index_col: 0
         sep: '\t'
         names: ['Year','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
   SAM:
     driver: csv
     args:
@@ -548,3 +602,84 @@ by Grigory Monterey, Sydney Levitus'
         #index_col: 0
         sep: '\t'
         names: ['Year','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
+  NCEP:
+    driver: netcdf
+    description: NCEP
+    metadata:
+      url_origin: https://icdc.cen.uni-hamburg.de/1/daten/reanalysis-atmosphere/cfsr.html
+    parameters:
+      variable:
+        description: variable name
+        type: str
+        default: 2m_airtemp_monthly
+        allowed: [2m_airtemp, net_longwave_radiation_flux, soil_temperature_0-10cm, total_cloud_cover, 2m_airtemp_monthly, net_shortwave_radiation_flux, specific_humidity, u_wind, 2m_air_tmax, relative_humidity, surface_convective_precipitation, u_wind_monthly, 2m_air_tmin, sensible_heat_flux, surface_pressure, v_wind, latent_heat_flux, soil_moisture_0-10cm, surface_pressure_monthly, v_wind_monthly]
+    args:
+      urlpath: /pool/data/ICDC/reanalyses/ncep_reanalysis1/DATA/{{variable}}/*.nc
+      concat_dim: time
+
+  ORAS5:
+    driver: netcdf
+    description: NCEP
+    metadata:
+      url_origin: https://icdc.cen.uni-hamburg.de/1/projekte/easy-init/easy-init-ocean.html
+    parameters:
+      variable:
+        description: variable name
+        type: str
+        default: sosstsst
+        allowed: [iicevelv, so20chgt, sohtc700, somxl010, sosstsst, vomecrtn, vozocrte, iicethic, ileadfra, sohefldo, sohtcbtm, sosaline, sowaflup, vosaline, iicevelu, sohtc300, sometauy, sossheig, sozotaux, votemper]
+      s_res:
+        description: spatial resolution
+        type: str
+        default: r1x1
+        allowed: [r1x1, ORCA025]
+      opa:
+        description: dont know
+        type: int
+        default: 4
+        allowed: [0,1,2,3,4]
+    args:
+      urlpath: /pool/data/ICDC/ocean_syntheses/oras5/{{s_res}}/{{variable}}/opa{{opa}}/{{variable}}_ORAS5*.nc
+      concat_dim: time_counter
+
+  ORAS5_backward_extension:
+    driver: netcdf
+    description: NCEP
+    metadata:
+      url_origin: https://icdc.cen.uni-hamburg.de/1/projekte/easy-init/easy-init-ocean.html
+    parameters:
+      variable:
+        description: variable name
+        type: str
+        default: sosstsst
+        allowed: [iicevelv, so20chgt, sohtc700, somxl010, sosstsst, vomecrtn, vozocrte, iicethic, ileadfra, sohefldo, sohtcbtm, sosaline, sowaflup, vosaline, iicevelu, sohtc300, sometauy, sossheig, sozotaux, votemper]
+      s_res:
+        description: spatial resolution
+        type: str
+        default: r1x1
+        allowed: [r1x1, ORCA025]
+    args:
+      urlpath: /pool/data/ICDC/ocean_syntheses/oras5_backward_extension/{{s_res}}/{{variable}}/opa0/{{variable}}_ORAS5*.nc
+      concat_dim: time_counter
+
+  GECCO2:
+    driver: netcdf
+    description: NCEP
+    metadata:
+      url_origin: https://icdc.cen.uni-hamburg.de/1/projekte/easy-init/easy-init-ocean.html
+    parameters:
+      variable:
+        description: variable name
+        type: str
+        default: temp
+        allowed: [temp, zeta, vice, v, uice, u, salt, qsw, qnet, heff, fv, fu, emp, bp, area, w]
+      s_res:
+        description: spatial resolution
+        type: str
+        default: regular_1x1_grid
+        allowed: [regular_1x1_grid, native_model_grid]
+    args:
+      urlpath: /pool/data/ICDC/ocean_syntheses/GECCO2/{{s_res}}/{{variable}}29_34_70.nc
+      concat_dim: time
+      decode_times: False
