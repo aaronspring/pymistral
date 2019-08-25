@@ -5,5 +5,4 @@ data_sources:
     name: MISTRAL
     loc_type: posix
     direct_access: True
-    urlpath: /work/kd0956/CMIP6
-    exclude_dirs: ['test_data','CMIP6','dc_repli/*','dc_test_data/*']
+    urlpath: /work/ik1017/CMIP6/data/CMIP6

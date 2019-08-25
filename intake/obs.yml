@@ -386,12 +386,11 @@ by Grigory Monterey, Sydney Levitus'
     metadata:
       url_origin: https://cdiac.ess-dive.lbl.gov/trends/co2/sio-mlo.html
     args:
-      urlpath: http://cdiac.ess-dive.lbl.gov/ftp/trends/co2/maunaloa.co2
-      delimiter: ','
-      header: 54
-      names: ['Year','Month','Date1','Date','CO2_measured','CO2_rm_seasonality','CO2-4th_harmonic_linear_gain','Col8','Col9','Col10']
-      #).drop([0,1,2,3,729,730,731,732,733])
-      #.apply(pd.to_numeric).replace(-99.99,method='bfill')
+      urlpath: ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_mm_mlo.txt
+      csv_kwargs:
+        delimiter: '    '
+        header: 71
+        names: ['year month','decimal date','average','interpolated','trend','days','6','7','8','9','10']
 
   Levitus_tanom:
     description: ICDC
@@ -571,15 +570,16 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: /pool/data/ICDC/atmosphere/hadcrut/DATA/hadcrut4/HadCRUT.4.6.0.0.{{out}}.nc
       drop_variables: [field_status, unspecified]
+
   # indices
   NINO3:
     driver: csv
     args:
       urlpath: https://www.esrl.noaa.gov/psd/data/correlation/nina3.data
       csv_kwargs:
-        skiprows: 1
-        #index_col: 0
-        sep: ' '
+        skiprows: 3
+        skipfooter: 4
+        sep: '  '
         names: ['Year','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
   PDO:
@@ -640,7 +640,7 @@ by Grigory Monterey, Sydney Levitus'
         allowed: [0,1,2,3,4]
     args:
       urlpath: /pool/data/ICDC/ocean_syntheses/oras5/{{s_res}}/{{variable}}/opa{{opa}}/{{variable}}_ORAS5*.nc
-      concat_dim: time
+      concat_dim: time_counter
 
   ORAS5_backward_extension:
     driver: netcdf
@@ -660,7 +660,7 @@ by Grigory Monterey, Sydney Levitus'
         allowed: [r1x1, ORCA025]
     args:
       urlpath: /pool/data/ICDC/ocean_syntheses/oras5_backward_extension/{{s_res}}/{{variable}}/opa0/{{variable}}_ORAS5*.nc
-      concat_dim: time
+      concat_dim: time_counter
 
   GECCO2:
     driver: netcdf

@@ -18,6 +18,8 @@ dependencies:
   - tqdm
   - xarray
   - intake
+  - intake-xarray
   - intake-esm
   - hvplot
   - pytest
+  - ipywidgets
