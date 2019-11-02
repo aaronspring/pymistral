@@ -1,8 +1,0 @@
-name: miklip_baseline1_cmorized
-collection_type: cmip5
-data_sources:
-  root_dir:
-    name: MISTRAL
-    loc_type: posix
-    direct_access: True
-    urlpath: /work/bmx828/miklip-ces/data4miklip/model/global/miklip/baseline1

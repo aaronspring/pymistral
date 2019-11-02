@@ -62,7 +62,6 @@ sources:
     args:
       urlpath: '/work/mh0727/data/SOCOM/gridded_data/SOM-FFN/pco2_1982-2015_MPI_SOM-FFN_GCB2016.nc'
       chunks: {'time':12}
-      drop_variables: date
     metadata:
       fields:
         fgco2:
@@ -325,7 +324,6 @@ by Grigory Monterey, Sydney Levitus'
         allowed: 1deg
     args:
       urlpath: /work/mh0727/data/WOD/WOD_{{var}}_{{s_res}}.nc
-      drop_variables: time
 
   WOA13:
     driver: netcdf
@@ -349,7 +347,6 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: /work/mh0727/data/WOA/{{t_res}}/woa13_{{var}}_{{t_res}}_{{s_res}}.nc
       decode_times: False
-      drop_variables: [lon_bnds, lat_bnds, depth_bnds,bnds,climatology_bnds,climatology_bounds]
     metadata:
       url_origin: https://www.nodc.noaa.gov/OC5/woa13/
       fields:
@@ -403,7 +400,6 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: /pool/data/ICDC/ocean/levitus/DATA/tanom/yearly/tanom_*.nc
       concat_dim: time
-      drop_variables: [lat_bnds,lon_bnds,depth_bnds,climatology_bounds,crs]
       decode_times: False
 
   Levitus_sanom:
@@ -417,7 +413,6 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: /pool/data/ICDC/ocean/levitus/DATA/sanom/sanom_*.nc
       concat_dim: time
-      drop_variables: [lat_bnds,lon_bnds,depth_bnds,climatology_bounds,crs]
       decode_times: False
 
   Levitus_OHC:
@@ -437,7 +432,6 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: /pool/data/ICDC/ocean/levitus/DATA/heat_content/heat_content_anomaly_{{depth}}_yearly.nc
       concat_dim: time
-      drop_variables: [lat_bnds,depth,lon_bnds,depth_bnds,climatology_bounds,crs]
       decode_times: False
 
   MODIS:
@@ -468,7 +462,6 @@ by Grigory Monterey, Sydney Levitus'
     driver: netcdf
     args:
       urlpath: /pool/data/ICDC/ocean/aviso_ssh/DATA/*/dt_global_twosat_phy_l4_*.nc
-      drop_variables: [lat_bnds, lon_bnds,nv,ugoas,adt,vgos,err,vgosa,crs]
       concat_dim: time
 
   HadISST:
@@ -482,7 +475,6 @@ by Grigory Monterey, Sydney Levitus'
         allowed: ['sst','ice']
     args:
       urlpath: /pool/data/ICDC/ocean/hadisst1/DATA/HadISST_{{var}}.nc
-      drop_variables: [time_bnds,nv]
 
   AMSR-E_SST:
     driver: netcdf
@@ -496,7 +488,6 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: /pool/data/ICDC/ocean/amsre_sst/DATA/MONTHLY/AMSRE_SST__REMSS-UHAM-ICDC*.nc
       concat_dim: time
-      drop_variables: dataflag
 
   OISST:
     driver: netcdf
@@ -510,7 +501,6 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: /pool/data/ICDC/ocean/reynolds_sst/DATA/MONTHLY/*avhrr-only-v2__monthly__UHAM-ICDC.nc
       concat_dim: time
-      drop_variables: [min_sea_ice_extent, max_sea_ice_extent, sst_mean_uncertainty, sst_stddev, n_days]
 
   OSCAR_surface_currents:
     driver: netcdf
@@ -526,7 +516,6 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: /pool/data/ICDC/ocean/oscar_surface_current_velocity/DATA/{{s_res}}/*oscar_vel*.nc
       concat_dim: time
-      drop_variables: depth
 
   SMOS_SSS:
     driver: netcdf
@@ -540,7 +529,6 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: /pool/data/ICDC/ocean/smos_sss/DATA/SMOS_SSS_2010_2016_V3.nc
       concat_dim: time
-      drop_variables: [sss_biasadj,sss_biasadj_obj, theoret_err, bias_err]
 
   HadCRUT3:
     driver: netcdf
@@ -555,7 +543,6 @@ by Grigory Monterey, Sydney Levitus'
         allowed: [3,3v]
     args:
       urlpath: /pool/data/ICDC/atmosphere/hadcrut/DATA/hadcrut{{version}}/HadCRUT{{version}}.nc
-      drop_variables: [field_status, unspecified]
   HadCRUT4:
     driver: netcdf
     description: HadCRUT Surface (Air) Temperature Anomalies
@@ -569,7 +556,6 @@ by Grigory Monterey, Sydney Levitus'
         allowed: [median, uncorrelated, uncorrleated_supplementary]
     args:
       urlpath: /pool/data/ICDC/atmosphere/hadcrut/DATA/hadcrut4/HadCRUT.4.6.0.0.{{out}}.nc
-      drop_variables: [field_status, unspecified]
 
   # indices
   NINO3:

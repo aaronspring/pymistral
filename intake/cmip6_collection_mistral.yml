@@ -1,8 +1,0 @@
-name: cmip6_collection_mistral
-collection_type: cmip6
-data_sources:
-  root_dir:
-    name: MISTRAL
-    loc_type: posix
-    direct_access: True
-    urlpath: /work/ik1017/CMIP6/data/CMIP6

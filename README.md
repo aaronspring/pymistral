@@ -1,7 +1,14 @@
 # pymistral
 
-Wrapper for parallel, effective and efficient computations via slurm and dask
-on our supercomputer
+Effective use of python with `xarray` and `dask` to analyse Earth-System-Modelling output on the `mistral` supercomputer at DKRZ.
+
+# Examples
+
+Check out our examples:
+
+-   easy access via `intake-esm` on CMIP5, CMIP6 and MiKlip output on `mistral`
+-   easy access via `intake` to ICDC observations on `mistral`
+-   grid handling of `MPIOM` via `xgcm`
 
 # Contact
 
@@ -11,12 +18,12 @@ on our supercomputer
 
 # System configuration
 
-The following steps are necessary to use pymistral.
+The following steps are necessary to use `pymistral`.
 
 ## Environment
 
-Create a new conda environment using the pymistral.yml file. This has to be
-done on the supercomputer when using pymistral on an HPC system or locally for
+Create a new `conda environment` using the `pymistral.yml` file. This has to be
+done on the supercomputer when using `pymistral` on an HPC system or locally for
 a standalone configuration.
 
 `conda env create -f pymistral.yml`
@@ -28,16 +35,14 @@ If the environment already exists and needs to be updated, use:
 
 ## Script to start jupyterlab on HPC
 
-This part is only necessary when jupyterlab and pymistral is used on a remote
-HPC system.
+This part is only necessary when `jupyterlab` and `pymistral` is used on a remote
+HPC system. A detailed explanation is at the DKRZ website: <https://www.dkrz.de/up/systems/mistral/programming/jupyter-notebook>
 
 ### pymistral_preload
 
-Place the pymistral_preload file into your home directory on mistral and
+Place the `jupyter_preload` file into your home directory on `mistral` and
 change the conda environment name if necessary.
 
-### start-pymistral.sh
+### ./start-pymistral
 
-Adjust the start-pymistral.sh script with your username and project number.
-
-Change SJ_INCFILE if pymistral_preload has been renamed.
+Adjust the `start-jupyter` script with your username and project number.

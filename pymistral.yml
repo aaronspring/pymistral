@@ -22,4 +22,9 @@ dependencies:
   - intake-esm
   - hvplot
   - pytest
+  - nb_conda_kernels
   - ipywidgets
+  - pip
+  - pip:
+    - https://github.com/jbusecke/cmip6_preprocessing
+    - https://github.com/xgcm/xgcm
