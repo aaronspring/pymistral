@@ -25,6 +25,12 @@ dependencies:
   - nb_conda_kernels
   - ipywidgets
   - pip
+  - cftime=1.0.3.4
+  - nc-time-axis
+  - xrviz
+  - xhistogram
   - pip:
-    - https://github.com/jbusecke/cmip6_preprocessing
-    - https://github.com/xgcm/xgcm
+    - git+https://github.com/jbusecke/cmip6_preprocessing.git
+    - git+https://github.com/xgcm/xgcm.git
+    - git+https://github.com/xgcm/xrft.git
+    - git+https://github.com/mathause/regionmask.git

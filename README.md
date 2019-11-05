@@ -9,6 +9,7 @@ Check out our examples:
 -   easy access via `intake-esm` on CMIP5, CMIP6 and MiKlip output on `mistral`
 -   easy access via `intake` to ICDC observations on `mistral`
 -   grid handling of `MPIOM` via `xgcm`
+-   plotting the curvilinear `MPIOM` with `cartopy`: `xr.DataArray.plot_map()`
 
 # Contact
 
@@ -41,7 +42,8 @@ HPC system. A detailed explanation is at the DKRZ website: <https://www.dkrz.de/
 ### pymistral_preload
 
 Place the `jupyter_preload` file into your home directory on `mistral` and
-change the conda environment name if necessary.
+change the conda environment name if necessary. Alternatively, you can create your own `conda`: <https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html>
+Here don't use your `$HOME` on `mistral`, specify path like `/work/yourgroup/m??????/miniconda3`. 
 
 ### ./start-pymistral
 

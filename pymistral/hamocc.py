@@ -49,3 +49,16 @@ def temfa_phofa(ds):
     temfa = .6 * 1.066**(ds['tsw'] - 273.15)
     phofa = ds['soflwac'] * 0.02
     return temfa * phofa / (np.sqrt(phofa**2 + temfa**2))
+
+
+r_ppmw2ppmv = 28.8 / 44.0095
+CO2_to_C = 44.0095 / 12.0111
+
+
+def convert_C(ds):
+    """Converts CO2 from ppmw to ppmv and co2_flux to C."""
+    if 'CO2' in ds.data_vars:
+        ds = ds * 1e6 * r_ppmw2ppmv
+    if 'co2_fl' in ds.data_vars:
+        ds = ds / CO2_to_C
+    return ds

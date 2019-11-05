@@ -10,10 +10,5 @@ Available Modules:
 """
 
 
-from . import setup
-from . import plot
-from . import variability
-from . import hamocc
-from . import mpiom
-from . import slurm_post
-from . import cmip
+from . import hamocc, plot, setup, slurm_post
+from .setup import cdo
