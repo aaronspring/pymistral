@@ -27,10 +27,12 @@ class CartopyMap(object):
     def __init__(self, xarray_obj):
         self._obj = xarray_obj
 
-    def __call__(self, ax=None, proj=ccrs.PlateCarree(), plot_lon_lat_axis=True, feature='land', plot_type='pcolormesh', **kwargs):
-        return self._cartopy(ax=ax, proj=proj, feature=feature, plot_lon_lat_axis=plot_lon_lat_axis, plot_type=plot_type, **kwargs)
+    def __call__(self, ax=None, proj=ccrs.PlateCarree(), plot_lon_lat_axis=True, feature='land', plot_type='pcolormesh', rm_cyclic=True, **kwargs):
+        return self._cartopy(ax=ax, proj=proj, feature=feature, plot_lon_lat_axis=plot_lon_lat_axis, plot_type=plot_type, rm_cyclic=rm_cyclic, **kwargs)
 
-    def _cartopy(self, ax=None, proj=ccrs.PlateCarree(), feature='land', plot_lon_lat_axis=True, plot_type='pcolormesh', **kwargs):
+    def _cartopy(self, ax=None, proj=ccrs.PlateCarree(), feature='land', plot_lon_lat_axis=True, plot_type='pcolormesh', rm_cyclic=True, **kwargs):
+
+        # TODO: CESM2 and GFDL-ESM4 have lon issue
 
         xda = self._obj
         # da, convert to da or error
@@ -41,6 +43,10 @@ class CartopyMap(object):
                 raise ValueError(
                     f'Please provide xr.DataArray, found {type(xda)}')
 
+        assert (xda.ndim == 2) or (xda.ndim == 3 and 'col' in kwargs or 'row' in kwargs) or (
+            xda.ndim == 4 and 'col' in kwargs and 'row' in kwargs)
+        single_plot = True if xda.ndim == 2 else False
+
         stereo_maps = (ccrs.Stereographic,
                        ccrs.NorthPolarStereo,
                        ccrs.SouthPolarStereo)
@@ -50,25 +56,24 @@ class CartopyMap(object):
 
         # find whether curv or not
         curv = False
+        lon = None
+        lat = None
         for c in xda.coords:
             if len(xda[c].dims) == 2:
                 curv = True
-            if c in ['xc', 'lon', 'longitude']:
-                lon = c
-            if c in ['yc', 'lat', 'latitude']:
-                lat = c
+                if c in ['xc', 'lon', 'longitude']:
+                    lon = c
+                if c in ['yc', 'lat', 'latitude']:
+                    lat = c
+        assert lon != None
+        assert lat != None
 
-        xda = self._obj
-        if not isinstance(xda, xr.DataArray):
-            raise ValueError(f'Please provide xr.DataArray, found {type(xda)}')
-
-        if proj in [ccrs.Robinson]:
+        if proj in [ccrs.Robinson()]:
             plot_lon_lat_axis = False
 
-        assert xda.ndim == 2 or (xda.ndim == 3 and 'col' in kwargs or 'row' in kwargs) or (
-            xda.ndim == 4 and 'col' in kwargs and 'row' in kwargs)
-
-        if curv:
+        if plot_type is 'contourf':
+            rm_cyclic = False
+        if curv and rm_cyclic:
             xda = _rm_singul_lon(xda, lon=lon, lat=lat)
 
         if 'robust' not in kwargs:
@@ -77,13 +82,17 @@ class CartopyMap(object):
             kwargs['cbar_kwargs'] = {'shrink': .6}
 
         if ax is None:
-            axm = getattr(xda.plot, plot_type)(
-                lon, lat, subplot_kws={'projection': proj}, transform=ccrs.PlateCarree(), **kwargs)
+            if single_plot:
+                axm = getattr(xda.plot, plot_type)(
+                    lon, lat, ax=plt.axes(projection=proj), transform=ccrs.PlateCarree(), **kwargs)
+            else:
+                axm = getattr(xda.plot, plot_type)(
+                    lon, lat, subplot_kws={'projection': proj}, transform=ccrs.PlateCarree(), **kwargs)
         else:
             axm = getattr(xda.plot, plot_type)(
                 lon, lat, ax=ax, transform=ccrs.PlateCarree(), **kwargs)
 
-        for axes in axm.axes.flat:
+        def work_on_axes(axes):
             if 'coastline_color' in kwargs:
                 coastline_color = kwargs['coastline_color']
             else:
@@ -95,7 +104,13 @@ class CartopyMap(object):
 
             if plot_lon_lat_axis:
                 _set_lon_lat_axis(axes, proj)
-
+        if single_plot:
+            if ax is None:
+                ax = plt.gca()
+            work_on_axes(ax)
+        else:
+            for axes in axm.axes.flat:
+                work_on_axes(axes)
         return axm
 
 

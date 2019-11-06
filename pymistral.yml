@@ -19,13 +19,13 @@ dependencies:
   - xarray
   - intake
   - intake-xarray
-  - intake-esm
   - hvplot
   - pytest
   - nb_conda_kernels
   - ipywidgets
   - pip
   - cftime=1.0.3.4
+  - flake8
   - nc-time-axis
   - xrviz
   - xhistogram
@@ -34,3 +34,4 @@ dependencies:
     - git+https://github.com/xgcm/xgcm.git
     - git+https://github.com/xgcm/xrft.git
     - git+https://github.com/mathause/regionmask.git
+    - git+https://github.com/ncar/intake-esm.git

@@ -86,7 +86,7 @@ def _set_LY(ds, first=1, dim='lead'):
 
 
 def yearmean(ds, dim='time'):
-    return ds.groupby('{dim}.year').mean(dim).rename({'year': dim})
+    return ds.groupby(f'{dim}.year').mean(dim).rename({'year': dim})
 
 
 def yearsum(ds, dim='time'):
