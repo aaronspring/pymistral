@@ -13,7 +13,8 @@ sources:
         allowed: ['GR15', '1deg','R2B6']
     args:
       urlpath: '/work/mh0727/data/pCO2/pco2_taka_{{s_res}}.nc'
-      decode_times: False
+      xarray_kwargs:
+        decode_times: False
 
   dust_Mahowald:
     driver: netcdf
@@ -30,7 +31,8 @@ sources:
         allowed: ['2005','r2']
     args:
       urlpath: '/work/mh0727/data/DUST/{{s_res}}_MAHOWALDDUST_{{version}}.nc'
-      decode_times: False
+      xarray_kwargs:
+          decode_times: False
     metadata:
       plots:
         monthly_climatology:
@@ -53,7 +55,8 @@ sources:
         allowed: ['GR15', 'GR30','TOY','TP04','TP10']
     args:
       urlpath: '/work/mh0727/data/DUST/Albanietal2016_GRL_dustdep.{{s_res}}.nc'
-      decode_times: False
+      xarray_kwargs:
+        decode_times: False
     metadata:
       url_origin: doi:10.1002/2016GL067911
 
@@ -62,6 +65,8 @@ sources:
     args:
       urlpath: '/work/mh0727/data/SOCOM/gridded_data/SOM-FFN/pco2_1982-2015_MPI_SOM-FFN_GCB2016.nc'
       chunks: {'time':12}
+      xarray_kwargs:
+        drop_variables: date
     metadata:
       fields:
         fgco2:
@@ -113,7 +118,9 @@ sources:
     driver: netcdf
     args:
       urlpath: '/work/mh0727/data/SOCOM/gridded_data/JMA-MLR/JMA_co2map1990-2015_v2_0.nc'
-      chunks: {'time':12}
+      chunks: {'time': 12}
+      xarray_kwargs:
+        decode_times: False
     metadata:
       readme: '/work/mh0727/data/SOCOM/gridded_data/JMA-MLR/README'
 
@@ -254,8 +261,9 @@ sources:
         allowed: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
     args:
       urlpath: '/work/mh0727/data/SOCOM/biome_timeseries/{{product}}.{{biome}}.nc'
-      concat_dim: 'biome'
-      decode_times: False
+      xarray_kwargs:
+        decode_times: False
+
   SOCOM_all_products:
     driver: netcdf
     description: biome aggregates
@@ -288,14 +296,17 @@ sources:
         allowed: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
     args:
       urlpath: '/work/mh0727/data/SOCOM/biome_timeseries/*.{{biome}}.nc'
-      concat_dim: 'product'
-      decode_times: False
+      xarray_kwargs:
+        decode_times: False
+        combine: nested
 
 
   zmld.IFREMER:
     driver: netcdf
     args:
       urlpath: '/work/mh0727/data/MixedLayer/mld_DT02.nc'
+      xarray_kwargs:
+        decode_times: False
 
   zmld.Levitus:
     description: 'Potential density (pd) criterion 0.125 in sigma units, Mixed Layer Depths
@@ -305,9 +316,6 @@ by Grigory Monterey, Sydney Levitus'
     args:
       urlpath: '/work/mh0727/data/MixedLayer/mld_pd_0125.nc'
 
-  WOCE_stations:
-    driver: csv
-
   WOD:
     driver: netcdf
     parameters:
@@ -316,12 +324,11 @@ by Grigory Monterey, Sydney Levitus'
         type: str
         default: CFC11
         allowed: [CFC11,CFC12,deltaC13]
-    s_res:
-      parameters:
+      s_res:
         description: spatial resolution
         type: str
         default: 1deg
-        allowed: 1deg
+        allowed: [1deg]
     args:
       urlpath: /work/mh0727/data/WOD/WOD_{{var}}_{{s_res}}.nc
 
@@ -346,7 +353,8 @@ by Grigory Monterey, Sydney Levitus'
         allowed: ['nitrate','dissolved_oxygen','apparent_oxygen_utilization','phosphate','salinity','silicate','temperature']
     args:
       urlpath: /work/mh0727/data/WOA/{{t_res}}/woa13_{{var}}_{{t_res}}_{{s_res}}.nc
-      decode_times: False
+      xarray_kwargs:
+        decode_times: False
     metadata:
       url_origin: https://www.nodc.noaa.gov/OC5/woa13/
       fields:
@@ -399,8 +407,10 @@ by Grigory Monterey, Sydney Levitus'
           unit: °C
     args:
       urlpath: /pool/data/ICDC/ocean/levitus/DATA/tanom/yearly/tanom_*.nc
-      concat_dim: time
-      decode_times: False
+      xarray_kwargs:
+        decode_times: False
+        concat_dim: time
+        combine: nested
 
   Levitus_sanom:
     description: ICDC
@@ -412,8 +422,10 @@ by Grigory Monterey, Sydney Levitus'
           unit: psu
     args:
       urlpath: /pool/data/ICDC/ocean/levitus/DATA/sanom/sanom_*.nc
-      concat_dim: time
-      decode_times: False
+      xarray_kwargs:
+        decode_times: False
+        concat_dim: time
+        combine: nested
 
   Levitus_OHC:
     description: ICDC
@@ -431,8 +443,8 @@ by Grigory Monterey, Sydney Levitus'
           unit: 10^18_joules
     args:
       urlpath: /pool/data/ICDC/ocean/levitus/DATA/heat_content/heat_content_anomaly_{{depth}}_yearly.nc
-      concat_dim: time
-      decode_times: False
+      xarray_kwargs:
+        decode_times: False
 
   MODIS:
     description: ICDC MODIS monthly
@@ -455,14 +467,18 @@ by Grigory Monterey, Sydney Levitus'
         allowed: [chl, sst]
     args:
       urlpath: /pool/data/ICDC/ocean/modis_{{surface}}_{{var}}/DATA/monthly/*/MODIS*.nc
-      concat_dim: time
+      xarray_kwargs:
+        concat_dim: time
+        combine: nested
 
   AVISO:
     description: ICDC SSH
     driver: netcdf
     args:
       urlpath: /pool/data/ICDC/ocean/aviso_ssh/DATA/*/dt_global_twosat_phy_l4_*.nc
-      concat_dim: time
+      xarray_kwargs:
+        concat_dim: time
+        combine: nested
 
   HadISST:
     description: hadisst
@@ -475,6 +491,8 @@ by Grigory Monterey, Sydney Levitus'
         allowed: ['sst','ice']
     args:
       urlpath: /pool/data/ICDC/ocean/hadisst1/DATA/HadISST_{{var}}.nc
+      xarray_kwargs:
+        use_cftime: True
 
   AMSR-E_SST:
     driver: netcdf
@@ -487,7 +505,9 @@ by Grigory Monterey, Sydney Levitus'
           unit: K
     args:
       urlpath: /pool/data/ICDC/ocean/amsre_sst/DATA/MONTHLY/AMSRE_SST__REMSS-UHAM-ICDC*.nc
-      concat_dim: time
+      xarray_kwargs:
+        concat_dim: time
+        combine: nested
 
   OISST:
     driver: netcdf
@@ -500,7 +520,9 @@ by Grigory Monterey, Sydney Levitus'
           unit: K
     args:
       urlpath: /pool/data/ICDC/ocean/reynolds_sst/DATA/MONTHLY/*avhrr-only-v2__monthly__UHAM-ICDC.nc
-      concat_dim: time
+      xarray_kwargs:
+        concat_dim: time
+        combine: nested
 
   OSCAR_surface_currents:
     driver: netcdf
@@ -515,7 +537,9 @@ by Grigory Monterey, Sydney Levitus'
         allowed: [1degree,1third_degree]
     args:
       urlpath: /pool/data/ICDC/ocean/oscar_surface_current_velocity/DATA/{{s_res}}/*oscar_vel*.nc
-      concat_dim: time
+      xarray_kwargs:
+        concat_dim: time
+        combine: nested
 
   SMOS_SSS:
     driver: netcdf
@@ -528,7 +552,6 @@ by Grigory Monterey, Sydney Levitus'
           unit: psu
     args:
       urlpath: /pool/data/ICDC/ocean/smos_sss/DATA/SMOS_SSS_2010_2016_V3.nc
-      concat_dim: time
 
   HadCRUT3:
     driver: netcdf
@@ -539,7 +562,7 @@ by Grigory Monterey, Sydney Levitus'
       version:
         description: version
         type: str
-        default: '3'
+        default: 3
         allowed: [3,3v]
     args:
       urlpath: /pool/data/ICDC/atmosphere/hadcrut/DATA/hadcrut{{version}}/HadCRUT{{version}}.nc
@@ -601,7 +624,9 @@ by Grigory Monterey, Sydney Levitus'
         allowed: [2m_airtemp, net_longwave_radiation_flux, soil_temperature_0-10cm, total_cloud_cover, 2m_airtemp_monthly, net_shortwave_radiation_flux, specific_humidity, u_wind, 2m_air_tmax, relative_humidity, surface_convective_precipitation, u_wind_monthly, 2m_air_tmin, sensible_heat_flux, surface_pressure, v_wind, latent_heat_flux, soil_moisture_0-10cm, surface_pressure_monthly, v_wind_monthly]
     args:
       urlpath: /pool/data/ICDC/reanalyses/ncep_reanalysis1/DATA/{{variable}}/*.nc
-      concat_dim: time
+      xarray_kwargs:
+        concat_dim: time
+        combine: nested
 
   ORAS5:
     driver: netcdf
@@ -626,7 +651,9 @@ by Grigory Monterey, Sydney Levitus'
         allowed: [0,1,2,3,4]
     args:
       urlpath: /pool/data/ICDC/ocean_syntheses/oras5/{{s_res}}/{{variable}}/opa{{opa}}/{{variable}}_ORAS5*.nc
-      concat_dim: time_counter
+      xarray_kwargs:
+        concat_dim: time_counter
+        combine: nested
 
   ORAS5_backward_extension:
     driver: netcdf
@@ -646,7 +673,9 @@ by Grigory Monterey, Sydney Levitus'
         allowed: [r1x1, ORCA025]
     args:
       urlpath: /pool/data/ICDC/ocean_syntheses/oras5_backward_extension/{{s_res}}/{{variable}}/opa0/{{variable}}_ORAS5*.nc
-      concat_dim: time_counter
+      xarray_kwargs:
+        concat_dim: time_counter
+        combine: nested
 
   GECCO2:
     driver: netcdf
@@ -666,5 +695,7 @@ by Grigory Monterey, Sydney Levitus'
         allowed: [regular_1x1_grid, native_model_grid]
     args:
       urlpath: /pool/data/ICDC/ocean_syntheses/GECCO2/{{s_res}}/{{variable}}29_34_70.nc
-      concat_dim: time
-      decode_times: False
+      xarray_kwargs:
+        decode_times: False
+        #concat_dim: time
+        #combine: nested

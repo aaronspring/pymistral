@@ -20,6 +20,8 @@ dependencies:
   - intake
   - intake-xarray
   - hvplot
+  - geoviews
+  - holoviews
   - pytest
   - nb_conda_kernels
   - ipywidgets
@@ -30,7 +32,7 @@ dependencies:
   - xrviz
   - xhistogram
   - pip:
-    - git+https://github.com/jbusecke/cmip6_preprocessing.git
+    - git+https://github.com/aaronspring/cmip6_preprocessing.git
     - git+https://github.com/xgcm/xgcm.git
     - git+https://github.com/xgcm/xrft.git
     - git+https://github.com/mathause/regionmask.git
