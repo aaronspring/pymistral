@@ -43,7 +43,7 @@ HPC system. A detailed explanation is at the DKRZ website: <https://www.dkrz.de/
 
 Place the `jupyter_preload` file into your home directory on `mistral` and
 change the conda environment name if necessary. Alternatively, you can create your own `conda`: <https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html>
-Here don't use your `$HOME` on `mistral`, specify path like `/work/yourgroup/m??????/miniconda3`. 
+Here don't use your `$HOME` on `mistral`, specify path like `/work/yourgroup/m??????/miniconda3`.
 
 ### ./start-pymistral
 
