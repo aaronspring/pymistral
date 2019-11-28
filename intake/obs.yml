@@ -189,13 +189,13 @@ sources:
       version:
         description: version name
         type: str
-        default: 's85_v4.2'
-        allowed: ['prior_v4.2','s76_v4.2','s85_v4.2','s93_v4.2']
+        default: s85_v4.2
+        allowed: [sEXTocNEET_v4.3, prior_v4.2, s76_v4.2, s81oc_v4.3, s85_v4.2, s93_v4.2, s99oc_v4.3, s04oc_v4.3, s10oc_v4.3]
       t_res:
         description: temporal resolution
         type: str
-        default: 'monmean'
-        allowed: ['daily','monmean','yearmonmean']
+        default: yearmonmean
+        allowed: [daily, monmean, yearmonmean]
     args:
       urlpath: '/work/mh0727/data/Jena_CarboScope/atmospheric_CO2_inversion/{{version}}_{{t_res}}.nc'
 
@@ -566,6 +566,7 @@ by Grigory Monterey, Sydney Levitus'
         allowed: [3,3v]
     args:
       urlpath: /pool/data/ICDC/atmosphere/hadcrut/DATA/hadcrut{{version}}/HadCRUT{{version}}.nc
+
   HadCRUT4:
     driver: netcdf
     description: HadCRUT Surface (Air) Temperature Anomalies

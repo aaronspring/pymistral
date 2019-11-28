@@ -1,0 +1,4 @@
+[run]
+omit =
+    pymistral/tests/*.py
+    setup.py

@@ -32,8 +32,9 @@ dependencies:
   - xrviz
   - xhistogram
   - pip:
-    - git+https://github.com/aaronspring/cmip6_preprocessing.git
+    - git+https://github.com/jbusecke/cmip6_preprocessing.git
     - git+https://github.com/xgcm/xgcm.git
     - git+https://github.com/xgcm/xrft.git
     - git+https://github.com/mathause/regionmask.git
     - git+https://github.com/ncar/intake-esm.git
+    - pre-commit
