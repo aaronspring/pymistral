@@ -18,6 +18,23 @@ dependencies:
   - tqdm
   - xarray
   - intake
-  - intake-esm
+  - intake-xarray
   - hvplot
+  - geoviews
+  - holoviews
   - pytest
+  - nb_conda_kernels
+  - ipywidgets
+  - pip
+  - cftime=1.0.3.4
+  - flake8
+  - nc-time-axis
+  - xrviz
+  - xhistogram
+  - pip:
+    - git+https://github.com/jbusecke/cmip6_preprocessing.git
+    - git+https://github.com/xgcm/xgcm.git
+    - git+https://github.com/xgcm/xrft.git
+    - git+https://github.com/mathause/regionmask.git
+    - git+https://github.com/ncar/intake-esm.git
+    - pre-commit

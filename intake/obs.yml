@@ -1,0 +1,714 @@
+plugins:
+  source:
+      - module: intake_xarray
+sources:
+  pco2_Takahashi:
+    driver: netcdf
+    description: Takahashi climatology on different grids
+    parameters:
+      s_res:
+        description: 'spatial resolution'
+        type: str
+        default: 'GR15'
+        allowed: ['GR15', '1deg','R2B6']
+    args:
+      urlpath: '/work/mh0727/data/pCO2/pco2_taka_{{s_res}}.nc'
+      xarray_kwargs:
+        decode_times: False
+
+  dust_Mahowald:
+    driver: netcdf
+    parameters:
+      s_res:
+        description: 'spatial resolution'
+        type: str
+        default: 'GR15'
+        allowed: ['GR15', 'GR30','TOY','TP04','TP10','TP6M']
+      version:
+        description: 'version as str'
+        type: str
+        default: '2005'
+        allowed: ['2005','r2']
+    args:
+      urlpath: '/work/mh0727/data/DUST/{{s_res}}_MAHOWALDDUST_{{version}}.nc'
+      xarray_kwargs:
+          decode_times: False
+    metadata:
+      plots:
+        monthly_climatology:
+          title: Mahowald monthly climatology
+          kind: contourf
+          x: 'lon'
+          y: 'lat'
+          z: 'DUST'
+          groupby: 'time'
+
+  dust_Albani2016:
+    description: 'Simulated dust fields from Albani et al. 2016 (GRL);
+                  Albani, S., N.M. Mahowald, L.N. Murphy, R. Raiswell, J.K. Moore, R.F. Anderson, D. McGee, L.I. Bradtmiller, B. Delmonte, P.P. Hesse, and P.A. Mayewski (2016). Paleodust variability since the Last Glacial Maximum and implications for iron inputs to the ocean. Geophys. Res. Lett., 43, 3944–3954, doi:10.1002/2016GL067911'
+    driver: netcdf
+    parameters:
+      s_res:
+        description: 'spatial resolution'
+        type: str
+        default: 'GR15'
+        allowed: ['GR15', 'GR30','TOY','TP04','TP10']
+    args:
+      urlpath: '/work/mh0727/data/DUST/Albanietal2016_GRL_dustdep.{{s_res}}.nc'
+      xarray_kwargs:
+        decode_times: False
+    metadata:
+      url_origin: doi:10.1002/2016GL067911
+
+  SOMFFN:
+    driver: netcdf
+    args:
+      urlpath: '/work/mh0727/data/SOCOM/gridded_data/SOM-FFN/pco2_1982-2015_MPI_SOM-FFN_GCB2016.nc'
+      chunks: {'time':12}
+      xarray_kwargs:
+        drop_variables: date
+    metadata:
+      fields:
+        fgco2:
+          label: fgco2
+          unit: mol m-2 yr-1
+        spco2:
+          label: sea surface pCO2
+          unit: uatm
+      plots:
+        fgco2_over_time:
+          title: 'SOM-FFN fgco2 over time'
+          kind: contourf
+          x: 'lon'
+          y: 'lat'
+          z: 'fgco2'
+          groupby: 'time'
+          width: 800
+          height: 400
+          cmap: 'RdBu_r'
+          levels: 20
+        fgco2_timeseries_location:
+          title: fgco2 timeseries at (lon,lat) location
+          kind: line
+          x: 'time'
+          y: 'fgco2'
+          groupby: ['lon','lat']
+        fgco2_timeseries_latitude:
+          title: fgco2 timeseries at latitude
+          kind: contourf
+          y: 'time'
+          x: 'lon'
+          z: 'fgco2'
+          groupby: 'lat'
+          levels: 20
+
+  UEA_SI:
+    driver: netcdf
+    args:
+      urlpath: '/work/mh0727/data/SOCOM/gridded_data/UEA-SI/statistical_gap-filled_fco2_v1-0_20150910.nc'
+      chunks: {'time':12}
+    metadata:
+      readme: '/work/mh0727/data/SOCOM/gridded_data/UEA-SI/README'
+      fields:
+        fco2:
+          label: fco2
+          unit: uatm
+
+  fgco2_JMA_MLR:
+    driver: netcdf
+    args:
+      urlpath: '/work/mh0727/data/SOCOM/gridded_data/JMA-MLR/JMA_co2map1990-2015_v2_0.nc'
+      chunks: {'time': 12}
+      xarray_kwargs:
+        decode_times: False
+    metadata:
+      readme: '/work/mh0727/data/SOCOM/gridded_data/JMA-MLR/README'
+
+  JenaMLS:
+    driver: netcdf
+    metadata:
+      readme: '/work/mh0727/data/SOCOM/gridded_data/Jena-MLS/README'
+      fields:
+        co2flux_land:
+          label: Land-atmosphere co2 flux
+          unit: PgC/yr
+        co2flux_ocean:
+          label: Ocean-atmosphere co2 flux
+          unit: PgC/yr
+    parameters:
+      version:
+        description: 'version'
+        type: str
+        default: 'v1.5_daily'
+        allowed: ['v1.4','v1.5_daily','v1.5_pCO2_daily']
+    args:
+      urlpath: '/work/mh0727/data/SOCOM/gridded_data/Jena-MLS/oc_{{version}}.nc'
+      chunks: {'time':12}
+
+  Jena_CarboScope.APO_inversion:
+    driver: netcdf
+    description: APO Inversion by Christian Roedenbeck from MPI Jena
+    metadata:
+      url_origin: https://www.bgc-jena.mpg.de/CarboScope/?ID=apo
+      readme: /work/mh0727/data/Jena_CarboScope/APO_inversion/README.md
+      fields:
+        apomix:
+          label: APO mixing ratio
+          unit: ppm
+    parameters:
+      version:
+        description: version name
+        type: str
+        default: 'apo99_v1.6'
+        allowed: ['apo99_v1.6']
+      t_res:
+        description: temporal resolution
+        type: str
+        default: 'monmean'
+        allowed: ['daily','monmean','yearmonmean']
+    args:
+      urlpath: '/work/mh0727/data/Jena_CarboScope/APO_inversion/{{version}}_mix_{{t_res}}.nc'
+
+  Jena_CarboScope.atmospheric_CO2_inversion:
+    driver: netcdf
+    description: Atm. CO2 Inversion by Christian Roedenbeck from MPI Jena
+    metadata:
+      url_origin: https://www.bgc-jena.mpg.de/CarboScope/?ID=apo
+      readme: /work/mh0727/data/Jena_CarboScope/atmospheric_CO2_inversion/README.md
+      fields:
+        co2mix:
+          label: CO2 mixing ratio
+          unit: ppm
+        co2flux_land:
+          label: air-land CO2 flux
+          unit: PgC/yr
+        co2flux_ocean:
+          label: air-sea CO2 flux
+          unit: PgC/yr
+    parameters:
+      version:
+        description: version name
+        type: str
+        default: s85_v4.2
+        allowed: [sEXTocNEET_v4.3, prior_v4.2, s76_v4.2, s81oc_v4.3, s85_v4.2, s93_v4.2, s99oc_v4.3, s04oc_v4.3, s10oc_v4.3]
+      t_res:
+        description: temporal resolution
+        type: str
+        default: yearmonmean
+        allowed: [daily, monmean, yearmonmean]
+    args:
+      urlpath: '/work/mh0727/data/Jena_CarboScope/atmospheric_CO2_inversion/{{version}}_{{t_res}}.nc'
+
+  Jena_CarboScope.surf_pCO2_interpolation:
+    driver: netcdf
+    description: surface pCO2 interpolation by Christian Roedenbeck from MPI Jena
+    metadata:
+      url_origin: https://www.bgc-jena.mpg.de/CarboScope/?ID=oc
+      readme: /work/mh0727/data/Jena_CarboScope/surf_pCO2_interpolation/README.md
+      fields:
+        co2flux_ocean:
+          label: air-sea CO2 flux
+          unit: PgC/yr
+        pCO2:
+          label: surface pCO2
+          unit: ppm
+        paCO2:
+          label: atmospheric pCO2
+          unit: mbar
+    parameters:
+      version:
+        description: version name
+        type: str
+        default: 'oc_v1.6'
+        allowed: ['oc_v1.6']
+      t_res:
+        description: temporal resolution
+        type: str
+        default: 'monmean'
+        allowed: ['monmean','yearmonmean']
+    args:
+      urlpath: '/work/mh0727/data/Jena_CarboScope/surf_pCO2_interpolation/{{version}}_{{t_res}}.nc'
+
+  SOCOM_biomes:
+    driver: netcdf
+    description: biome aggregates
+    metadata:
+      url_origin: 'http://www.bgc-jena.mpg.de/SOCOM'
+      readme: '/work/mh0727/data/SOCOM/README'
+      fields:
+        meanf:
+          label: spco2
+          unit: uatm
+        mmeanf:
+          label: spco2
+          unit: uatm
+        fluxf:
+          label: fgco2
+          unit: PgC/yr
+        mfluxf:
+          label: fgco2
+          unit: PgC/month
+    parameters:
+      product:
+        description: 'product name'
+        type: str
+        default: 'ETH-SOMFFN'
+        allowed: ['ETH-SOMFFN','AOML-EMP','CARBONES-NN','CU-SCSE','Jena-MLS13','JMA-MLR','NIES-NN','NIES-OTTM','OceanFlux-SI','PU-MCMC','UEA-SI','UEx-MRL','UNSW-SOMLO']
+      biome:
+        description: 'biome index'
+        type: int
+        default: 0
+        allowed: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
+    args:
+      urlpath: '/work/mh0727/data/SOCOM/biome_timeseries/{{product}}.{{biome}}.nc'
+      xarray_kwargs:
+        decode_times: False
+
+  SOCOM_all_products:
+    driver: netcdf
+    description: biome aggregates
+    metadata:
+      url_origin: 'http://www.bgc-jena.mpg.de/SOCOM'
+      readme: '/work/mh0727/data/SOCOM/README'
+      fields:
+        taxis:
+          label: Time
+        meanf:
+          label: spco2
+        fluxf:
+          label: fgco2
+      plots:
+        fgco2_over_time:
+          title: 'SOCOM products: fgco2 in a biome over time'
+          kind: line
+          x: taxis
+          y: meanf
+        spco2_over_time:
+          title: 'SOCOM products: spco2 in a biome over time'
+          kind: line
+          x: taxis
+          y: fluxf
+    parameters:
+      biome:
+        description: 'biome index'
+        type: int
+        default: 0
+        allowed: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
+    args:
+      urlpath: '/work/mh0727/data/SOCOM/biome_timeseries/*.{{biome}}.nc'
+      xarray_kwargs:
+        decode_times: False
+        combine: nested
+
+
+  zmld.IFREMER:
+    driver: netcdf
+    args:
+      urlpath: '/work/mh0727/data/MixedLayer/mld_DT02.nc'
+      xarray_kwargs:
+        decode_times: False
+
+  zmld.Levitus:
+    description: 'Potential density (pd) criterion 0.125 in sigma units, Mixed Layer Depths
+by Grigory Monterey, Sydney Levitus'
+    driver: netcdf
+    origin: https://www.nodc.noaa.gov/OC5/WOA94/mix.html
+    args:
+      urlpath: '/work/mh0727/data/MixedLayer/mld_pd_0125.nc'
+
+  WOD:
+    driver: netcdf
+    parameters:
+      var:
+        description: variable name
+        type: str
+        default: CFC11
+        allowed: [CFC11,CFC12,deltaC13]
+      s_res:
+        description: spatial resolution
+        type: str
+        default: 1deg
+        allowed: [1deg]
+    args:
+      urlpath: /work/mh0727/data/WOD/WOD_{{var}}_{{s_res}}.nc
+
+  WOA13:
+    driver: netcdf
+    description: World Ocean Atlas
+    parameters:
+      t_res:
+        description: temporal resolution
+        type: str
+        default: annual # seasonal doesnt have taxis
+        allowed: [annual,month,seasonal] # monthly vs month
+      s_res:
+        description: spatial resolution
+        type: str
+        default: GR15
+        allowed: ['GR15','1deg','R2B6L64','TP04']
+      var:
+        description: variable name
+        type: str
+        default: nitrate
+        allowed: ['nitrate','dissolved_oxygen','apparent_oxygen_utilization','phosphate','salinity','silicate','temperature']
+    args:
+      urlpath: /work/mh0727/data/WOA/{{t_res}}/woa13_{{var}}_{{t_res}}_{{s_res}}.nc
+      xarray_kwargs:
+        decode_times: False
+    metadata:
+      url_origin: https://www.nodc.noaa.gov/OC5/woa13/
+      fields:
+        n_an:
+          label: nitrate
+          unit: 10-6 mol / l
+        i_an:
+          label: silicate
+          unit: 10-6 mol / l
+        p_an:
+          label: phospate
+          unit: 10-6 mol / l
+        t_an:
+          label: temperature
+          unit: °C
+        s_an:
+          label: salinity
+          unit: psu
+        o_an:
+          label: volume fraction of oxygen in sea water
+          unit: ml / l
+        A_an:
+          label: apparent oxygen utilization
+          unit: ml / l
+      plots:
+        climatology:
+          kind: contourf
+          x: lon
+          y: lat
+
+  CO2:
+    description: CO2 Mauna Loa
+    driver: csv
+    metadata:
+      url_origin: https://cdiac.ess-dive.lbl.gov/trends/co2/sio-mlo.html
+    args:
+      urlpath: ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_mm_mlo.txt
+      csv_kwargs:
+        delimiter: '    '
+        header: 71
+        names: ['year month','decimal date','average','interpolated','trend','days','6','7','8','9','10']
+
+  Levitus_tanom:
+    description: ICDC
+    driver: netcdf
+    metadata:
+      fields:
+        t_an:
+          label: temperature anomaly
+          unit: °C
+    args:
+      urlpath: /pool/data/ICDC/ocean/levitus/DATA/tanom/yearly/tanom_*.nc
+      xarray_kwargs:
+        decode_times: False
+        concat_dim: time
+        combine: nested
+        drop_variables: [lat_bnds,lon_bnds,depth_bnds,climatology_bounds,crs]
+
+  Levitus_sanom:
+    description: ICDC
+    driver: netcdf
+    metadata:
+      fields:
+        s_an:
+          label: salinity anomaly
+          unit: psu
+    args:
+      urlpath: /pool/data/ICDC/ocean/levitus/DATA/sanom/sanom_*.nc
+      xarray_kwargs:
+        decode_times: False
+        concat_dim: time
+        combine: nested
+        drop_variables: [lat_bnds,lon_bnds,depth_bnds,climatology_bounds,crs]
+
+  Levitus_OHC:
+    description: ICDC
+    driver: netcdf
+    parameters:
+      depth:
+        description: depth levels of integral
+        type: str
+        default: 0-700
+        allowed: [0-700,0-2000]
+    metadata:
+      fields:
+        h18_hc:
+          label: Ocean heat content anomaly
+          unit: 10^18_joules
+    args:
+      urlpath: /pool/data/ICDC/ocean/levitus/DATA/heat_content/heat_content_anomaly_{{depth}}_yearly.nc
+      xarray_kwargs:
+        concat_dim: time
+        drop_variables: [lat_bnds,depth,lon_bnds,depth_bnds,climatology_bounds,crs]
+        decode_times: False
+
+  MODIS:
+    description: ICDC MODIS monthly
+    driver: netcdf
+    metadata:
+      fields:
+        chla:
+          label: Chlorophyll-a concentration at sea surface (OCI algorithm)
+          unit: mg m-3
+    parameters:
+      surface:
+        description: which bands aqua or terra
+        type: str
+        default: aqua
+        allowed: [aqua, terra]
+      var:
+        description: variable name
+        type: str
+        default: chl
+        allowed: [chl, sst]
+    args:
+      urlpath: /pool/data/ICDC/ocean/modis_{{surface}}_{{var}}/DATA/monthly/*/MODIS*.nc
+      xarray_kwargs:
+        concat_dim: time
+        combine: nested
+
+  AVISO:
+    description: ICDC SSH
+    driver: netcdf
+    args:
+      urlpath: /pool/data/ICDC/ocean/aviso_ssh/DATA/*/dt_global_twosat_phy_l4_*.nc
+      xarray_kwargs:
+        concat_dim: time
+        combine: nested
+        drop_variables: [lat_bnds, lon_bnds,nv,ugoas,adt,vgos,err,vgosa,crs]
+
+  HadISST:
+    description: hadisst
+    driver: netcdf
+    parameters:
+      var:
+        description: varname
+        type: str
+        default: sst
+        allowed: ['sst','ice']
+    args:
+      urlpath: /pool/data/ICDC/ocean/hadisst1/DATA/HadISST_{{var}}.nc
+      xarray_kwargs:
+        use_cftime: True
+        drop_variables: [time_bnds,nv]
+
+  AMSR-E_SST:
+    driver: netcdf
+    description: Surface temperature (SST) data retrieved from observations of the satellite microwave radiometer Advanced Microwave Scanning Radiometer an Bord EOS (AMSR-E)
+    metadata:
+      url_origin: https://icdc.cen.uni-hamburg.de/1/daten/ocean/sst-amsre.html
+      fields:
+        sst:
+          label: SST
+          unit: K
+    args:
+      urlpath: /pool/data/ICDC/ocean/amsre_sst/DATA/MONTHLY/AMSRE_SST__REMSS-UHAM-ICDC*.nc
+      xarray_kwargs:
+        concat_dim: time
+        combine: nested
+        drop_variables: dataflag
+
+  OISST:
+    driver: netcdf
+    description: Version 2 of the OISST (previously Reynolds SST) data set. It comprises two new high resolution sea surface temperature (SST) analysis products that have been developed using optimum interpolation (OI) --> OISST data set. One product uses Advanced Very High Resolution Radiometer (AVHRR) infrared satellite SST data (Pathfinder data September 1981 through December 2005; operational AVHRR January 2006 onwards). The other uses AVHRR and Advanced Microwave Scanning Radiometer (AMSR) on the NASA Earth Observing System satellite SST data (June 2002 onwards). Both products also use in situ data from ships and buoys and include a large-scale adjustment of satellite biases with respect to the in situ data. Hence this SST data set has to be regarded as a bulk SST data set.
+    metadata:
+      url_origin: http://icdc.cen.uni-hamburg.de/1/daten/ocean/sst-reynolds/
+      fields:
+        sst:
+          label: SST
+          unit: K
+    args:
+      urlpath: /pool/data/ICDC/ocean/reynolds_sst/DATA/MONTHLY/*avhrr-only-v2__monthly__UHAM-ICDC.nc
+      xarray_kwargs:
+        concat_dim: time
+        combine: nested
+        drop_variables: [min_sea_ice_extent, max_sea_ice_extent, sst_mean_uncertainty, sst_stddev, n_days]
+
+  OSCAR_surface_currents:
+    driver: netcdf
+    description: global near-surface current estimates
+    metadata:
+      url_origin: http://icdc.cen.uni-hamburg.de/1/daten/ocean/oscar-oceansurfacecurrent.html
+    parameters:
+      s_res:
+        description: spatial resolution
+        type: str
+        default: 1degree
+        allowed: [1degree,1third_degree]
+    args:
+      urlpath: /pool/data/ICDC/ocean/oscar_surface_current_velocity/DATA/{{s_res}}/*oscar_vel*.nc
+      xarray_kwargs:
+        concat_dim: time
+        combine: nested
+        drop_variables: depth
+
+  SMOS_SSS:
+    driver: netcdf
+    description: The ESA mission SMOS was planned with the aim of obtaining more precise data concerning the global water cycle. The exchange of water between land, ocean and atmosphere is one of the principal factors influencing weather and climate patterns. Constituents of the global hydrological cycle that can be measured with SMOS are a) the soil moisture, b) the ocean surface salinity, and c) the thin (< 50 cm) sea ice thickness. SMOS is a polar orbiting satellite based passive microwave sensor operating at L-Band (1.4 GHz). The brightness temperature measured by SMOS at L-Band is dependent on the SST and SSS of the seawater as well as on the sea surface roughness induced by wind and waves. The surface salinity is derived by inverse models on a global basis, taking auxiliary information about the SST and the sea surface roughness into account.
+    metadata:
+      url_origin: https://icdc.cen.uni-hamburg.de/1/daten/ocean/smos-sss/
+      fields:
+        sss:
+          label: SSS
+          unit: psu
+    args:
+      urlpath: /pool/data/ICDC/ocean/smos_sss/DATA/SMOS_SSS_2010_2016_V3.nc
+      drop_variables: [sss_biasadj,sss_biasadj_obj, theoret_err, bias_err]
+
+  HadCRUT3:
+    driver: netcdf
+    description: HadCRUT3 Surface (Air) Temperature Anomalies
+    metadata:
+      url_origin: http://icdc.cen.uni-hamburg.de/1/daten/atmosphere/crutem-and-hadcrut.html
+    parameters:
+      version:
+        description: version
+        type: str
+        default: 3
+        allowed: [3,3v]
+    args:
+      urlpath: /pool/data/ICDC/atmosphere/hadcrut/DATA/hadcrut{{version}}/HadCRUT{{version}}.nc
+
+  HadCRUT4:
+    driver: netcdf
+    description: HadCRUT Surface (Air) Temperature Anomalies
+    metadata:
+      url_origin: http://icdc.cen.uni-hamburg.de/1/daten/atmosphere/crutem-and-hadcrut.html
+    parameters:
+      out:
+        description: type of output
+        type: str
+        default: median
+        allowed: [median, uncorrelated, uncorrleated_supplementary]
+    args:
+      urlpath: /pool/data/ICDC/atmosphere/hadcrut/DATA/hadcrut4/HadCRUT.4.6.0.0.{{out}}.nc
+      xarray_kwargs:
+        drop_variables: [field_status, unspecified]
+
+  # indices
+  NINO3:
+    driver: csv
+    args:
+      urlpath: https://www.esrl.noaa.gov/psd/data/correlation/nina3.data
+      csv_kwargs:
+        skiprows: 3
+        skipfooter: 4
+        sep: '  '
+        names: ['Year','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
+  PDO:
+    driver: csv
+    args:
+      urlpath: https://www.esrl.noaa.gov/psd/data/correlation/pdo.data
+      csv_kwargs:
+        skiprows: 1
+        #index_col: 0
+        sep: '\t'
+        names: ['Year','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
+  SAM:
+    driver: csv
+    args:
+      urlpath: http://www.nerc-bas.ac.uk/public/icd/gjma/newsam.1957.2007.txt
+      csv_kwargs:
+        header: 1
+        #index_col: 0
+        sep: '\t'
+        names: ['Year','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
+  NCEP:
+    driver: netcdf
+    description: NCEP
+    metadata:
+      url_origin: https://icdc.cen.uni-hamburg.de/1/daten/reanalysis-atmosphere/cfsr.html
+    parameters:
+      variable:
+        description: variable name
+        type: str
+        default: 2m_airtemp_monthly
+        allowed: [2m_airtemp, net_longwave_radiation_flux, soil_temperature_0-10cm, total_cloud_cover, 2m_airtemp_monthly, net_shortwave_radiation_flux, specific_humidity, u_wind, 2m_air_tmax, relative_humidity, surface_convective_precipitation, u_wind_monthly, 2m_air_tmin, sensible_heat_flux, surface_pressure, v_wind, latent_heat_flux, soil_moisture_0-10cm, surface_pressure_monthly, v_wind_monthly]
+    args:
+      urlpath: /pool/data/ICDC/reanalyses/ncep_reanalysis1/DATA/{{variable}}/*.nc
+      xarray_kwargs:
+        concat_dim: time
+        combine: nested
+
+  ORAS5:
+    driver: netcdf
+    description: NCEP
+    metadata:
+      url_origin: https://icdc.cen.uni-hamburg.de/1/projekte/easy-init/easy-init-ocean.html
+    parameters:
+      variable:
+        description: variable name
+        type: str
+        default: sosstsst
+        allowed: [iicevelv, so20chgt, sohtc700, somxl010, sosstsst, vomecrtn, vozocrte, iicethic, ileadfra, sohefldo, sohtcbtm, sosaline, sowaflup, vosaline, iicevelu, sohtc300, sometauy, sossheig, sozotaux, votemper]
+      s_res:
+        description: spatial resolution
+        type: str
+        default: r1x1
+        allowed: [r1x1, ORCA025]
+      opa:
+        description: dont know
+        type: int
+        default: 4
+        allowed: [0,1,2,3,4]
+    args:
+      urlpath: /pool/data/ICDC/ocean_syntheses/oras5/{{s_res}}/{{variable}}/opa{{opa}}/{{variable}}_ORAS5*.nc
+      xarray_kwargs:
+        concat_dim: time_counter
+        combine: nested
+
+  ORAS5_backward_extension:
+    driver: netcdf
+    description: NCEP
+    metadata:
+      url_origin: https://icdc.cen.uni-hamburg.de/1/projekte/easy-init/easy-init-ocean.html
+    parameters:
+      variable:
+        description: variable name
+        type: str
+        default: sosstsst
+        allowed: [iicevelv, so20chgt, sohtc700, somxl010, sosstsst, vomecrtn, vozocrte, iicethic, ileadfra, sohefldo, sohtcbtm, sosaline, sowaflup, vosaline, iicevelu, sohtc300, sometauy, sossheig, sozotaux, votemper]
+      s_res:
+        description: spatial resolution
+        type: str
+        default: r1x1
+        allowed: [r1x1, ORCA025]
+    args:
+      urlpath: /pool/data/ICDC/ocean_syntheses/oras5_backward_extension/{{s_res}}/{{variable}}/opa0/{{variable}}_ORAS5*.nc
+      xarray_kwargs:
+        concat_dim: time_counter
+        combine: nested
+
+  GECCO2:
+    driver: netcdf
+    description: NCEP
+    metadata:
+      url_origin: https://icdc.cen.uni-hamburg.de/1/projekte/easy-init/easy-init-ocean.html
+    parameters:
+      variable:
+        description: variable name
+        type: str
+        default: temp
+        allowed: [temp, zeta, vice, v, uice, u, salt, qsw, qnet, heff, fv, fu, emp, bp, area, w]
+      s_res:
+        description: spatial resolution
+        type: str
+        default: regular_1x1_grid
+        allowed: [regular_1x1_grid, native_model_grid]
+    args:
+      urlpath: /pool/data/ICDC/ocean_syntheses/GECCO2/{{s_res}}/{{variable}}29_34_70.nc
+      xarray_kwargs:
+        decode_times: False
+        #concat_dim: time
+        #combine: nested

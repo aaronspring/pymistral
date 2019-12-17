@@ -1,0 +1,1027 @@
+,varname,long_name,code,table,units,model,outdatatype,dims,stream
+hyai,,hybrid A coefficient at layer interfaces,,,Pa,echam6,tracer,['nhyi'],echam6_tracer
+hybi,,hybrid B coefficient at layer interfaces,,,1,echam6,tracer,['nhyi'],echam6_tracer
+hyam,,hybrid A coefficient at layer midpoints,,,Pa,echam6,tracer,['nhym'],echam6_tracer
+hybm,,hybrid B coefficient at layer midpoints,,,1,echam6,tracer,['nhym'],echam6_tracer
+CO2,,mass fraction of CO2 in air,1,255,kg kg-1,echam6,tracer,"['time', 'lev', 'lat', 'lon']",echam6_tracer
+runoff,,Surface Runoff and Drainage (acc+weighted),160,185,kg/m^2s,echam6,accw,"['time', 'lat', 'lon']",echam6_accw
+drainage,,Drainage (acc+weighted),161,185,kg/m^2s,echam6,accw,"['time', 'lat', 'lon']",echam6_accw
+ground_heat_flux,,Ground Heat Flux (acc+weighted),206,185,W/m^2,echam6,accw,"['time', 'lat', 'lon']",echam6_accw
+glacier_runoff,,Glacier Runoff (acc+weighted),215,185,kg/m^2s,echam6,accw,"['time', 'lat', 'lon']",echam6_accw
+snow_melt,,Land Snow Melt (acc+weighted),218,185,kg/m^2s,echam6,accw,"['time', 'lat', 'lon']",echam6_accw
+glacier_precip_minus_evap,,P-E over land ice (acc+weighted),221,185,kg/m^2s,echam6,accw,"['time', 'lat', 'lon']",echam6_accw
+snow_accumulation,,Snow Accumulation (acc+weighted),222,185,kg/m^2s,echam6,accw,"['time', 'lat', 'lon']",echam6_accw
+glacier_melt,,Glacier Ice Melt (acc+weighted),228,185,kg/m^2s,echam6,accw,"['time', 'lat', 'lon']",echam6_accw
+var64,,,,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+var65,,,,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+var66,,,,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+var67,,,,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ocu,,ocean eastw. velocity (coupled mode),83,128,m/s,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ocv,,ocean northw. velocity (coupled mode),84,128,m/s,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+tradl,,thermal radiation 200mb,85,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+sradl,,solar radiation 200mb,86,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+trafl,,thermal radiation 200mb (clear sky),87,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+srafl,,solar radiation 200mb (clear sky),88,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+trfliac,,LW flux over ice,91,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+trflwac,,LW flux over water,92,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+trfllac,,LW flux over land,93,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+sofliac,,SW flux over ice,94,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+soflwac,,SW flux over water,95,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+sofllac,,SW flux over land,96,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+friac,,ice cover (fraction of grid box),97,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+var100,,,,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+var101,,,,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+tsi,,surface temperature of ice,102,128,K,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+tsw,,surface temperature of water,103,128,K,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ustri,,zonal      wind stress over ice,104,128,Pa,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+vstri,,meridional wind stress over ice,105,128,Pa,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ustrw,,zonal      wind stress over water,106,128,Pa,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+vstrw,,meridional wind stress over water,107,128,Pa,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ustrl,,zonal      wind stress over land,108,128,Pa,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+vstrl,,meridional wind stress over land,109,128,Pa,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ahfliac,,latent heat flux over ice,110,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ahflwac,,latent heat flux over water,111,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ahfllac,,latent heat flux over land,112,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+evapiac,,evaporation over ice,113,128,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+evapwac,,evaporation over water,114,128,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+evaplac,,evaporation over land,115,128,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+az0i,,roughness length over ice,116,128,m,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+az0w,,roughness length over water,117,128,m,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ahfsiac,,sensible heat flux over ice,119,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ahfswac,,sensible heat flux over water,120,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ahfslac,,sensible heat flux over land,121,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+alsoi,,albedo of ice,122,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+alsow,,albedo of water,123,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+alsol,,albedo of land,124,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+aps,,surface pressure,134,128,Pa,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+apmeb,,vert. integr. tendencies of water,137,128,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+tslm1,,surface temperature of land,139,128,K,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ws,,soil wetness,140,128,m,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+sn,,snow depth,141,128,m,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+aprl,,large scale precipitation,142,128,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+aprc,,convective  precipitation,143,128,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+aprs,,snow fall,144,128,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+vdis,,boundary layer dissipation,145,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ahfs,,sensible heat flux,146,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ahfl,,latent heat flux,147,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+xivi,,vertically integrated cloud ice,150,128,kg m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+slp,,mean sea level pressure,151,128,Pa,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+aclcov,,total cloud cover (mean),164,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+u10,,10m u-velocity,165,128,m/s,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+v10,,10m v-velocity,166,128,m/s,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+temp2,,2m temperature,167,128,K,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+dew2,,2m dew point temperature,168,128,K,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+tsurf,,surface temperature,169,128,K,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+wind10,,10m windspeed,171,128,m/s,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+albedo,,surface albedo,175,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+srads,,net surface solar radiation,176,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+trads,,net surface thermal radiation,177,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+srad0,,net top solar radiation,178,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+trad0,,top thermal radiation (OLR),179,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ustr,,u-stress,180,128,Pa,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+vstr,,v-stress,181,128,Pa,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+evap,,evaporation,182,128,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+srad0d,,top incoming solar radiation,184,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+srafs,,net surf. solar radiation   (clear sky),185,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+trafs,,net surf. thermal radiation (clear sky),186,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+sraf0,,net top solar radiation     (clear sky),187,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+traf0,,net top thermal radiation   (clear sky),188,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+sclf0,,SW top cloud forcing (178-187),191,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+tclf0,,LW top cloud forcing (179-188),192,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+wl,,skin reservoir content,193,128,m,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+vdisgw,,gravity wave dissipation,197,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+srad0u,,top solar radiation upward,203,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+sradsu,,surface solar radiation upward,204,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+tradsu,,surface thermal radiation upward,205,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ahfcon,,conductive heat flux through ice,208,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+ahfres,,melting of ice,209,128,W m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+seaice,,ice cover (fraction of 1-SLM),210,128,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+siced,,ice depth,211,128,m,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+gld,,glacier depth,213,128,m,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+sni,,water equivalent of snow on ice,214,128,m,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+wimax,,maximum 10m-wind speed,216,128,m/s,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+wsmx,,field capacity of soil,229,128,m,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+qvi,,vertically integrated water vapor,230,128,kg m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+xlvi,,vertically integrated cloud water,231,128,kg m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+snc,,snow depth at the canopy,233,128,m,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+abso4,,antropogenic sulfur burden,235,128,kg m-2,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+precip,,total precipitation,4,128,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+drain,,drainage,161,185,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+grndflux,,surface ground heat flux,206,185,,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+rogl,,glacier runoff,215,185,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+snmel,,snow melt,218,185,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+apmegl,,P-E over land ice,221,185,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+snacl,,snow accumulation over land,222,185,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+sodif,,diffusivity of soil and land ice,228,185,m^2/s,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+runtoc,,surface runoff into ocean,219,180,kg m-2 s-1,echam6,BOT_mm,"['time', 'lat', 'lon']",echam6_BOT_mm
+co2_flx_inst,,upward surface CO2 flux,2,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_flux,,total upward surface CO2 flux (acc.),5,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_flx_land,,total upward land CO2 flux (acc.),6,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_flx_ocean,,upward ocean CO2 flux (acc.),7,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_burden,,CO2 content (acc.),8,255,kg m-2,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_burden_corr_acc2,,CO2 correction in tendencies (acc.),9,255,kg m-2,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_flux_corr,,CO2 flux correction (acc.),10,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_burden_inst,,CO2 content,14,255,kg m-2,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_flx_total_inst,,total upward surface CO2 flux,15,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2ocean,,pco2 of surface ocean water,17,255,ppm CO2,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2trans,,transfer velocity of ocean/atmosphere CO2 flux,18,255,10-9 mol s m-4,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_flx_anthro,,upward anthropogenic CO2 flux (acc.),20,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_flx_npp,,upward CO2 flux - NPP (acc.),21,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_flx_resp,,upward CO2 flux - soil respiration (acc.),22,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_flx_herb,,upward CO2 flux - herbivory (acc.),23,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_flx_lcc,,upward CO2 flux - land use change (acc.),24,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_flx_harvest,,upward CO2 flux - harvest (acc.),25,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+co2_flx_fire,,upward CO2 flux - fire (acc.),26,255,kg m-2 s-1,echam6,co2_mm,"['time', 'lat', 'lon']",echam6_co2_mm
+t,,temperature,130,128,K,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+u,,u-velocity,131,128,m/s,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+v,,v-velocity,132,128,m/s,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+q,,specific humidity,133,128,kg/kg,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+omega,,vertical velocity,135,128,Pa/s,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+xl,,cloud water,153,128,kg/kg,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+xi,,cloud ice,154,128,kg/kg,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+geopoth,,geopotential height,156,128,m,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+rhumidity,,relative humidity,157,128,fraction,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+aclcac,,cloud cover,223,128,,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+svo,,vorticity,138,128,1/s,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+stream,,streamfunction,148,128,m^2/s,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+velopot,,velocity potential,149,128,m^2/s,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+sd,,divergence,155,128,1/s,echam6,ATM_mm,"['time', 'plev', 'lat', 'lon']",echam6_ATM_mm
+st,,temperature,130,128,K,echam6,echam,"['time', 'lev', 'nsp', 'nc2']",echam6_echam
+lsp,,log surface pressure,152,128,,echam6,echam,"['time', 'nsp', 'nc2']",echam6_echam
+rsdscs,,surface downwelling shortwave radiation flux (clear-sky),50,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+rsuscs,,surface upwelling shortwave radiation flux (clear-sky),51,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+rsdscs_na,,instantaneous surface downwelling shortwave radiation flux (clear-sky),52,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+rsuscs_na,,instantaneous surface upwelling shortwave radiation flux (clear-sky),53,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+q2m,,2m specific humidity,54,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+rh2m,,2m relative humidity,55,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+rsdsiac,,surface downwelling shortwave radiation over ice,56,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+rsdswac,,surface downwelling shortwave radiation over water,57,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+rsusiac,,surface upwelling shortwave radiation over ice,58,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+rsuswac,,surface upwelling shortwave radiation over water,59,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+rldsiac,,surface downwelling longwave radiation over ice,60,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+rldswac,,surface downwelling longwave radiation over water,61,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+rlusiac,,surface upwelling longwave radiation over ice,62,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+rluswac,,surface upwelling longwave radiation over water,63,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+sh_vdiff,,column heating due to vertical diffusion,64,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+ev_vdiff,,column moistening due to vertical diffusion,65,128,kg/m**2s,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+ch_concloud,,convective heating,66,128,W/m**s,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+cw_concloud,,convective moistening,67,128,kg/m**2s,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+fage,,aging factor of snow on ice,68,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+snifrac,,fraction of ice covered with snow,69,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+barefrac,,bare ice fraction,70,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+alsom,,albedo of melt ponds,71,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+alsobs,,albedo of bare ice and snow without ponds,72,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+sicepdw,,melt pond depth on sea-ice,73,128,m,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+sicepdi,,ice thickness on melt pond,74,128,m,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+tsicepdi,,ice temperature on frozen melt pond,75,128,K,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+sicepres,,residual heat flux,76,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+ameltdepth,,total melt pond depth,77,128,m,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+ameltfrac,,fract area of melt ponds on sea-ice,78,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+albedo_vis_dir,,surface albedo visible range direct,79,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+albedo_nir_dir,,surface albedo NIR range direct,80,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+albedo_vis_dif,,surface albedo visible range diffuse,81,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+albedo_nir_dif,,surface albedo NIR range diffuse,82,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+amlcorac,,mixed layer flux correction,89,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+albedo_vis,,surface albedo visible range,100,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+albedo_nir,,surface albedo NIR range,101,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+az0l,,roughness length over land,118,128,m,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+ahfice,,conductive heat flux,125,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+qres,,residual heat flux for melting sea ice,126,128,W/m**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+geosp,,surface geopotential (orography),129,128,m**2/s**2,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+relhum,,relative humidity,157,128,,echam6,echam,"['time', 'lev', 'lat', 'lon']",echam6_echam
+slm,,"land sea mask (1=land, 0=sea/lakes)",172,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+slf,,sea land fraction,194,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+t2max,,maximum 2m temperature,201,128,K,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+t2min,,minimum 2m temperature,202,128,K,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+topmax,,max height of conv cloud tops,217,128,Pa,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+glac,,fraction of land covered by glaciers,232,128,,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+ao3,,ipcc ozone,236,128,kg/kg,echam6,echam,"['time', 'lev', 'lat', 'lon']",echam6_echam
+tropo,,WMO defined tropopause height,237,128,Pa,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+thvsig,,stddev virt pot temp at halflev klevm1,238,128,K,echam6,echam,"['time', 'lat', 'lon']",echam6_echam
+tpot,,potential temperature,239,128,K,echam6,echam,"['time', 'lev', 'lat', 'lon']",echam6_echam
+jsswniracc,,net surface NIR accumulated,203,181,W/m**2,jsbach,surf_mm,"['time', 'lat', 'lon']",jsbach_surf_mm
+jsswvisacc,,net surface visible accumulated,204,181,W/m**2,jsbach,surf_mm,"['time', 'lat', 'lon']",jsbach_surf_mm
+jsswdifniracc,,net surface diffuse NIR accumulated,205,181,W/m**2,jsbach,surf_mm,"['time', 'lat', 'lon']",jsbach_surf_mm
+jsswdifvisacc,,net surface diffuse visible accumulated,206,181,W/m**2,jsbach,surf_mm,"['time', 'lat', 'lon']",jsbach_surf_mm
+longwave_down_acc,,downward longwave radiation,207,181,W/m**2,jsbach,surf_mm,"['time', 'lat', 'lon']",jsbach_surf_mm
+az0lh,,roughness length of heat over land,212,181,m,jsbach,surf_mm,"['time', 'lat', 'lon']",jsbach_surf_mm
+az0,,roughness length,213,181,m,jsbach,surf_mm,"['time', 'lat', 'lon']",jsbach_surf_mm
+jsswparacc,,downward surface PAR accumulated,244,181,W/m**2,jsbach,surf_mm,"['time', 'lat', 'lon']",jsbach_surf_mm
+jsswdifparacc,,downward surface diffuse PAR accumulated,246,181,W/m**2,jsbach,surf_mm,"['time', 'lat', 'lon']",jsbach_surf_mm
+surface_radiative_temp,,Surface Radiative Temperature,36,180,K,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+evapotranspiration,,Evapotranspiration (avg),44,180,kg/m^2s,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+snow_fract,,Snow Cover Fraction,60,180,,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+soil_temperature,,Soil Temperature,68,180,K,jsbach,land_mm,"['time', 'depth', 'lat', 'lon']",jsbach_land_mm
+csat,,csat exchange coefficient,72,180,,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+cair,,cair exchange coefficient,73,180,,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+csat_transpiration,,csat transpiration coefficient,74,180,,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+transpiration,,Transpiration (avg),76,180,kg/m^2s,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+water_storage_pre,,Water storage of previous time step,77,180,m,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+water_balance,,Soil Water Balance,78,180,kg/m^2s,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+bare_soil_evaporation,,Bare Soil Evaporation (avg),79,180,kg/m^2s,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+snow_evaporation,,Snow Evaporation (avg),80,180,kg/m^2s,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+skin_evaporation,,Skin Reservoir Evaporation (avg),81,180,kg/m^2s,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+reduced_evaporation,,Potential for reducing Evaporation (avg),82,180,kg/m^2s,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+precip_acc,,Precipitation received by JSBACH,83,180,kg/m^2s,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+wetskin_fract,,Mean Wet Skin Fraction,86,180,,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+surface_qair,,"Surface specific humidity, accu.",91,180,kg/kg,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+evaporation_deficit,,Evaporation deficit flux (avg),102,180,kg/m^2s,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+tair_max,,Maximum temperature lowest atmospheric level,104,180,K,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+tair_min,,Minimum temperature lowest atmospheric level,105,180,K,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+wind_lal_acc,,Windspeed lowest atmospheric level,106,180,m/s,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+lai,,Leaf Area Index,107,180,,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+snow_depth_canopy,,Snow Depth on Canopy,109,180,m,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+snow_fract_canopy,,Snow Fraction on Canopy,110,180,,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+net_assimilation,,Canopy Net Carbon Assimilation (avg.),124,180,mol(CO2) m-2(grid box) s-1,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+gross_assimilation,,Gross Assimilation (avg.),126,180,mol(CO2) m-2(grid box) s-1,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+surface_temperature_acc,,Land Surface Temperature accumulated,139,180,K,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+apar_acc,,PAR Absorbed by Canopy (avg.),148,180,mol(PHOTONS) m-2(grid box) s-1,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+par_acc,,incoming photosynthetically active radiation (PAR) (avg.),149,180,mol(PHOTONS) m-2 s-1,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+var125,,,,255,,jsbach,land_mm,"['time', 'lat', 'lon']",jsbach_land_mm
+cover_fract_pot,,Potential Natural Land Cover Fraction,10,180,,jsbach,jsbach_mm,"['time', 'lev', 'lat', 'lon']",jsbach_jsbach_mm
+cover_fract,,Land Cover Fraction,12,180,,jsbach,jsbach_mm,"['time', 'lev', 'lat', 'lon']",jsbach_jsbach_mm
+veg_ratio_max,,Maximum Vegetation Fraction,20,180,,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+swdown_acc,,Surface Downwelling Solar Radiation,21,180,W m-2,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+swdown_reflect_acc,,Surface Upwelling Solar Radiation,22,180,W m-2,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+box_veg_ratio,,vegetated fraction of grid box,24,180,,jsbach,jsbach_mm,"['time', 'lev', 'lat', 'lon']",jsbach_jsbach_mm
+land_fract,,Land Fraction,25,180,,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+swdown_absorb_nosno_acc,,Surface absorbed Solar Radiation (without snow),30,180,W m-2,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+skin_reservoir,,Water Content of the Skin Reservoir,55,180,m,jsbach,jsbach_mm,"['time', 'lev', 'lat', 'lon']",jsbach_jsbach_mm
+relative_humidity_air_inst,,Relative Humidity,56,180,,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+snow_age,,Non-dimensional Snow Age,77,180,,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+layer_moisture,,Soil Moisture Content,84,180,m,jsbach,jsbach_mm,"['time', 'depth', 'lat', 'lon']",jsbach_jsbach_mm
+veg_fract_correction,,Correction factor for cover fraction 1-exp(-LAI_max/2),116,180,,jsbach,jsbach_mm,"['time', 'lev', 'lat', 'lon']",jsbach_jsbach_mm
+canopy_conductance,,Canopy Conductance,120,180,m/s,jsbach,jsbach_mm,"['time', 'lev', 'lat', 'lon']",jsbach_jsbach_mm
+net_assimilation_acc,,Canopy Net Carbon Assimilation,124,180,mol(CO2) m-2(canopy) s-1,jsbach,jsbach_mm,"['time', 'lev', 'lat', 'lon']",jsbach_jsbach_mm
+gross_assimilation_acc,,Gross Assimilation (avg.),126,180,mol(CO2) m-2(canopy) s-1,jsbach,jsbach_mm,"['time', 'lev', 'lat', 'lon']",jsbach_jsbach_mm
+CO2_flux_net,,Net CO2 flux to atmosphere (acc.),160,180,mol(CO2) m-2(grid box) s-1,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+CO2_flux_herbivory,,Grazing CO2 flux to atmosphere (acc.),161,180,mol(CO2) m-2(grid box) s-1,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+CO2_emission_landcover_change,,Land-cover change CO2 flux to the atmosphere (acc.),162,180,mol(CO2) m-2(grid box) s-1,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+CO2_emission_harvest,,Harvest CO2 flux to atmosphere (acc.),163,180,mol(CO2) m-2(grid box) s-1,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+CO2_flux_dynveg,,Disturbance CO2 flux to atmosphere (acc.),164,180,mol(CO2) m-2(grid box) s-1,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+disch,,river discharge,218,180,m/s,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+awfre,,P-E over ocean and lakes,242,180,kg/m**2s,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+var13,,,,255,,jsbach,jsbach_mm,"['time', 'lat', 'lon']",jsbach_jsbach_mm
+box_minNflux_litter_green,,Mineral N flux assoiated with green litter,70,182,mol(N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_minNflux_litter_wood,,Mineral N flux associated with woody litter,71,182,mol(N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_minNflux_slow,,Soil mineral N flux from slow pool,72,182,mol(N) m-2(grid box)  s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_Nplant_uptake,,N uptake by plants,73,182,mol(N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_Nsoil_uptake,,N uptake by soil,74,182,mol(N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_Ntotal_uptake,,total N uptake by plants and soil,76,182,mol(N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_Nfix_to_sminN,,N flux to mineral N pool due to N fixation (BNF),77,182,mol(N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_Ndep_to_sminN,,N flux to mineral N pool due to N deposition,79,182,mol (N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_sminN_to_denit,,N flux from mineral N pool due to denitrification,80,182,mol(N) m-2(grid box)s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_sminN_leach,,N flux to mineral N pool due to leaching,81,182,mol(N) m-2(grid box)s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_sminN_herbivory,,N flux from herbivory via animal faeces to mineral N pool,82,182,mol(N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_sminN_loss,,Total N outflux of soil mineral N pool,84,182,mol(N) m-2(grid box)s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+LCC_flux_box_N2litterGreenPools,,Nitrogen relocated from green and reserve pools to the green litter pools due to LCC,86,182,mol(N) m-2(vegetated area) s-1,jsbach,nitro_mm,"['time', 'lat', 'lon']",jsbach_nitro_mm
+LCC_flux_box_N2litterWoodPool,,Wood nitrogen relocated by landcover change to woody litter pool,87,182,mol(N) m-2(vegetated area) s-1,jsbach,nitro_mm,"['time', 'lat', 'lon']",jsbach_nitro_mm
+LCC_flux_box_N2SMINNpool,,Wood nitrogen relocated by landcover change to soil mineral N pool,88,182,mol(N) m-2(vegetated area) s-1,jsbach,nitro_mm,"['time', 'lat', 'lon']",jsbach_nitro_mm
+N2atmos_LUtrans,,Nitrogen flux to atmosphere from land use change,129,182,mol(N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lat', 'lon']",jsbach_nitro_mm
+N2atmos_harvest,,Nitrogen flux to atmosphere from harvest,130,182,mol(N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lat', 'lon']",jsbach_nitro_mm
+jsbachNconserv,,jsbach nitrogen conservation test: should be zero.,138,182,mol(N2) m-2(grid box),jsbach,nitro_mm,"['time', 'lat', 'lon']",jsbach_nitro_mm
+box_Nflx_2_crop_harvest,,N flux from vegetation to crop harvest pool,158,182,mol(N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lat', 'lon']",jsbach_nitro_mm
+box_N2O_total,,Sum of all N2O fluxes,212,182,mikro-mol(N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+boxN_crop_harvest,,N-Pool for material harvested from crops,222,182,mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+Ndep_forc,,atmospheric N deposition,236,182,kg (N) m-2(grid box) s-1,jsbach,nitro_mm,"['time', 'lat', 'lon']",jsbach_nitro_mm
+NetEcosyst_N_flux,,Total balance of N gains and losses (positive for ecosystem gain),237,182,mol(N) m-2(canopy) s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+NPP_run_mean,,Exponential running mean of NPP used for N-fixation model,238,182,mol(N) m-2(canopy) s-1,jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+boxN_green,,N-Pool for Green Parts of Vegetation,240,182,mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+boxN_woods,,N-Pool for Structural Material of Plants,241,182,mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+boxN_mobile,,N-Pool for mobile N,242,182,mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+boxN_litter_green_ag,,N-Pool for above ground non-woody litter (leaves),243,182,mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+boxN_litter_green_bg,,N-Pool for below ground non-woody litter (fine roots),244,182,mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+boxN_litter_wood_ag,,N-Pool for above ground woody litter,245,182,mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+boxN_slow,,N-Pool for slowly respirated soil organic material,246,182,mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_Npools_total,,Sum of nitrogen from all nitrogen pools,247,182,mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lat', 'lon']",jsbach_nitro_mm
+boxN_litter_wood_bg,,N-Pool for below ground woody litter,248,182,mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+boxN_sminN,,N-Pool for soil mineral nitrogen,250,182,mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_N2O_emissions_depfix,,N2O emissions due to deposition and fixation,251,182,mikro-mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+box_N2O_emissions_mineraliz,,N2O emissions due to mineralization,252,182,mikro-mol(N) m-2(grid box),jsbach,nitro_mm,"['time', 'lev', 'lat', 'lon']",jsbach_nitro_mm
+boxYC_acid_ag1,,C-Pool for acid-soluble litte in Yasso (aboveground),31,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_acid_bg1,,C-Pool for acid-soluble litte in Yasso (belowground),32,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_water_ag1,,C-Pool for water-soluble litter in Yasso (aboveground),33,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_water_bg1,,C-Pool for water-soluble litter in Yasso (belowground),34,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_ethanol_ag1,,C-Pool for ethanol-soluble litter in Yasso (aboveground),35,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_ethanol_bg1,,C-Pool for ethanol-soluble litter in Yasso (belowground),36,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_nonsoluble_ag1,,C-Pool for nonsoluble litter in Yasso (aboveground),37,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_nonsoluble_bg1,,C-Pool for nonsoluble litter in Yasso (belowground),38,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_humus_1,,C-Pool for humus in Yasso,39,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_acid_ag2,,C-Pool for acid-soluble litte in Yasso (aboveground),41,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_acid_bg2,,C-Pool for acid-soluble litte in Yasso (belowground),42,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_water_ag2,,C-Pool for water-soluble litter in Yasso (aboveground),43,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_water_bg2,,C-Pool for water-soluble litter in Yasso (belowground),44,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_ethanol_ag2,,C-Pool for ethanol-soluble litter in Yasso (aboveground),45,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_ethanol_bg2,,C-Pool for ethanol-soluble litter in Yasso (belowground),46,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_nonsoluble_ag2,,C-Pool for nonsoluble litter in Yasso (aboveground),47,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_nonsoluble_bg2,,C-Pool for nonsoluble litter in Yasso (belowground),48,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+boxYC_humus_2,,C-Pool for humus in Yasso,49,184,mol(C) m-2(grid box),jsbach,yasso_mm,"['time', 'lev', 'lat', 'lon']",jsbach_yasso_mm
+pseudo_temp_yDay,,Pseudo-mean air temperature over previous 15 days,50,184,K,jsbach,yasso_mm,"['time', 'lat', 'lon']",jsbach_yasso_mm
+pseudo_precip_yDay,,Pseudo-mean precipitation rate over previous 15 days,51,184,Kg m-2 s-1,jsbach,yasso_mm,"['time', 'lat', 'lon']",jsbach_yasso_mm
+prev_year_npp,,NPP of the previous year,18,181,mol(CO2) m-2(canopy),jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+ave_npp5,,five year running mean of annual NPP,19,181,mol(CO2) m-2(canopy),jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+prev_day_max_wind10,,maximum 10m wind speed of the previous day,20,181,m/s,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+max_wind10,,typical maximum daily 10m wind speed of the previous years,23,181,m/s,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+rel_hum_air_yDay,,smoothed (~14 day) relative humidity of the air,24,181,%,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+top_layer_soil_moisture,,,26,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+prev_day_temp_max,,,29,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+prev_day_temp_min,,,30,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+act_fpc,,fractional plant cover,31,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+curr_day_temp_max,,,32,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+curr_day_temp_min,,,33,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+desert_fpc,,desert fraction,34,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+bare_fpc,,bare soil fraction,35,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+prev_day_precip_mean,,,37,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+pot_fpc,,potential plant cover fraction,38,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+bio_exist,,bio exist,39,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+sum_green_bio_memory,,vegetated fraction calculated from green biomass,40,181,mol(C) m-2(canopy),jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+prev_day_mean_wind10,,,42,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+box_burned_frac_diag_avg,,Burned area fraction including survivors,50,181,m2m-2(grid box),jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+fuel,,fuel used for burned area calculations,51,181,mol(C)/m^2(veg),jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+burned_frac,,burned area fraction,52,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_burned_frac_avg,,Burned area fraction averaged over output period,53,181,m2m-2(grid box),jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+damaged_frac,,damaged area fraction,54,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_damaged_frac_avg,,Damaged area fraction averaged over output period,55,181,m2m-2(grid box),jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_fire_CO2_flux_2_atmos,,Average CO2 flux to atmosphere,56,181,kg(CO2) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+dist_nitrogen_2_atmos,,N compounds emitted to the atmosphere by fire,62,181,mol(N) m-2(grid box),jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+frac_1hr_wood,,fraction of 1hr fuel in wood pool,65,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+frac_10hr_wood,,fraction of 10hr fuel in wood pool,66,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+frac_100hr_wood,,fraction of 100hr fuel in wood pool,67,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+frac_1000hr_wood,,fraction of 1000hr fuel in wood pool,68,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+NI_acc,,average Nesterov index,69,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+frac_litter_wood_new,,fraction of new litter in woody litter pool,75,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+Box_flux_harvest_2atmos,,Harvest flux from natural vegetation emitted from gridbox as CO2 to atmosphere,80,181,mol(C) m-2(gridbox) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+LCC_coverFract_target,,Vegetation cover fractions that should be reached at the end of the year as a result of landcover change.,81,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+LCC_flux_box_C2atmos,,Carbon flux to atmosphere from land cover/land use change,82,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+LCC_flux_box_C2litterGreenPools,,Flux of green and reserve carbon relocated by landcover change to the two green litter pools,83,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+LCC_flux_box_C2litterWoodPool,,Wood carbon relocated by landcover change to woody litter pool,84,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+CROP_2_NATL_ignored,,Cover fraction that could not be transfered from croplands to natural vegetation,123,181,-,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+PAST_2_NATL_ignored,,Cover fraction that could not be transfered from pastures to natural vegetation,124,181,-,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+Box_harvest,,Prescribed harvest from natural vegetation for full gridbox,125,181,mol(C) m-2(gridbox) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+Box_flux_harvest,,Total harvest flux from natural vegetation for full gridbox,126,181,mol(C) m-2(gridbox) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+excess_NPP,,NPP that could not be not stored in vegetation carbon pools,130,181,mol(CO2) m-2(canopy) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+root_exudates,,root exudates,131,181,mol(C) m-2(canopy) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+Cflux_herbivory,,Cflux_herbivory,132,181,mol(C) m-2(canopy) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+Cflux_herbivory_LG,,Cflux_herbivory_LG,133,181,mol(C) m-2(canopy) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+Cflux_herbivory_2_atm,,Cflux_herbivory_2_atm,134,181,mol(C) m-2(canopy) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_root_exudates,,root exudates,135,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_Cflux_herbivory,,Cflux_herbivory,136,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+jsbachCconserv,,jsbach carbon conservation test: should be zero.,138,181,mol(CO2) m-2(grid box),jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+box_Cflux_herbivory_2_atm,,Carbon flux from herbivory to the atmsphere,143,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+NPP_flux_correction,,Flux correction for NPP,157,181,mol(CO2) m-2(canopy) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_Cflx_2_crop_harvest,,Carbon flux from crops to crop harvest pool,158,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_green,,C-Pool for Green Parts of Vegetation,160,181,mol(C) m-2(grid box),jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+boxC_woods,,C-Pool for Structural Material of Plants,161,181,mol(C) m-2(grid box),jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+boxC_reserve,,"C-Pool for reserve carbohydrates (starches, sugars)",162,181,mol(C) m-2(grid box),jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+LAI_yDayMean,,Mean Leaf Area Index of the Previous Day,165,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+NPP_yDayMean,,Mean NPP Rate of the Previous Day,166,181,mol(CO2) m-2(canopy) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+topSoilTemp_yDayMean,,Previous Day Mean Temperature of the Uppermost Soil Layer,168,181,K,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+alpha_yDayMean,,Previous Day Mean Value of the Water Stress Coefficient,169,181,,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_soil_respiration,,Soil respiration,170,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_NPP_yDayMean,,Mean potential NPP of the Previous Day,171,181,mol(CO2) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_NPP_flux_correction,,Flux correction for NPP,172,181,mol(CO2) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_GPP_yDayMean,,Mean GPP Rate of the Previous Day,173,181,mol(CO2) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_litter_flux,,Total litter flux entering the soil pools,175,181,mol(CO2) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_Cpools_total,,Sum of carbon from all carbon pools,176,181,mol(CO2) m-2(grid box),jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+box_NPP_act_yDayMean,,Mean actual NPP the Previous Day,178,181,mol(CO2) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+growth_phase_SG,,Growth Phase of Summergreens,181,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+growth_phase_EG,,Growth Phase of Evergreens,182,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+previous_day_temp,,Air Temperature of the Previous Day,185,181,degC,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+pseudo_soil_temp,,Pseudo Soil Temperature,186,181,degC,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+heat_sum_EG,,Heat Sum - Evergreens,188,181,degC d,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+heat_sum_SG,,Heat Sum - Summergreens,189,181,degC d,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+chill_days_EG,,Number of Chill Days - Evergreens,190,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+chill_days_SG,,Number of Chill Days - Summergreens,191,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+growth_phase_CRP,,Growth Phase of extra-tropical crops,196,181,,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+heat_sum_CRP,,Heat Sum - Crops,197,181,degC d,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+heat_sum_winter,,Heat Sum - Winter Crops,199,181,degC d,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+previous_day_temp_min,,Minimum air Temp. of the Previous Day,205,181,degC,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+previous_day_temp_max,,Maximum air Temp. of the Previous Day,206,181,degC,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+NPP_act_yDayMean,,NPP_act_yDayMean,210,181,mol(CO2) m-2(canopy) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+box_Cflx_crop_harvest_2_atm,,Carbon flux from crop harvest pool to the atmsphere,211,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+redFact_Nlimitation,,redFact_Nlimitation,212,181,dimensionless),jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+boxC_onSite_LCC,,Carbon left on ground from land use change,218,181,mol(C) m-2(grid box),jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_paper_LCC,,Wood carbon in short/intermediate term anthropogenic pool from land use change,220,181,mol(C) m-2(grid_box),jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_construction_LCC,,Wood carbon in long term anthropogenic pool from land use change,221,181,mol(C) m-2(grid box),jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_paper_harvest,,Wood carbon in short/intermediate term anthropogenic pool from harvest,222,181,mol(C) m-2(grid box),jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_construction_harvest,,Wood carbon in long term anthropogenic pool from harvest,223,181,mol(C) m-2(grid box),jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_onSite_harvest,,Carbon left on ground from harvest,224,181,mol(C)m-2(grid box),jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_crop_harvest,,C-Pool for material harvested from crops,225,181,mol(C) m-2(grid box),jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+boxC_flux_2_onSite_LCC,,Carbon flux from living plants to ground pool from land use change,228,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_flux_2_paper_LCC,,Wood carbon flux from living plants to short/intermediate term anthropogenic pool from land use change,230,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_flux_2_construction_LCC,,Wood carbon flux from living plants to long term anthropogenic pool from land use change,231,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_flux_onSite_2_atmos_LCC,,Carbon flux from ground pool from land use change to atmos,236,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_flux_paper_2_atmos_LCC,,Carbon flux from short/intermediate term anthropogenic pool from land use change to atmos,238,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_flux_construction_2_atmos_LCC,,Carbon flux from long term anthropogenic pool from land use change to atmos,239,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_flux_2_paper_harvest,,Wood carbon flux from living plants to intermediate term anthropogenic pool from harvest,242,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_flux_2_construction_harvest,,Wood carbon flux from living plants to long term anthropogenic pool from harvest,243,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_flux_paper_2_atmos_harvest,,Carbon flux intermediate term anthropogenic pool from harvest to atmos,246,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_flux_construction_2_atmos_harvest,,Carbon flux from long term anthropogenic pool from harvest to atmos,247,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+drainage_yDayMean,,Previous Day Mean drainage,248,181,Kg m-2 s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_flux_2_onSite_harvest,,Wood carbon flux from living plants to short term anthropogenic pool from harvest,249,181,mol(C)m-2(grid box)s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+boxC_flux_onsite_2_atmos_harvest,,Carbon flux short term anthropogenic pool from harvest to atmos,251,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lat', 'lon']",jsbach_veg_mm
+box_soil_respiration_pot,,Soil respiration without N limitation,254,181,mol(C) m-2(grid box) s-1,jsbach,veg_mm,"['time', 'lev', 'lat', 'lon']",jsbach_veg_mm
+thetaoga,,Sea water potential temperature,515,,C,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+soga,,Sea water salinity,516,,1e-3,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+zossga,,Global average steric sea level change,518,,m,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+zosga,,Global average sea level change,519,,m,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+zostoga,,Global average thermosteric sea level change,520,,m,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+netwatertransport_bering_strait,,Ocean water transport across line bering strait,622,,kg s-1,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+netwatertransport_drake_passage,,Ocean water transport across line drake passage,652,,kg s-1,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+netwatertransport_equatorial_undercurrent,,Ocean water transport across line equatorial undercurrent,672,,kg s-1,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+simassacrossline_fram_strait,,Sea-ice-mass flux through straits fram strait,703,,kg s-1,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+netheattransport_atlantic_26n,,Ocean heat transport across line atlantic 26n,800,,W,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+eisab_arctic_ocean,,Sea ice extent in region arctic ocean,836,,m2,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+eiscb_arctic_ocean,,Sea ice volume in region arctic ocean,837,,m3,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+eisab_southern_ocean,,Sea ice extent in region southern ocean,900,,m2,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+eiscb_southern_ocean,,Sea ice volume in region southern ocean,901,,m3,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+tem_0m_tropical_pacific_ocean,,Sst in region tropical pacific ocean,936,,C,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+hflb_global_ocean,,Heat uptake in region global ocean,950,,W,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+wflb_global_ocean,,Freshwater uptake in region global ocean,951,,m3 s-1,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+tem_0m_global_ocean,,Sst in region global ocean,952,,C,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+salt_0m_global_ocean,,Sss in region global ocean,953,,psu,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+tem_200m_global_ocean,,Temperature 200m in region global ocean,955,,C,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+salt_200m_global_ocean,,Salinity 200m in region global ocean,956,,psu,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+tem_800m_global_ocean,,Temperature 800m in region global ocean,958,,C,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+salt_800m_global_ocean,,Salinity 800m in region global ocean,959,,psu,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+tem_2000m_global_ocean,,Temperature 2000m in region global ocean,961,,C,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+salt_2000m_global_ocean,,Salinity 2000m in region global ocean,962,,psu,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+amoc26n,,Atlantic moc at 26N in 1000m,1001,,Sv,mpiom,monitoring_ym,"['time', 'depth', 'lat', 'lon']",mpiom_monitoring_ym
+lon_bnds,,,,,,mpiom,data_2d_mm,"['y', 'x', 'vertices']",mpiom_data_2d_mm
+lat_bnds,,,,,,mpiom,data_2d_mm,"['y', 'x', 'vertices']",mpiom_data_2d_mm
+lon_2_bnds,,,,,,mpiom,data_2d_mm,"['y_2', 'x_2', 'vertices']",mpiom_data_2d_mm
+lat_2_bnds,,,,,,mpiom,data_2d_mm,"['y_2', 'x_2', 'vertices']",mpiom_data_2d_mm
+lon_3_bnds,,,,,,mpiom,data_2d_mm,"['y_3', 'x_3', 'vertices']",mpiom_data_2d_mm
+lat_3_bnds,,,,,,mpiom,data_2d_mm,"['y_3', 'x_3', 'vertices']",mpiom_data_2d_mm
+zos,,Sea surface height above geoid,1,,m,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+zossq,,Square of sea surface height above geoid,11,,m2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+tos,,Sea surface temperature,12,,C,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sivol,,Sea ice volume per area,13,,m,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+tossq,,Square of sea surface temperature,14,,C2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+siconc,,Sea ice area fraction,15,,1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sos,,Sea surface salinity,16,,1e-3,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+pbo,,Sea water pressure at sea floor,17,,Pa,mpiom,data_2d_mm,"['time', 'depth_2', 'y', 'x']",mpiom_data_2d_mm
+tob,,Sea water potential temperature at sea flor,19,,C,mpiom,data_2d_mm,"['time', 'depth_2', 'y', 'x']",mpiom_data_2d_mm
+sob,,Sea water potential salinity at sea flor,20,,1e-3,mpiom,data_2d_mm,"['time', 'depth_2', 'y', 'x']",mpiom_data_2d_mm
+msftbarot,,Ocean barotropic mass streamfunction,27,,kg s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sicuo,,Sea ice x velocity,35,,m s-1,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+sicve,,Sea ice y velocity,36,,m s-1,mpiom,data_2d_mm,"['time', 'depth', 'y_3', 'x_3']",mpiom_data_2d_mm
+wfocorr,,Water flux correction,66,,kg m-2 s-1,mpiom,data_2d_mm,"['time', 'depth_3', 'y', 'x']",mpiom_data_2d_mm
+flum,,Surface net downward heat flux where sea,70,,W m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+wfo,,Water flux into sea water,78,,kg m-2 s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+pem,,Water flux into ocean,79,,m s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+t14d,,14C isotherm depth,104,,m,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+t20d,,20C isotherm depth,109,,m,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+oxhtradv,,Ocean heat x transport due to advection,123,,W,mpiom,data_2d_mm,"['time', 'depth_3', 'y_2', 'x_2']",mpiom_data_2d_mm
+oyhtradv,,Ocean heat y transport due to advection,124,,W,mpiom,data_2d_mm,"['time', 'depth_3', 'y_3', 'x_3']",mpiom_data_2d_mm
+oxhtrdif,,Ocean heat x transport due to diffusion,125,,W,mpiom,data_2d_mm,"['time', 'depth_3', 'y_2', 'x_2']",mpiom_data_2d_mm
+oyhtrdif,,Ocean heat y transport due to diffusion,126,,W,mpiom,data_2d_mm,"['time', 'depth_3', 'y_3', 'x_3']",mpiom_data_2d_mm
+hfxba,,Ocean heat x transport due to bolus advection,127,,W,mpiom,data_2d_mm,"['time', 'depth_3', 'y_2', 'x_2']",mpiom_data_2d_mm
+hfyba,,Ocean heat y transport due to bolus advection,128,,W,mpiom,data_2d_mm,"['time', 'depth_3', 'y_3', 'x_3']",mpiom_data_2d_mm
+swsum,,Total penetrating fraction of solar flux,134,,frac,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+heatabs,,Total subsurface heating due to absorption,136,,J m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sidmasstranx,,Sea ice x transport,138,,kg s-1,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+sidmasstrany,,Sea ice y transport,139,,kg s-1,mpiom,data_2d_mm,"['time', 'depth', 'y_3', 'x_3']",mpiom_data_2d_mm
+sossq,,Square of sea surface salinity,140,,(1e-3)2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sicsno,,Surface snow thickness where sea ice,141,,m,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+hfsithermds,,Heat flux into sea water due to sea ice thermodynamics,149,,W m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sfbrine,,Downward sea ice brine salt flux,150,,kg m-2 s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sfdsi,,Downward sea ice basal salt flux,151,,kg m-2 s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+fsitherm,,Water flux into sea water due to sea ice thermodynamics,153,,kg m-2 s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+wfonocorr,,Water flux into sea water without flux correction,165,,kg m-2 s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+hfsnow,,Heat flux due to snow falling in the ocean,168,,W m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+hfvolds,,Heat flux due to water flux in the ocean,169,,W m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+hfds,,Surface downward heat flux in sea water,170,,W m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+zmld_sqr,,Square of ocean mixed layer thickness defined by sigma t,181,,m2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+zmld,,Ocean mixed layer thickness defined by sigma t,183,,m,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+aofltxwo,,Zonal wind stress on water,215,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+aofltywe,,Meridional wind stress on water,216,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_3', 'x_3']",mpiom_data_2d_mm
+aofltxio,,Zonal wind stress on ice,217,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+aofltyie,,Meridional wind stress on ice,218,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_3', 'x_3']",mpiom_data_2d_mm
+aoflfrwo,,Liquid freshwater flux,219,,m s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+aoflfrio,,Solid freshwater flux over ice,220,,m s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+aoflrhio,,Residual heat flux used to melt snow/ice,221,,W m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+aoflnhwo,,Net heat flux over water,222,,W m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+aoflshwo,,Downwelling solar radiation,223,,W m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+aoflchio,,Conductive heat flux through ice,224,,W m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+aoflwsvo,,10m wind velocity,225,,m s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+strairx,,Zonal wind stress on ice,226,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+strairy,,Meridional wind stress on ice,227,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_3', 'x_3']",mpiom_data_2d_mm
+strocx,,Zonal ice stress on ocean,228,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+strocy,,Meridional ice stress on ocean,229,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_3', 'x_3']",mpiom_data_2d_mm
+mlotstsq,,Square of ocean mixed layer thickness defined by sigma t,275,,m2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+mlotst,,Ocean mixed layer thickness defined by sigma t,276,,m,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+opottempmint,,Integral wrt depth of product of sea water density and potential temperature,277,,C kg m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+somint,,Integral wrt depth of product of sea water density and prognostic salinity,278,,1e-3 kg m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+thetaot,,Vertically Averaged Sea Water Potential Temperature,285,,K,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+thetaot300,,Depth average potential temperature of upper 300m,286,,K,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+thetaot700,,Depth average potential temperature of upper 700m,287,,K,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+thetaot2000,,Depth average potential temperature of upper 2000m,288,,K,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+tauuo,,Surface downward x stress,548,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+tauvo,,Surface downward y stress,549,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_3', 'x_3']",mpiom_data_2d_mm
+rsntds,,Net downward shortwave flux at sea water surface,521,,W m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+simass,,Sea ice mass per area,1013,,kg m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sisnconc,,Snow area fraction,1015,,,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sitimefrac,,Sea ice time fraction,1016,,1.0,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sisnmass,,Snow mass per area,1018,,kg m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sihc,,Sea-ice heat content per unit area,1019,,J m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sisnhc,,Snow-heat content per unit area,1020,,J m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sisaltmass,,Mass of salt in sea ice per area,1021,,kg m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+siusic,,Product of sea ice x velocity and sea ice concentration,1022,,m s-1,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+sicu,,Sea ice concentration on u-point,1023,,1,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+sivsic,,Product of sea ice v velocity and sea ice concentration,1024,,m s-1,mpiom,data_2d_mm,"['time', 'depth', 'y_3', 'x_3']",mpiom_data_2d_mm
+sicv,,Sea ice concentration on v-point,1025,,1,mpiom,data_2d_mm,"['time', 'depth', 'y_3', 'x_3']",mpiom_data_2d_mm
+sispeedsic,,Product of sea ice velocity and sea ice concentration,1026,,m s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sistrxdtopsic,,Product of x-component of atmospheric stress on sea ice and sea ice concentration,1027,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+sistrydtopsic,,Product of y-component of atmospheric stress on sea ice and sea ice concentration,1028,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+sistrxubotsic,,Product of x-component of ocean stress on sea ice and sea ice concentration,1036,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+sistryubotsic,,Product of y-component of ocean stress on sea ice and sea ice concentration,1037,,N m-2,mpiom,data_2d_mm,"['time', 'depth', 'y_3', 'x_3']",mpiom_data_2d_mm
+sifbsic,,Product of sea ice freeboard and sea ice concentration,1038,,m,mpiom,data_2d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_2d_mm
+sidconcdyn,,Sea-ice area fraction change from dynamics,1039,,s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sidconcth,,Sea-ice area fraction change from  thermodynamics,1040,,s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sidmassdyn,,Sea-ice mass change from dynamics,1041,,kg s-1 m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sidmassth,,Sea-ice mass change from  thermodynamics,1042,,kg s-1 m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sndmassdyn,,Snow mass change through advection by sea-ice dynamics,1043,,kg s-1 m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sndmassth,,Snow mass change by thermodynamics,1044,,kg s-1 m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sndmasssnf,,Snow mass change through snowfall,1045,,kg s-1 m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+siflcondsic,,Product of conductive heatflux and sea ice concentration,1046,,W m-2,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+siflsaltbotsic,,Product of saltflux from seaice and sea ice concentration,1047,,kg m-2 s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+siflfwbotsic,,Product of freshwater flux from seaice and sea ice concentration,1048,,kg m-2 s-1,mpiom,data_2d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_2d_mm
+sosga,,Sea surface salinity,508,,1e-3,mpiom,timeser_mm,"['time', 'depth', 'lat', 'lon']",mpiom_timeser_mm
+tosga,,Sea surface temperature,509,,C,mpiom,timeser_mm,"['time', 'depth', 'lat', 'lon']",mpiom_timeser_mm
+volo,,Sea water volume,513,,m3,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+masso,,Sea water mass,514,,kg,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+global_salt_content,,Global salt content,517,,kg,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_davis_strait,,Ocean water transport across line davis strait,592,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+snmassacrossline_denmark_strait,,Snow-mass-flux through straits denmark strait,644,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareaacrossline_denmark_strait,,Sea-ice-area flux through straits denmark strait,645,,m2 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+snmassacrossline_indonesian_throughflow,,Snow-mass-flux through straits indonesian throughflow,724,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareaacrossline_indonesian_throughflow,,Sea-ice-area flux through straits indonesian throughflow,725,,m2 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+snmassacrossline_faroe_scotland_channel,,Snow-mass-flux through straits faroe scotland channel,684,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareaacrossline_faroe_scotland_channel,,Sea-ice-area flux through straits faroe scotland channel,685,,m2 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+ekmantransport_atlantic_26n,,Ocean ekman transport across line atlantic 26n,809,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+simassacrossline_barents_opening,,Sea-ice-mass flux through straits barents opening,613,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+snmassacrossline_barents_opening,,Snow-mass-flux through straits barents opening,614,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareaacrossline_barents_opening,,Sea-ice-area flux through straits barents opening,615,,m2 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+simassacrossline_bering_strait,,Sea-ice-mass flux through straits bering strait,623,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+snmassacrossline_bering_strait,,Snow-mass-flux through straits bering strait,624,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareaacrossline_bering_strait,,Sea-ice-area flux through straits bering strait,625,,m2 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+simassacrossline_canadian_archipelago,,Sea-ice-mass flux through straits canadian archipelago,633,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+snmassacrossline_canadian_archipelago,,Snow-mass-flux through straits canadian archipelago,634,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareaacrossline_canadian_archipelago,,Sea-ice-area flux through straits canadian archipelago,635,,m2 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+snmassacrossline_fram_strait,,Snow-mass-flux through straits fram strait,704,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareaacrossline_fram_strait,,Sea-ice-area flux through straits fram strait,705,,m2 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_barents_opening,,Ocean water transport across line barents opening,612,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_canadian_archipelago,,Ocean water transport across line canadian archipelago,632,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_denmark_strait,,Ocean water transport across line denmark strait,642,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_english_channel,,Ocean water transport across line english channel,662,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_faroe_scotland_channel,,Ocean water transport across line faroe scotland channel,682,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_florida_bahamas,,Ocean water transport across line florida bahamas,692,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_fram_strait,,Ocean water transport across line fram strait,702,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_iceland_faroe_channel,,Ocean water transport across line iceland faroe channel,712,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_indonesian_throughflow,,Ocean water transport across line indonesian throughflow,722,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_mozambiqe_channel,,Ocean water transport across line mozambiqe channel,732,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_taiwan_and_luzon_straits,,Ocean water transport across line taiwan and luzon straits,742,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_windward_passage,,Ocean water transport across line windward passage,752,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_strait_of_gibraltar,,Ocean water transport across line strait of gibraltar,762,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netheattransport_atlantic_60n,,Ocean heat transport across line atlantic 60n,770,,W,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netsalttransport_atlantic_60n,,Ocean salt transport across line atlantic 60n,771,,psu m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_atlantic_60n,,Ocean water transport across line atlantic 60n,772,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+snmassacrossline_atlantic_60n,,Snow-mass-flux through straits atlantic 60n,774,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareaacrossline_atlantic_60n,,Sea-ice-area flux through straits atlantic 60n,775,,m2 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netheattransport_atlantic_40n,,Ocean heat transport across line atlantic 40n,780,,W,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netsalttransport_atlantic_40n,,Ocean salt transport across line atlantic 40n,781,,psu m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_atlantic_40n,,Ocean water transport across line atlantic 40n,782,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+snmassacrossline_atlantic_40n,,Snow-mass-flux through straits atlantic 40n,784,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareaacrossline_atlantic_40n,,Sea-ice-area flux through straits atlantic 40n,785,,m2 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netheattransport_atlantic_30n,,Ocean heat transport across line atlantic 30n,790,,W,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netsalttransport_atlantic_30n,,Ocean salt transport across line atlantic 30n,791,,psu m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_atlantic_30n,,Ocean water transport across line atlantic 30n,792,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+snmassacrossline_atlantic_30n,,Snow-mass-flux through straits atlantic 30n,794,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareaacrossline_atlantic_30n,,Sea-ice-area flux through straits atlantic 30n,795,,m2 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netsalttransport_atlantic_26n,,Ocean salt transport across line atlantic 26n,801,,psu m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_atlantic_26n,,Ocean water transport across line atlantic 26n,802,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+snmassacrossline_atlantic_26n,,Snow-mass-flux through straits atlantic 26n,804,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareaacrossline_atlantic_26n,,Sea-ice-area flux through straits atlantic 26n,805,,m2 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netheattransport_atlantic_30s,,Ocean heat transport across line atlantic 30s,810,,W,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netsalttransport_atlantic_30s,,Ocean salt transport across line atlantic 30s,811,,psu m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+netwatertransport_atlantic_30s,,Ocean water transport across line atlantic 30s,812,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+snmassacrossline_atlantic_30s,,Snow-mass-flux through straits atlantic 30s,814,,kg s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareaacrossline_atlantic_30s,,Sea-ice-area flux through straits atlantic 30s,815,,m2 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eisab_greenland_iceland_norwegian_sea,,Sea ice extent in region greenland iceland norwegian sea,820,,m2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eiscb_greenland_iceland_norwegian_sea,,Sea ice volume in region greenland iceland norwegian sea,821,,m3,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+hflb_greenland_iceland_norwegian_sea,,Heat uptake in region greenland iceland norwegian sea,822,,W,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+wflb_greenland_iceland_norwegian_sea,,Freshwater uptake in region greenland iceland norwegian sea,823,,m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_0m_greenland_iceland_norwegian_sea,,Sst in region greenland iceland norwegian sea,824,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_0m_greenland_iceland_norwegian_sea,,Sss in region greenland iceland norwegian sea,825,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_0m_greenland_iceland_norwegian_sea,,Kinetic energy in region greenland iceland norwegian sea,826,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_200m_greenland_iceland_norwegian_sea,,Temperature 200m in region greenland iceland norwegian sea,827,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_200m_greenland_iceland_norwegian_sea,,Salinity 200m in region greenland iceland norwegian sea,828,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_200m_greenland_iceland_norwegian_sea,,Kinetic energy in region greenland iceland norwegian sea,829,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_800m_greenland_iceland_norwegian_sea,,Temperature 800m in region greenland iceland norwegian sea,830,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_800m_greenland_iceland_norwegian_sea,,Salinity 800m in region greenland iceland norwegian sea,831,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_800m_greenland_iceland_norwegian_sea,,Kinetic energy in region greenland iceland norwegian sea,832,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_2000m_greenland_iceland_norwegian_sea,,Temperature 2000m in region greenland iceland norwegian sea,833,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_2000m_greenland_iceland_norwegian_sea,,Salinity 2000m in region greenland iceland norwegian sea,834,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_2000m_greenland_iceland_norwegian_sea,,Kinetic energy in region greenland iceland norwegian sea,835,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+hflb_arctic_ocean,,Heat uptake in region arctic ocean,838,,W,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+wflb_arctic_ocean,,Freshwater uptake in region arctic ocean,839,,m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_0m_arctic_ocean,,Sst in region arctic ocean,840,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_0m_arctic_ocean,,Sss in region arctic ocean,841,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_0m_arctic_ocean,,Kinetic energy in region arctic ocean,842,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_200m_arctic_ocean,,Temperature 200m in region arctic ocean,843,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_200m_arctic_ocean,,Salinity 200m in region arctic ocean,844,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_200m_arctic_ocean,,Kinetic energy in region arctic ocean,845,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_800m_arctic_ocean,,Temperature 800m in region arctic ocean,846,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_800m_arctic_ocean,,Salinity 800m in region arctic ocean,847,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_800m_arctic_ocean,,Kinetic energy in region arctic ocean,848,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_2000m_arctic_ocean,,Temperature 2000m in region arctic ocean,849,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_2000m_arctic_ocean,,Salinity 2000m in region arctic ocean,850,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_2000m_arctic_ocean,,Kinetic energy in region arctic ocean,851,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eisab_labrador_sea,,Sea ice extent in region labrador sea,852,,m2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eiscb_labrador_sea,,Sea ice volume in region labrador sea,853,,m3,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+hflb_labrador_sea,,Heat uptake in region labrador sea,854,,W,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+wflb_labrador_sea,,Freshwater uptake in region labrador sea,855,,m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_0m_labrador_sea,,Sst in region labrador sea,856,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_0m_labrador_sea,,Sss in region labrador sea,857,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_0m_labrador_sea,,Kinetic energy in region labrador sea,858,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_200m_labrador_sea,,Temperature 200m in region labrador sea,859,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_200m_labrador_sea,,Salinity 200m in region labrador sea,860,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_200m_labrador_sea,,Kinetic energy in region labrador sea,861,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_800m_labrador_sea,,Temperature 800m in region labrador sea,862,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_800m_labrador_sea,,Salinity 800m in region labrador sea,863,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_800m_labrador_sea,,Kinetic energy in region labrador sea,864,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_2000m_labrador_sea,,Temperature 2000m in region labrador sea,865,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_2000m_labrador_sea,,Salinity 2000m in region labrador sea,866,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_2000m_labrador_sea,,Kinetic energy in region labrador sea,867,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eisab_north_atlantic_ocean,,Sea ice extent in region north atlantic ocean,868,,m2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eiscb_north_atlantic_ocean,,Sea ice volume in region north atlantic ocean,869,,m3,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+hflb_north_atlantic_ocean,,Heat uptake in region north atlantic ocean,870,,W,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+wflb_north_atlantic_ocean,,Freshwater uptake in region north atlantic ocean,871,,m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_0m_north_atlantic_ocean,,Sst in region north atlantic ocean,872,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_0m_north_atlantic_ocean,,Sss in region north atlantic ocean,873,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_0m_north_atlantic_ocean,,Kinetic energy in region north atlantic ocean,874,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_200m_north_atlantic_ocean,,Temperature 200m in region north atlantic ocean,875,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_200m_north_atlantic_ocean,,Salinity 200m in region north atlantic ocean,876,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_200m_north_atlantic_ocean,,Kinetic energy in region north atlantic ocean,877,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_800m_north_atlantic_ocean,,Temperature 800m in region north atlantic ocean,878,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_800m_north_atlantic_ocean,,Salinity 800m in region north atlantic ocean,879,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_800m_north_atlantic_ocean,,Kinetic energy in region north atlantic ocean,880,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_2000m_north_atlantic_ocean,,Temperature 2000m in region north atlantic ocean,881,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_2000m_north_atlantic_ocean,,Salinity 2000m in region north atlantic ocean,882,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_2000m_north_atlantic_ocean,,Kinetic energy in region north atlantic ocean,883,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eisab_atlantic_ocean,,Sea ice extent in region atlantic ocean,884,,m2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eiscb_atlantic_ocean,,Sea ice volume in region atlantic ocean,885,,m3,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+hflb_atlantic_ocean,,Heat uptake in region atlantic ocean,886,,W,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+wflb_atlantic_ocean,,Freshwater uptake in region atlantic ocean,887,,m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_0m_atlantic_ocean,,Sst in region atlantic ocean,888,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_0m_atlantic_ocean,,Sss in region atlantic ocean,889,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_0m_atlantic_ocean,,Kinetic energy in region atlantic ocean,890,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_200m_atlantic_ocean,,Temperature 200m in region atlantic ocean,891,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_200m_atlantic_ocean,,Salinity 200m in region atlantic ocean,892,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_200m_atlantic_ocean,,Kinetic energy in region atlantic ocean,893,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_800m_atlantic_ocean,,Temperature 800m in region atlantic ocean,894,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_800m_atlantic_ocean,,Salinity 800m in region atlantic ocean,895,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_800m_atlantic_ocean,,Kinetic energy in region atlantic ocean,896,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_2000m_atlantic_ocean,,Temperature 2000m in region atlantic ocean,897,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_2000m_atlantic_ocean,,Salinity 2000m in region atlantic ocean,898,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_2000m_atlantic_ocean,,Kinetic energy in region atlantic ocean,899,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+hflb_southern_ocean,,Heat uptake in region southern ocean,902,,W,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+wflb_southern_ocean,,Freshwater uptake in region southern ocean,903,,m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_0m_southern_ocean,,Sst in region southern ocean,904,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_0m_southern_ocean,,Sss in region southern ocean,905,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_0m_southern_ocean,,Kinetic energy in region southern ocean,906,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_200m_southern_ocean,,Temperature 200m in region southern ocean,907,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_200m_southern_ocean,,Salinity 200m in region southern ocean,908,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_200m_southern_ocean,,Kinetic energy in region southern ocean,909,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_800m_southern_ocean,,Temperature 800m in region southern ocean,910,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_800m_southern_ocean,,Salinity 800m in region southern ocean,911,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_800m_southern_ocean,,Kinetic energy in region southern ocean,912,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_2000m_southern_ocean,,Temperature 2000m in region southern ocean,913,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_2000m_southern_ocean,,Salinity 2000m in region southern ocean,914,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_2000m_southern_ocean,,Kinetic energy in region southern ocean,915,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eisab_indopacific_ocean,,Sea ice extent in region indopacific ocean,916,,m2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eiscb_indopacific_ocean,,Sea ice volume in region indopacific ocean,917,,m3,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+hflb_indopacific_ocean,,Heat uptake in region indopacific ocean,918,,W,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+wflb_indopacific_ocean,,Freshwater uptake in region indopacific ocean,919,,m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_0m_indopacific_ocean,,Sst in region indopacific ocean,920,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_0m_indopacific_ocean,,Sss in region indopacific ocean,921,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_0m_indopacific_ocean,,Kinetic energy in region indopacific ocean,922,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_200m_indopacific_ocean,,Temperature 200m in region indopacific ocean,923,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_200m_indopacific_ocean,,Salinity 200m in region indopacific ocean,924,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_200m_indopacific_ocean,,Kinetic energy in region indopacific ocean,925,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_800m_indopacific_ocean,,Temperature 800m in region indopacific ocean,926,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_800m_indopacific_ocean,,Salinity 800m in region indopacific ocean,927,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_800m_indopacific_ocean,,Kinetic energy in region indopacific ocean,928,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_2000m_indopacific_ocean,,Temperature 2000m in region indopacific ocean,929,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_2000m_indopacific_ocean,,Salinity 2000m in region indopacific ocean,930,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_2000m_indopacific_ocean,,Kinetic energy in region indopacific ocean,931,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eisab_tropical_pacific_ocean,,Sea ice extent in region tropical pacific ocean,932,,m2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eiscb_tropical_pacific_ocean,,Sea ice volume in region tropical pacific ocean,933,,m3,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+hflb_tropical_pacific_ocean,,Heat uptake in region tropical pacific ocean,934,,W,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+wflb_tropical_pacific_ocean,,Freshwater uptake in region tropical pacific ocean,935,,m3 s-1,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_0m_tropical_pacific_ocean,,Sss in region tropical pacific ocean,937,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_0m_tropical_pacific_ocean,,Kinetic energy in region tropical pacific ocean,938,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_200m_tropical_pacific_ocean,,Temperature 200m in region tropical pacific ocean,939,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_200m_tropical_pacific_ocean,,Salinity 200m in region tropical pacific ocean,940,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_200m_tropical_pacific_ocean,,Kinetic energy in region tropical pacific ocean,941,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_800m_tropical_pacific_ocean,,Temperature 800m in region tropical pacific ocean,942,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_800m_tropical_pacific_ocean,,Salinity 800m in region tropical pacific ocean,943,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_800m_tropical_pacific_ocean,,Kinetic energy in region tropical pacific ocean,944,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+tem_2000m_tropical_pacific_ocean,,Temperature 2000m in region tropical pacific ocean,945,,C,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+salt_2000m_tropical_pacific_ocean,,Salinity 2000m in region tropical pacific ocean,946,,psu,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_2000m_tropical_pacific_ocean,,Kinetic energy in region tropical pacific ocean,947,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eisab_global_ocean,,Sea ice extent in region global ocean,948,,m2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+eiscb_global_ocean,,Sea ice volume in region global ocean,949,,m3,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_0m_global_ocean,,Kinetic energy in region global ocean,954,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_200m_global_ocean,,Kinetic energy in region global ocean,957,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_800m_global_ocean,,Kinetic energy in region global ocean,960,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+u2pv2_2000m_global_ocean,,Kinetic energy in region global ocean,963,,m2 s-2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siarean,,Sea-ice area north,1050,,m2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siareas,,Sea-ice area south,1051,,m2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+sivoln,,Sea-ice volume north,1052,,m3,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+sivols,,Sea-ice volume south,1053,,m3,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siextentn,,Sea-ice extent north,1054,,m2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+siextents,,Sea-ice extent south,1055,,m2,mpiom,timeser_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_timeser_mm
+thetao,,Sea water potential temperature,2,,C,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+uo,,Sea water x velocity,3,,m s-1,mpiom,data_3d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_3d_mm
+vo,,Sea water y velocity,4,,m s-1,mpiom,data_3d_mm,"['time', 'depth', 'y_3', 'x_3']",mpiom_data_3d_mm
+so,,Sea water salinity,5,,1e-3,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+po,,Sea water pressure,6,,Pa,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+wo,,Upward sea water velocity,7,,m s-1,mpiom,data_3d_mm,"['time', 'depth_2', 'y', 'x']",mpiom_data_3d_mm
+rhopoto,,Sea water potential density,18,,kg m-3,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+wmo,,Upward ocean mass transport,21,,kg s-1,mpiom,data_3d_mm,"['time', 'depth_2', 'y', 'x']",mpiom_data_3d_mm
+wmosq,,Square of upward ocean mass transport,22,,kg2 s-2,mpiom,data_3d_mm,"['time', 'depth_2', 'y', 'x']",mpiom_data_3d_mm
+umo,,Ocean mass x transport,23,,kg s-1,mpiom,data_3d_mm,"['time', 'depth', 'y_2', 'x_2']",mpiom_data_3d_mm
+vmo,,Ocean mass y transport,24,,kg s-1,mpiom,data_3d_mm,"['time', 'depth', 'y_3', 'x_3']",mpiom_data_3d_mm
+agessc,,Sea water age since surface contact,39,,yr,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+heat_content,,Heat content per unit area,54,,J m-2,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+avo,,Sea water vertical viscosity,110,,m2 s-1,mpiom,data_3d_mm,"['time', 'depth_2', 'y', 'x']",mpiom_data_3d_mm
+difvho,,Ocean vertical heat diffusivity,111,,m2 s-1,mpiom,data_3d_mm,"['time', 'depth_2', 'y', 'x']",mpiom_data_3d_mm
+wtmix,,Sea water vertical diffusivity due to wind,112,,m2 s-1,mpiom,data_3d_mm,"['time', 'depth_2', 'y', 'x']",mpiom_data_3d_mm
+swrab,,Penetrating fraction of solar flux with depth,135,,frac,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+rsdoabsorb,,Net rate of absorption of shortwave energy in ocean layer,152,,W m-2,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+thkcello,,Cell thickness,197,,m,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+rinu,,Richardson number,214,,1,mpiom,data_3d_mm,"['time', 'depth_2', 'y', 'x']",mpiom_data_3d_mm
+obvfsq,,Squared of brunt vaisala frequency in sea water,279,,s-2,mpiom,data_3d_mm,"['time', 'depth_2', 'y', 'x']",mpiom_data_3d_mm
+nudging_so,,Salinity nudging source and sink term,556,,psu,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+nudging_thetao,,Temperature nudging source and sink term,557,,C,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+nudging_dissic,,Dissic nudging source and sink term,558,,mol m-3,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+nudging_talk,,Talk nudging source and sink term,559,,mol m-3,mpiom,data_3d_mm,"['time', 'depth', 'y', 'x']",mpiom_data_3d_mm
+opottemptend,,Tendency of sea water potential temperature expressed as heat content,25,,W m-2,mpiom,data_3d_ym,"['time', 'depth', 'y', 'x']",mpiom_data_3d_ym
+osalttend,,Tendency of sea water salinity expressed as salt content,26,,kg s-1 m-2,mpiom,data_3d_ym,"['time', 'depth', 'y', 'x']",mpiom_data_3d_ym
+opottempadvect,,Tendency of sea water potential temperature expressed as heat content due to advection,28,,W m-2,mpiom,data_3d_ym,"['time', 'depth', 'y', 'x']",mpiom_data_3d_ym
+opottemppadvect,,Tendency of sea water potential temperature expressed as heat content due to parameterized eddy advection,30,,W m-2,mpiom,data_3d_ym,"['time', 'depth', 'y', 'x']",mpiom_data_3d_ym
+osaltadvect,,Tendency of sea water salinity expressed as salt content due to advection,88,,kg s-1 m-2,mpiom,data_3d_ym,"['time', 'depth', 'y', 'x']",mpiom_data_3d_ym
+osaltpmadvect,,Tendency of sea water salinity expressed as salt content due to parameterized eddy advection,90,,kg s-1 m-2,mpiom,data_3d_ym,"['time', 'depth', 'y', 'x']",mpiom_data_3d_ym
+tauucorr,,Surface downward x stress correction,282,,Nm-2,mpiom,data_3d_ym,"['time', 'depth_3', 'y_2', 'x_2']",mpiom_data_3d_ym
+opottempdiff,,Tendency of sea water potential temperature expressed as heat content due to parameterized dianeutral mixing,1029,,W m-2,mpiom,data_3d_ym,"['time', 'depth', 'y', 'x']",mpiom_data_3d_ym
+opottemppmdiff,,Tendency of sea water potential temperature expressed as heat content due to parameterized mesocale diffusion,1030,,W m-2,mpiom,data_3d_ym,"['time', 'depth', 'y', 'x']",mpiom_data_3d_ym
+osaltdiff,,Tendency of sea water salinity expressed as salt content due to parameterized dianeutral mixing,1031,,kg s-1 m-2,mpiom,data_3d_ym,"['time', 'depth', 'y', 'x']",mpiom_data_3d_ym
+osaltpmdiff,,Tendency of sea water salinity expressed as salt content due to parameterized mesocale diffusion,1032,,kg s-1 m-2,mpiom,data_3d_ym,"['time', 'depth', 'y', 'x']",mpiom_data_3d_ym
+global_hfl,,Global ocean implied heattransport,93,,W,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+atlantic_hfl,,Atlantic ocean implied heattransport,94,,W,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+indopacific_hfl,,Indopacific ocean implied heattransport,95,,W,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+global_wfl,,Global ocean implied freshwater transport,96,,m3 s-1,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+atlantic_wfl,,Atlantic ocean implied freshwater transport,97,,m3 s-1,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+indopacific_wfl,,Indopacific ocean implied freshwater transport,98,,m3 s-1,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+global_moc,,Global ocean meridional overturning streamfunction,100,,kg s-1,mpiom,data_moc_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_data_moc_mm
+atlantic_moc,,Atlantic ocean meridional overturning streamfunction,101,,kg s-1,mpiom,data_moc_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_data_moc_mm
+indopacific_moc,,Indopacific ocean meridional overturning streamfunction,102,,kg s-1,mpiom,data_moc_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_data_moc_mm
+global_gm_moc,,Global ocean meridional overturning mass streamfunction due to parameterized mesoscale advection,106,,kg s-1,mpiom,data_moc_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_data_moc_mm
+atlantic_gm_moc,,Atlantic ocean meridional overturning mass streamfunction due to parameterized mesoscale advection,107,,kg s-1,mpiom,data_moc_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_data_moc_mm
+indopacific_gm_moc,,Indopacific ocean meridional overturning mass streamfunction due to parameterized mesoscale advection,108,,kg s-1,mpiom,data_moc_mm,"['time', 'depth_2', 'lat', 'lon']",mpiom_data_moc_mm
+global_hfbasin,,Global northward ocean heat transport,1093,,W,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+atlantic_hfbasin,,Atlantic northward ocean heat transport,1094,,W,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+indopacific_hfbasin,,Indopacific northward ocean heat transport,1095,,W,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+global_hfbasinpmadv,,Global northward ocean heat transport due to parameterized mesoscale advection,1096,,W,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+atlantic_hfbasinpmadv,,Atlantic northward ocean heat transport due to parameterized mesoscale advection,1097,,W,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+indopacific_hfbasinpmadv,,Indopacific northward ocean heat transport due to parameterized mesoscale advection,1098,,W,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+global_hfbasinpmdiff,,Global northward ocean heat transport due to parameterized mesoscale diffusion,1099,,W,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+atlantic_hfbasinpmdiff,,Atlantic northward ocean heat transport due to parameterized mesoscale diffusion,1100,,W,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+indopacific_hfbasinpmdiff,,Indopacific northward ocean heat transport due to parameterized mesoscale diffusion,1101,,W,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+global_sltbasin,,Global northward ocean salt transport,1112,,kg s-1,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+atlantic_sltbasin,,Atlantic northward ocean salt transport,1113,,kg s-1,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+indopacific_sltbasin,,Indopacific northward ocean salt transport,1114,,kg s-1,mpiom,data_moc_mm,"['time', 'depth', 'lat', 'lon']",mpiom_data_moc_mm
+global_primary_production,,Global primary production,500,,GtC yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_zooplankton_grazing,,Global zooplankton grazing,501,,GtC yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_OM_export_at_90m,,Global om export at 90m,502,,GtC yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_calc_export_at_90m,,Global calc export at 90m,503,,GtC yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_opal_export_at_90m,,Global opal export at 90m,504,,kmol Si s-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_opal_production,,Global opal production,505,,kmol Si s-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_caco3_production,,Global caco3 production,506,,GtC yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_net_co2_flux,,Global net co2 flux (positive into air),507,,GtC yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_surface_alkalinity,,Global surface alkalinity,508,,kmol m-3,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_surface_dissolved_inorganic_carbon,,Global surface dissolved inorganic carbon,509,,kmol C m-3,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+N2_fixation,,N2 fixation,517,,TgN yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+WC_denit,,Denitrification,519,,TgN yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_primary_production_cya,,Global primary production cyano,520,,GtC yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+SED_denit,,Sediment denitrification,523,,TgN yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_surface_phosphate,,Global surface phosphate,529,,kmol m-3,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_surface_nitrate,,Global surface nitrate,530,,kmol m-3,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+omz_volume,,Volume of OMZ,531,,km3,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_prcaca,,Global caco3 flux to sediment,532,,GtC yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_silpro,,Global opal flux to sediment,533,,GtSi yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_prorca,,Global detritus flux to sediment,534,,GtC yr-1,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+global_surface_silicate,,Global surface silicate,535,,kmol Si m-3,hamocc,monitoring_ym,"['time', 'depth', 'lat', 'lon']",hamocc_monitoring_ym
+dmsprod,,Dms production,69,,kmol S m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+dms_bac,,Dms bacterial consumption,70,,kmol S m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+dms_uv,,Dms uv light destruction,71,,kmol S m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+export,,Detritus production,84,,kmol C m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+delcar,,Calcium production,85,,kmol C m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+delsil,,Opal production,86,,kmol Si m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+phosy,,Photosynthesis,100,,mol C m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+graz,,Tendency of mole concentration of organic matter expressed as carbon in sea water due to grazing of phytoplankton,711,,mol m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+phosy_cya,,Photosynthesis cyano,141,,mol C m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+aou,,Aparent oxygen ut,143,,kmol O2 m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+remin_via_grazer,,Remin via grazer,292,,kmol P m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+bacterial_activity,,Bacterial activity,293,,kmol P m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+remin_of_det_by_O2_,,Remin of detritus by oxygen,294,,kmol P m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+remin_of_det_by_N,,Remin of detritus by nitrogen,295,,kmol P m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+remin_of_det_by_S,,Remin of detritus by sulfate,296,,kmol P m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+pho,,Tlim Llim,510,,d-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+ph,,Sea water ph reported on total scale,700,,1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+pon,,Mole concentration of particulate organic matter expressed as nitrogen in sea water,701,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+dissic,,Mole concentration of dissolved inorganic carbon in sea water,704,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+dmso,,Mole concentration of dimethyl sulfide in sea water,707,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+phyp,,Mole concentration of phytoplankton expressed as phosphorus in sea water,709,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+phyfe,,Mole concentration of phytoplankton expressed as iron in sea water,712,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+bsi,,Mole concentration of particulate matter expressed as silicon in sea water,719,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+phyn,,Mole concentration of phytoplankton expressed as nitrogen in sea water,724,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+phydiaz,,Mole concentration of diazotrophs expressed as carbon in sea water,727,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+chldiaz,,Mass concentration of diazotrophs expressed as chlorophyll in sea water,729,,kg m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+talk,,Seawater alkalinity expressed as mole equivalent,731,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+co3satcalc,,Mole concentration of carbonate ion for seawater in equilibrium with pure calcite,735,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+phymisc,,Mole concentration of miscellaneous phytoplankton expressed as carbon in sea water,736,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+o2,,Mole concentration of molecular oxygen in sea water,739,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+expc,,Sinking mole flux of particulate organic matter expressed as carbon in sea water,741,,mol m-2 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+calc,,Mole concentration of calcite expressed as carbon in sea water,743,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+pop,,Mole concentration of particulate organic matter expressed as phosphorus in sea water,745,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+limfediaz,,Iron limitation of diazotrophs,147,,1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+dissoc,,Mole concentration of dissolved organic carbon in sea water,747,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+dfe,,Mole concentration of dissolved iron in sea water,750,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+si,,Mole concentration of silicate in sea water,751,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+detoc,,Mole concentration of organic detritus expressed as carbon in sea water,752,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+phyc,,Mole concentration of phytoplankton expressed as carbon in sea water,754,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+chl,,Mass concentration of phytoplankton expressed as chlorophyll in sea water,758,,kg m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+po4,,Mole concentration of phosphate in sea water,759,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+no3,,Mole concentration of nitrate in sea water,762,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+talknat,,Seawater alkalinity expressed as mole equivalent natural component,764,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+co3,,Mole concentration of carbonate ion in seawater,765,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+zooc,,Mole concentration of zooplankton expressed as carbon in sea water,766,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+ddipdt,,Change in dissolved phosphate,236,,mol m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+dissicnat,,Mole concentration of dissolved inorganic carbon in sea water natural component,780,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+pp,,Tendency of mole concentration of particulate organic matter expressed as carbon in sea water due to net primary production,778,,mol m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+expsi,,Sinking mole flux of particulate silicon in sea water,776,,mol m-2 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+expcalc,,Sinking mole flux of calcite expressed as carbon in sea water,785,,mol m-2 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+o2sat,,Mole concentration of molecular oxygen in sea water at saturation,772,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+si_2,,Mole concentration of total dissolved inorganic silicon in sea water,782,,mol m-3,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+h2sprod,,H2s alk production,187,,mol m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+h2sloss,,H2s alk loss,188,,mol m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+pbfe,,Tendency of ocean mole content of iron due to biological production,774,,mol m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+pbsi,,Tendency of ocean mole content of silicon due to biological production,788,,mol m-3 s-1,hamocc,data_3d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_3d_mm
+atmco2,,Atmospheric CO2,61,,ppm,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+atmo2,,Atmospheric O2,62,,ppm,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+atmn2,,Atmospheric N2,64,,ppm,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+n2oflux,,N2oflux,93,,kmol N2 m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+spco2,,Surface partial pressure of carbon dioxide in sea water,755,,Pa,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fgdms,,Surface upward mole flux of dimethyl sulfide,721,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fgo2,,Surface downward mole flux of molecular oxygen,742,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+epsi100,,Sinking mole flux of particulate silicon in sea water,737,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth_2', 'y', 'x']",hamocc_data_2d_mm
+epcalc100,,Sinking mole flux of calcite expressed as carbon in sea water,733,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth_2', 'y', 'x']",hamocc_data_2d_mm
+epc100,,Sinking mole flux of particulate organic matter expressed as carbon in sea water,723,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth_2', 'y', 'x']",hamocc_data_2d_mm
+fgco2nat,,Surface downward mass flux of natural carbon dioxide expressed as carbon,716,,kg m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+froc,,Tendency of ocean mole content of organic carbon due to sedimentation,738,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth_3', 'y', 'x']",hamocc_data_2d_mm
+fric,,Tendency of ocean mole content of inorganic carbon due to sedimentation,763,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth_3', 'y', 'x']",hamocc_data_2d_mm
+dissicos,,Surface dissolved inorganic carbon concentration,107,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+talkos,,Surface total alkalinity,110,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+po4os,,Surface dissolved phosphate concentration,111,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+o2os,,Surface dissolved oxygen concentration,112,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+no3os,,Surface dissolved nitrate concentration,114,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+surf_silica,,Surface dissolved silicate,115,,mol Si m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+dissocos,,Surface dissolved organic carbon concentration,116,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+detcocos,,Surface detrital organic carbon concentration,117,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+surf_hi,,Surface hydrogen ion concentration,120,,kmol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+surf_phy,,Surface phytoplankton concentration,122,,mol C m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+zoocos,,Surface zooplankton carbon concentration,123,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+calcos,,Surface calite concentration,124,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+bsios,,Surface Mole Concentration of Particulate Organic Matter expressed as Silicon in sea water,127,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+surf_dms,,Surface dimethylsulfide,129,,mol S m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+dfeos,,Surface dissolved iron concentration,131,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+surf_aksp,,Surface apparent solubility product for calcite,137,,(kmol m-3)2,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+n2fix_diag,,Diagnostic nitrogen fixation rate,157,,mol N m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+denitr,,Denitrification,159,,mol N m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+zsatcalc,,Minimum depth of calcite undersaturation in sea water,714,,m,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fsfe,,Tendency of ocean mole content of iron due to deposition and runoff and sediment dissolution,715,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+o2min,,Mole concentration of dissolved molecular oxygen in sea water at shallowest local minimum in vertical profile,749,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+zo2min,,Depth at shallowest local minimum in vertical profile of mole concentration of dissolved molecular oxygen in sea water,710,,m,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+dpco2,,Surface carbon dioxide partial pressure difference between sea water and air,746,,Pa,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+dpo2,,Surface molecular oxygen partial pressure difference between sea water and air,708,,Pa,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intpcalc,,Net primary mole productivity of carbon by calcareous phytoplankton,730,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intpbsi,,Tendency of ocean mole content of silicon due to biological production,705,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intdissic,,Ocean mass content of dissolved inorganic carbon,791,,kg m-2,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fddtdic,,Tendency of ocean mole content of dissolved inorganic carbon,207,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fddtalk,,Integral wrt depth of tendency of sea water alkalinity expressed as mole equivalent,210,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fddtdip,,Tendency of ocean mole content of dissolved inorganic phosphorus,211,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fddtdin,,Tendency of ocean mole content of dissolved inorganic nitrogen,214,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fddtdisi,,Tendency of ocean mole content of dissolved inorganic silicon,215,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intpn2,,Tendency of ocean mole content of elemental nitrogen due to fixation,703,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+ndepo,,Nitrogen deposition,174,,mol N m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intpdiaz,,Net primary mole productivity of carbon by diazotrophs,201,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fbddtdife,,Tendency of ocean mole content of dissolved inorganic iron due to biological activity,713,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intdic,,Ocean mass content of dissolved inorganic carbon,206,,kg m-2,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fbddtalk,,Integral wrt depth of tendency of sea water alkalinity expressed as mole equivalent due to biological activity,717,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fgco2,,Surface downward mass flux of carbon dioxide expressed as carbon,718,,kg m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intpbn,,Tendency of ocean mole content of nitrogen due to biological production,720,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+ocfriver,,Tendency of ocean mole content of organic carbon due to runoff and sediment dissolution,722,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intpbp,,Tendency of ocean mole content of phosphorus due to biological production,725,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intdoc,,Ocean mass content of dissolved organic carbon,726,,kg m-2,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fddtdife,,Tendency of ocean mole content of dissolved inorganic iron,728,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+frn,,Tendency of ocean mole content of elemental nitrogen due to denitrification and sedimentation,732,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fbddtdic,,Tendency of ocean mole content of dissolved inorganic carbon due to biological activity,734,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intpcalcite,,Tendency of ocean mole content of calcite expressed as carbon due to biological production,740,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+icfriver,,Tendency of ocean mole content of inorganic carbon due to runoff and sediment dissolution,744,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intpoc,,Ocean mass content of particulate organic carbon,748,,kg m-2,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fbddtdisi,,Tendency of ocean mole content of dissolved inorganic silicon due to biological processes,753,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intpp,,Net primary mole productivity of carbon by phytoplankton,756,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fbddtdin,,Tendency of ocean mole content of dissolved inorganic nitrogen due to biological activity,757,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intpbfe,,Tendency of ocean mole content of iron due to biological production,760,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fbddtdip,,Tendency of ocean mole content of dissolved inorganic phosphorus due to biological activity,761,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fddtalk_all,,Integral wrt depth of tendency of sea water alkalinity expressed as mole equivalent,790,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intdissoc,,Ocean mass content of dissolved organic carbon,792,,kg m-2,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+phycos,,Surface mole concentration of phytoplankton expressed as carbon in sea water,767,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+o2satos,,Surface dissolved oxygen concentration at saturation,796,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+chlos,,Surface mass concentration of phytoplankton expressed as chlorophyll in sea water,768,,kg m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+chldiazos,,Surface mass concentration of diazotrophs expressed as chlorophyll in sea water,797,,kg m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+ponos,,Surface mole concentration of particulate organic matter expressed as nitrogen in sea water,798,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+popos,,Surface mole concentration of particulate organic matter expressed as phosphorus in sea water,799,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+fsn,,Tendency of ocean mole content of elemental nitrogen due to deposition and fixation and runoff,706,,mol m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+prorca,,Detritus sediment flux,94,,mol P m-2 s-1,hamocc,data_2d_mm,"['time', 'depth_3', 'y', 'x']",hamocc_data_2d_mm
+h2sos,,Surface h2s alkalinity,144,,mol m-3,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+lysokl,,Depth of lysokline,160,,m,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intdelcar,,Integrated calcium production,185,,mol C m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+intdelsil,,Integrated opal production,186,,mol Si m-2 s-1,hamocc,data_2d_mm,"['time', 'depth', 'y', 'x']",hamocc_data_2d_mm
+totalcarbon,,Total carbon,301,,mol C,hamocc,co2,"['time', 'depth', 'lat', 'lon']",hamocc_co2
+zco2flux,,Global carbon flux,303,,mol C/day,hamocc,co2,"['time', 'depth', 'lat', 'lon']",hamocc_co2
+totalcarboce,,Total carbon of water column incl pore water,305,,mol C,hamocc,co2,"['time', 'depth', 'lat', 'lon']",hamocc_co2
+totalcarbsed,,Total carbon of sediment,306,,mol C,hamocc,co2,"['time', 'depth', 'lat', 'lon']",hamocc_co2
+calcitesediment,,Total calcite of sediment,307,,mol C,hamocc,co2,"['time', 'depth', 'lat', 'lon']",hamocc_co2
+organsed,,Organic carbon of sediment,308,,mol C,hamocc,co2,"['time', 'depth', 'lat', 'lon']",hamocc_co2
+totalphos,,Total phosphate,309,,mol P,hamocc,co2,"['time', 'depth', 'lat', 'lon']",hamocc_co2
+watphos,,Total phosphate of water column incl pore water,310,,mol P,hamocc,co2,"['time', 'depth', 'lat', 'lon']",hamocc_co2
+sedphos,,Total phosphate of sediment,311,,mol P,hamocc,co2,"['time', 'depth', 'lat', 'lon']",hamocc_co2
+totalsil,,Total silicate,312,,mol Si,hamocc,co2,"['time', 'depth', 'lat', 'lon']",hamocc_co2
+watsil,,Total silicate of water column incl pore water,313,,mol Si,hamocc,co2,"['time', 'depth', 'lat', 'lon']",hamocc_co2
+sedsil,,Total silicate of sediment,314,,mol Si,hamocc,co2,"['time', 'depth', 'lat', 'lon']",hamocc_co2
+calcinpglint,,Total inorganic calcium input to sediment,203,,kmol,hamocc,co2,"['time', 'depth_2', 'lat', 'lon']",hamocc_co2
+orginpglint,,Total organic calcium input to sediment,204,,kmol,hamocc,co2,"['time', 'depth_2', 'lat', 'lon']",hamocc_co2
+silinpglint,,Total silicat input to sediment,205,,kmol,hamocc,co2,"['time', 'depth_2', 'lat', 'lon']",hamocc_co2
+ssso12,,Sediment accumulated organic carbon,38,,kmol P m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+sssc12,,Sediment accumulated calcium carbonate,41,,kmol C m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+ssssil,,Sediment accumulated opal,44,,kmol Si m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+ssster,,Sediment accumulated clay,45,,kmol m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+bsso12,,Burial layer of organic carbon,46,,kmol P m-2,hamocc,data_sedi_ym,"['time', 'depth', 'y', 'x']",hamocc_data_sedi_ym
+bssc12,,Burial layer of calcium carbonate,47,,kmol C m-2,hamocc,data_sedi_ym,"['time', 'depth', 'y', 'x']",hamocc_data_sedi_ym
+bsssil,,Burial layer of opal,48,,kmol Si m-2,hamocc,data_sedi_ym,"['time', 'depth', 'y', 'x']",hamocc_data_sedi_ym
+bsster,,Burial layer of clay,49,,kmol m-2,hamocc,data_sedi_ym,"['time', 'depth', 'y', 'x']",hamocc_data_sedi_ym
+sedhpl,,Sediment accumulated hydrogen ions,50,,kmol m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+powaic,,Sediment pore water dic,51,,kmol C m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+powaal,,Sediment pore water alkalinity,54,,kmol m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+powaph,,Sediment pore water phosphate,55,,kmol P m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+powaox,,Sediment pore water oxygen,56,,kmol O2 m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+pown2,,Sediment pore water gaseous nitrogen,57,,kmol N2 m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+powno3,,Sediment pore water nitrate (no3),58,,kmol N m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+powasi,,Sediment pore water silicid acid (si(oh)4),59,,kmol Si m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+powafe,,Sediment pore water iron,60,,kmol Fe m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+powah2s,,Sediment pore water h2s alkalinity,63,,kmol m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+prcaca,,Caco3 sediment flux,95,,mol C m-2 s-1,hamocc,data_sedi_ym,"['time', 'depth', 'y', 'x']",hamocc_data_sedi_ym
+silpro,,Opal sediment flux,96,,kmol Si m-2 s-1,hamocc,data_sedi_ym,"['time', 'depth', 'y', 'x']",hamocc_data_sedi_ym
+produs,,Dust flux to sediment (free+aggregated),97,,kmol m-2 s-1,hamocc,data_sedi_ym,"['time', 'depth', 'y', 'x']",hamocc_data_sedi_ym
+denit_sed,,Sediment denitrification,167,,kmol N m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+sred_sed,,Sediment sulfate reduction,168,,kmol P m-3,hamocc,data_sedi_ym,"['time', 'sediment', 'y', 'x']",hamocc_data_sedi_ym
+sedfludic,,Sedimentflux to ocean dic,280,,kmol C m-2 s-1,hamocc,data_sedi_ym,"['time', 'depth_2', 'y', 'x']",hamocc_data_sedi_ym
+sedflualk,,Sedimentflux to ocean alk,281,,kmol m-2 s-1,hamocc,data_sedi_ym,"['time', 'depth_2', 'y', 'x']",hamocc_data_sedi_ym
+sedflupo4,,Sedimentflux to ocean phosphate,282,,kmol P m-2 s-1,hamocc,data_sedi_ym,"['time', 'depth_2', 'y', 'x']",hamocc_data_sedi_ym
+sedfluo2,,Sedimentflux to ocean oxygen,283,,kmol O2 m-2 s-1,hamocc,data_sedi_ym,"['time', 'depth_2', 'y', 'x']",hamocc_data_sedi_ym
+sedflun2,,Sedimentflux to ocean nitrogen,284,,kmol N m-2 s-1,hamocc,data_sedi_ym,"['time', 'depth_2', 'y', 'x']",hamocc_data_sedi_ym
+sedfluno3,,Sedimentflux to ocean nitrate,285,,kmol N m-2 s-1,hamocc,data_sedi_ym,"['time', 'depth_2', 'y', 'x']",hamocc_data_sedi_ym
+sedflusi,,Sedimentflux to ocean silicate,286,,kmol Si m-2 s-1,hamocc,data_sedi_ym,"['time', 'depth_2', 'y', 'x']",hamocc_data_sedi_ym
+sedflufe,,Sedimentflux to ocean iron,287,,kmol Fe m-2 s-1,hamocc,data_sedi_ym,"['time', 'depth_2', 'y', 'x']",hamocc_data_sedi_ym
+h2s,,H2s alkalinity,36,,kmol m-3,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+pt,,Mole concentration of total dissolved inorganic phosphorus in sea water,781,,mol m-3,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+silica,,Mole concentration of silicate in sea water,783,,mol m-3,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+hi,,Hydrogen ion concentration,20,,kmol m-3,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+phy,,Phytoplankton concentration,22,,kmol P m-3,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+an2o,,Laughing gas,28,,kmol N2 m-3,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+dcalc,,Tendency of mole concentration of calcite expressed as carbon in sea water due to dissolution,770,,mol m-3 s-1,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+dpocdtdiaz,,Tendency of mole concentration of particulate organic matter expressed as carbon in sea water due to net primary production by d,789,,mol m-3 s-1,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+cyalos_det,,Cyano loss det,142,,mol C m-3 s-1,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+n2fix_cya_vol,,Cyanobacteria nitrogen fixation,166,,mol N m-3 s-1,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+bddtdip,,Tendency of mole concentration of dissolved inorganic phosphate in sea water due to biological processes,769,,mol m-3 s-1,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+bddtdic,,Tendency of mole concentration of dissolved inorganic carbon in sea water due to biological processes,771,,mol m-3 s-1,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+bddtdisi,,Tendency of mole concentration of dissolved inorganic silicate in sea water due to biological processes,773,,mol m-3 s-1,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+pcalc,,Tendency of mole concentration of calcite expressed as carbon in sea water due to biological production,775,,mol m-3 s-1,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+bddtdife,,Tendency of mole concentration of dissolved inorganic iron in sea water due to biological processes,777,,mol m-3 s-1,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+bddtalk,,Tendency of sea water alkalinity expressed as mole equivalent due to biological processes,779,,mol m-3 s-1,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+remoc,,Tendency of mole concentration of organic matter expressed as carbon in sea water due to remineralization,784,,mol m-3 s-1,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym
+bddtdin,,Tendency of mole concentration of dissolved inorganic nitrate in sea water due to biological processes,786,,mol m-3 s-1,hamocc,data_3d_ym,"['time', 'depth', 'y', 'x']",hamocc_data_3d_ym

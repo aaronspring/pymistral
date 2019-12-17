@@ -1,9 +1,0 @@
-name: miklip_preop_cmorized
-collection_type: cmip5
-data_sources:
-  root_dir:
-    name: MISTRAL
-    loc_type: posix
-    direct_access: True
-    exclude_dirs: ['output1']
-    urlpath: /work/bmx828/miklip-ces/data4miklip/model/global/miklip/preop

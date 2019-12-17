@@ -1,4 +1,0 @@
-module unload cdo
-module unload netcdf_c/4.3.2-gcc48
-module load anaconda3/bleeding_edge
-source activate pymistral
