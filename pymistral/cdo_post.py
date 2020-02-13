@@ -64,40 +64,43 @@ def read_all_outdatatype_files_to_ds(
      given `year` and return xr.Dataset."""
     ds_list = []
     for outdatatype_id in outdatatypes:
-        print(f'Read {outdatatype_id} to xr.Dataset.')
-        parts = outdatatype_id.split('_')
-        model = parts[0]
-        outdatatype = '_'.join(parts[1:])
-        path = (
-            f'{exppath}/{expid}/outdata/{model}/'
-            + f'{expid}_{model}_{outdatatype}_{year}*'
-        )
-        if model in ['jsbach', 'echam6']:
-            options = ' '
-            if (
-                'BOT' in outdatatype
-                or 'ATM' in outdatatype
-                or 'LOG' in outdatatype
-            ):
-                options += ' -t echam6'
+        try:
+            print(f'Read {outdatatype_id} to xr.Dataset.')
+            parts = outdatatype_id.split('_')
+            model = parts[0]
+            outdatatype = '_'.join(parts[1:])
+            path = (
+                f'{exppath}/{expid}/outdata/{model}/'
+                + f'{expid}_{model}_{outdatatype}_{year}*'
+            )
+            if model in ['jsbach', 'echam6']:
+                options = ' '
+                if (
+                    'BOT' in outdatatype
+                    or 'ATM' in outdatatype
+                    or 'LOG' in outdatatype
+                ):
+                    options += ' -t echam6'
+                else:
+                    table = (
+                        f'{exppath}/{expid}/log/'
+                        + f'{expid}_{model}_{outdatatype[:2]}*.codes'
+                    )
+                    options += ' -t ' + table
             else:
-                table = (
-                    f'{exppath}/{expid}/log/'
-                    + f'{expid}_{model}_{outdatatype[:2]}*.codes'
-                )
-                options += ' -t ' + table
-        else:
-            options = ''
-        ds = cdo.copy(input=path, options=options, returnXDataset=True)
-        if 'time' not in ds.dims:
-            ds = ds.expand_dims('time')
-        ds.to_netcdf(f'{outpath}/sample_files/{model}_{outdatatype}.nc')
-        # add outdatatype
-        for v in ds.data_vars:
-            ds[v].attrs['outdatatype'] = outdatatype
-            ds[v].attrs['model'] = model
-            ds[v].attrs['dims'] = list(ds[v].dims)
-        ds_list.append(ds.isel(time=0).mean())
+                options = ''
+            ds = cdo.copy(input=path, options=options, returnXDataset=True)
+            if 'time' not in ds.dims:
+                ds = ds.expand_dims('time')
+            ds.to_netcdf(f'{outpath}/sample_files/{model}_{outdatatype}.nc')
+            # add outdatatype
+            for v in ds.data_vars:
+                ds[v].attrs['outdatatype'] = outdatatype
+                ds[v].attrs['model'] = model
+                ds[v].attrs['dims'] = list(ds[v].dims)
+            ds_list.append(ds.isel(time=0).mean())
+        except:
+            print(f'{outdatatype_id} failed'
     return xr.merge(ds_list, compat='override')
 
 
