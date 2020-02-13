@@ -58,7 +58,7 @@ def find_all_outdatatypes_in_exp(expid=expid, exppath=exppath, year=year):
 
 
 def read_all_outdatatype_files_to_ds(
-    outdatatypes, expid=expid, exppath=exppath, year=year
+    outdatatypes, expid=expid, exppath=exppath, year=year, new_sample_file_path='~/.'
 ):
     """Read all outdatatypes from experiment `expid` from path `exppath` of a
      given `year` and return xr.Dataset."""
@@ -91,7 +91,7 @@ def read_all_outdatatype_files_to_ds(
         ds = cdo.copy(input=path, options=options, returnXDataset=True)
         if 'time' not in ds.dims:
             ds = ds.expand_dims('time')
-        ds.to_netcdf(f'{exppath}/sample_files/{model}_{outdatatype}.nc')
+        ds.to_netcdf(f'{new_sample_file_path}/sample_files/{model}_{outdatatype}.nc')
         # add outdatatype
         for v in ds.data_vars:
             ds[v].attrs['outdatatype'] = outdatatype
