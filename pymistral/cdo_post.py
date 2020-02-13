@@ -100,7 +100,7 @@ def read_all_outdatatype_files_to_ds(
                 ds[v].attrs['dims'] = list(ds[v].dims)
             ds_list.append(ds.isel(time=0).mean())
         except:
-            print(f'{outdatatype_id} failed'
+            print(f'{outdatatype_id} failed')
     return xr.merge(ds_list, compat='override')
 
 
