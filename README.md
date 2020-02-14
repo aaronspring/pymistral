@@ -2,6 +2,8 @@
 
 Effective use of python with `xarray` and `dask` to analyse Earth-System-Modelling output on the `mistral` supercomputer at DKRZ.
 
+# TRANSFERED to https://gitlab.dkrz.de/m300524/pymistral!
+
 # Examples
 
 Check out our examples:
